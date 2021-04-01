@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="nl" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragment::head(title='Retro Vidoe')"></head>
+<body>
+<nav>
+    <ul>
+        <h3><a th:href="@{/}" th:text="Genres"></a></h3>
+        <h1>Genres</h1>
+        <li th:each="genre:${genres}">
+            <a th:object="${genre}" th:text="*{naam}" th:href="@{/films/{id}(id=*{id})}">Welkom</a>
+        </li>
+    </ul>
+</nav>
+<div th:if="${filmsMetGenre}">
+    <a th:each="film:${filmsMetGenre}" th:object="${film}" th:href="@{/film/{id}(id=*{id})}">
+        <img th:src="@{/images/{id}.jpg (id=*{id})}" th:alt="*{titel}">
+    </a>
+</div>
+</body>
+</html>
