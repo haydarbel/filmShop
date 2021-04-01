@@ -6,8 +6,11 @@ import org.springframework.dao.IncorrectResultSizeDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
+
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 @Repository
 public class JdbcFilmRepository implements FilmRepository {
@@ -22,7 +25,7 @@ public class JdbcFilmRepository implements FilmRepository {
     }
 
     @Override
-    public Optional<Film> findById(long id) {
+    public Optional<Film> findFilmById(long id) {
         var sql = "select id,genreid,titel,voorraad,gereserveerd,prijs from films where id = ?";
         try {
             return Optional.of(template.queryForObject(sql, filmMapper, id));
@@ -32,15 +35,38 @@ public class JdbcFilmRepository implements FilmRepository {
     }
 
     @Override
-    public List<Film> findByGenreId(long genreId) {
+    public List<Film> findFilmsByGenreId(long genreId) {
         var sql = "select id,genreid,titel,voorraad,gereserveerd,prijs from films where genreid = ? " +
                 "order by id";
         return template.query(sql, filmMapper,genreId);
     }
 
     @Override
-    public List<Film> findAll() {
+    public List<Film> findAllFilms() {
         var sql = "select id,genreid,titel,voorraad,gereserveerd,prijs from films order by id";
         return template.query(sql,filmMapper);
+    }
+
+    @Override
+    public List<Film> findFilmsByIds(Set<Long> ids) {
+        if (ids.isEmpty()) {
+            return List.of();
+        }
+        var sql = "select id,genreid,titel,voorraad,gereserveerd,prijs from films where id in ("+
+                "?,".repeat(ids.size() - 1)+
+                "?) order by id";
+        return template.query(sql,filmMapper,ids.toArray());
+    }
+
+    @Override
+    public BigDecimal findTotalePrijsByIds(Set<Long> ids) {
+        if (ids.size() != 0) {
+            var sql = "select sum(prijs) from films where id in ("+
+                    "?,".repeat(ids.size() - 1) +
+                    "?)";
+            return template.queryForObject(sql,BigDecimal.class,ids.toArray());
+        } else {
+            return BigDecimal.ZERO;
+        }
     }
 }

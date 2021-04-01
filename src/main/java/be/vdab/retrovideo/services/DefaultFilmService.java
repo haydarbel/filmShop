@@ -7,8 +7,11 @@ import be.vdab.retrovideo.repositories.GenreRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
+
 @Service
 @Transactional(readOnly = true)
 public class DefaultFilmService implements FilmService{
@@ -22,12 +25,12 @@ public class DefaultFilmService implements FilmService{
 
     @Override
     public Optional<Film> findFilmById(long id) {
-        return filmRepository.findById(id);
+        return filmRepository.findFilmById(id);
     }
 
     @Override
     public List<Film> findAllFilms() {
-        return filmRepository.findAll();
+        return filmRepository.findAllFilms();
     }
 
     @Override
@@ -41,7 +44,17 @@ public class DefaultFilmService implements FilmService{
     }
 
     @Override
-    public List<Film> findFilmsByGenre(long id) {
-        return filmRepository.findByGenreId(id);
+    public List<Film> findFilmsByGenreId(long id) {
+        return filmRepository.findFilmsByGenreId(id);
+    }
+
+    @Override
+    public List<Film> findFilmsByIds(Set<Long> ids) {
+        return filmRepository.findFilmsByIds(ids);
+    }
+
+    @Override
+    public BigDecimal findTotalePrijsByIds(Set<Long> ids) {
+        return filmRepository.findTotalePrijsByIds(ids);
     }
 }

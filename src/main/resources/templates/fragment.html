@@ -10,4 +10,11 @@
             <li th:each="genre:${genres}"><a th:href="@{/}">Welkom</a></li>
         </ul>
     </nav>
+    <nav th:fragment="navbar">
+        <ul>
+            <li><a th:href="@{/}" th:text="Genres"></a></li>
+            <li><a th:href="@{/mandje}">Mandje</a></li>
+            <li><a th:href="@{/klant}">Klant</a></li>
+        </ul>
+    </nav>
 </div>

@@ -50,7 +50,7 @@ class IndexController {
     public ModelAndView genre(@PathVariable long id) {
         var modelAndView = new ModelAndView("index","films",filmService.findAllFilms());
         modelAndView.addObject("genres",filmService.findAllGenres());
-        modelAndView.addObject("filmsMetGenre", filmService.findFilmsByGenre(id));
+        modelAndView.addObject("filmsMetGenre", filmService.findFilmsByGenreId(id));
         return modelAndView;
 
     }

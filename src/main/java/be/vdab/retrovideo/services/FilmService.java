@@ -5,8 +5,10 @@ import be.vdab.retrovideo.domain.Genre;
 import be.vdab.retrovideo.repositories.FilmRepository;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 
 public interface FilmService {
@@ -14,6 +16,8 @@ public interface FilmService {
     List<Film> findAllFilms();
     List<Genre> findAllGenres();
     Optional<Genre> findGenreById(long id);
-    List<Film> findFilmsByGenre(long id);
+    List<Film> findFilmsByGenreId(long id);
+    List<Film> findFilmsByIds(Set<Long> ids);
+    BigDecimal findTotalePrijsByIds(Set<Long> ids);
 
 }
