@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="nl" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragment::head(title='Mandje')"></head>
+<body>
+<nav th:replace="fragment::navbar"></nav>
+<h2>Klanten</h2>
+<form th:object="${zoekForm}" method="get"
+      th:action="@{/klant}">
+    <label>
+        Familienaam bevat:<input th:field="*{letters}" autofocus type="text" required minlength="1">
+        <span th:errors="*{letters}"></span>
+    </label>
+    <button>Zoeken</button>
+</form>
+<table>
+    <thead>
+    <tr>
+        <th>Naam</th>
+        <th>Straat-Huisnummer</th>
+        <th>Postcode</th>
+        <th>Gemeente</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="klant:${klanten}" th:object="${klant}">
+        <td ><a th:text="*{getnaam()}" th:href="@{/klant/bevestigen/{id}(id=*{id})}"></a></td>
+        <td th:text="*{straatNummer}"></td>
+        <td th:text="*{postcode}"></td>
+        <td th:text="*{gemeente}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

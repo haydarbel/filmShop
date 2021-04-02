@@ -13,7 +13,7 @@ import java.util.Optional;
 
 @Controller
 @RequestMapping("mandje")
-public class MandjeController {
+ class MandjeController {
     private final Mandje mandje;
     private final FilmService filmService;
 

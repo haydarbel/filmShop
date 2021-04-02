@@ -1,15 +1,17 @@
 package be.vdab.retrovideo.domain;
 
+import be.vdab.retrovideo.sessions.Mandje;
+
 import java.time.LocalDate;
 
 public class Reservatie {
     private final long klantId;
-    private final long filmId;
+    private final Mandje mandje;
     private final LocalDate reservatie;
 
-    public Reservatie(long klantId, long filmId, LocalDate reservatie) {
+    public Reservatie(long klantId, long filmId, Mandje mandje) {
         this.klantId = klantId;
-        this.filmId = filmId;
-        this.reservatie = reservatie;
+        this.mandje = mandje;
+        this.reservatie = LocalDate.now();
     }
 }
