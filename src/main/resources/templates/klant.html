@@ -4,8 +4,8 @@
 <body>
 <nav th:replace="fragment::navbar"></nav>
 <h2>Klanten</h2>
-<form th:object="${zoekForm}" method="get"
-      th:action="@{/klant}">
+<form th:object="${zoekForm}" method="post"
+      th:action="@{/klant/letter}">
     <label>
         Familienaam bevat:<input th:field="*{letters}" autofocus type="text" required minlength="1">
         <span th:errors="*{letters}"></span>

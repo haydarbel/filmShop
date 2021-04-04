@@ -4,9 +4,12 @@
 <body>
 <nav th:replace="fragment::navbar"></nav>
 <div>
-        <h1>Bevestigen</h1>
-        <p th:text="|${mandje.getIds().size()} film(s) voor ${klant.getnaam()}|"></p>
-        <a th:href="@{/bevestigen/bevestigd}">Bevestigen</a>
+    <h1>Bevestigen</h1>
+    <p th:text="|${mandje.getIds().size()} film(s) voor ${klant.getnaam()}|"></p>
+    <form th:action="@{/bevestigen/gedaan}" method="post">
+        <button>Bevestigen</button>
+    </form>
+    <a th:href="@{/bevestigen/bevestigd}">Bevestigen</a>
     </form>
 </div>
 </body>

@@ -33,7 +33,7 @@ class JdbcFilmRepositoryTest extends AbstractTransactionalJUnit4SpringContextTes
     }
 
     @Test
-    void findAllGeeftAlleFilmsGesorteerdOpId() {
+    void findAllFilmsSortedById() {
         assertThat(repository.findAllFilms())
                 .hasSize(countRowsInTable(FILMS))
                 .extracting(Film::getId).isSorted();
@@ -59,7 +59,7 @@ class JdbcFilmRepositoryTest extends AbstractTransactionalJUnit4SpringContextTes
     }
 
     @Test
-    void findTotalePrijsGeeftDeTotalePrijsVanGekozenFilms() {
+    void vindTotalePrijsGeeftDeTotalePrijsVanGekozenFilms() {
         var id1 = idVanTestFilm();
         var id2=idVanTest2Film();
         assertThat(repository.findTotalePrijsByIds(Set.of(id1, id2)))
@@ -68,9 +68,15 @@ class JdbcFilmRepositoryTest extends AbstractTransactionalJUnit4SpringContextTes
 
     @Test
     void eenStukvanVoorraadNaarGereserveerd() {
-        repository.eenStukvanVoorraadNaarGereserveerd(new ReservatieForm(idVanTest2Film(),List.of()));
+        repository.slaDeGereserveerdeFilmsenVerhoogMetEen(new ReservatieForm(idVanTest2Film(),List.of()));
         assertThat(countRowsInTableWhere(FILMS,"titel='test2'" +
                 "and voorraad="+voorraadVanTest2Film())).isOne();
+    }
+
+    @Test
+    void findStockById() {
+        assertThat(repository.findStockById(idVanTest2Film()).get().getVoorraad())
+                .isEqualTo(voorraadVanTest2Film());
     }
 
     private long idVanTestFilm() {

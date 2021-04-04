@@ -12,6 +12,6 @@ import java.util.Set;
 public interface ReservatieService {
     Optional<Klant> findKlantById(long id);
     List<Klant> findAllKlanten();
-    List<Klant> fintKlantByLetters(String letters);
+    List<Klant> findKlantByLetters(String letters);
     void createResevatie(Reservatie reservatie);
 }

@@ -9,10 +9,8 @@ import java.time.LocalDate;
 import java.util.*;
 
 public class Reservatie {
-    @Positive
     private final long klantId;
     private List<Long> filmids;
-    @NotNull
     @DateTimeFormat(style = "S-")
     private final LocalDate datum;
 
@@ -41,6 +39,12 @@ public class Reservatie {
     public long getKlantId() {
         return klantId;
     }
+    public List<Long> getFilmids() {
+        return filmids;
+    }
+    public LocalDate getDatum() {
+        return datum;
+    }
 
     public void addFilm(long id) {
         filmids.add(id);
@@ -50,10 +54,4 @@ public class Reservatie {
         this.filmids = filmids;
     }
 
-    public List<Long> getFilmids() {
-        return filmids;
-    }
-    public LocalDate getDatum() {
-        return datum;
-    }
 }

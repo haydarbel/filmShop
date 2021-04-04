@@ -12,20 +12,20 @@ import java.util.stream.Stream;
 @SessionScope
 public class Mandje implements Serializable {
     private static final long serialVersionUID = 1L;
-
     private long klantid;
+    private final Set<Long> idsVanFilms = new LinkedHashSet<>();
+
 
     public void setKlantid(long klantid) {
         this.klantid = klantid;
+        System.out.println(klantid);
     }
 
     public long getKlantid() {
         return klantid;
     }
 
-    private final Set<Long> idsVanFilms = new LinkedHashSet<>();
-
-    public void voegToe(long id) {
+    public void voegDeFilmToe(long id) {
         idsVanFilms.add(id);
     }
 

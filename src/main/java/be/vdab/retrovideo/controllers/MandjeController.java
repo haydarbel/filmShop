@@ -21,19 +21,19 @@ import java.util.Optional;
         this.mandje = mandje;
         this.filmService = filmService;
     }
-
-    @PostMapping("{id}")
-    public String voegToe(@PathVariable long id) {
-        mandje.voegToe(id);
-        return "redirect:/mandje";
-    }
-
     @GetMapping
     public ModelAndView toonMandje() {
         return new ModelAndView("mandje",
                 "films", filmService.findFilmsByIds(mandje.getIds()))
                 .addObject("totalePrijs",filmService.findTotalePrijsByIds(mandje.getIds()));
     }
+
+    @PostMapping("{id}")
+    public String voegToe(@PathVariable long id) {
+        mandje.voegDeFilmToe(id);
+        return "redirect:/mandje";
+    }
+
 
     @PostMapping("verwijderen")
     public String verwijderFilms(Optional<Long[]> id) {
