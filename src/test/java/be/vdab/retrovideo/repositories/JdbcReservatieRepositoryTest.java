@@ -1,20 +1,39 @@
 package be.vdab.retrovideo.repositories;
 
+import be.vdab.retrovideo.domain.Reservatie;
+import be.vdab.retrovideo.forms.ReservatieForm;
 import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.autoconfigure.jdbc.JdbcTest;
+import org.springframework.context.annotation.Import;
+import org.springframework.test.context.jdbc.Sql;
+import org.springframework.test.context.junit4.AbstractTransactionalJUnit4SpringContextTests;
 
-import static org.junit.jupiter.api.Assertions.*;
+import java.time.LocalDate;
+import java.util.Comparator;
+import java.util.List;
 
-class JdbcReservatieRepositoryTest {
+import static org.assertj.core.api.Assertions.assertThat;
+
+@JdbcTest
+@Import(JdbcReservatieRepository.class)
+@Sql("/insertReservaties.sql")
+class JdbcReservatieRepositoryTest extends AbstractTransactionalJUnit4SpringContextTests {
+    private static final String RESERVATIES = "reservaties";
+    private final JdbcReservatieRepository repository;
+
+    JdbcReservatieRepositoryTest(JdbcReservatieRepository repository) {
+        this.repository = repository;
+    }
 
     @Test
     void create() {
+        var reservatie = new ReservatieForm(4,List.of());
+        repository.create(reservatie);
+        assertThat(countRowsInTableWhere(RESERVATIES, "klantid=4")).isEqualTo(2);
     }
 
-    @Test
-    void findAll() {
-    }
 
-    @Test
-    void delete() {
-    }
+
+
+
 }

@@ -12,7 +12,7 @@
     </label>
     <button>Zoeken</button>
 </form>
-<table>
+<table th:if="${klanten}">
     <thead>
     <tr>
         <th>Naam</th>
@@ -23,7 +23,11 @@
     </thead>
     <tbody>
     <tr th:each="klant:${klanten}" th:object="${klant}">
-        <td ><a th:text="*{getnaam()}" th:href="@{/klant/bevestigen/{id}(id=*{id})}"></a></td>
+        <td>
+            <form method="post" th:action="@{/bevestigen/{id}(id=*{id})}">
+                <a href="#" th:text="*{getnaam()}" onclick="this.parentNode.submit()"></a>
+            </form>
+        </td>
         <td th:text="*{straatNummer}"></td>
         <td th:text="*{postcode}"></td>
         <td th:text="*{gemeente}"></td>

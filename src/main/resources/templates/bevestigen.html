@@ -3,7 +3,11 @@
 <head th:replace="fragment::head(title='Bevestigen')"></head>
 <body>
 <nav th:replace="fragment::navbar"></nav>
-<h2>Bevestigen</h2>
-<form th:object="$"></form>
+<div>
+        <h1>Bevestigen</h1>
+        <p th:text="|${mandje.getIds().size()} film(s) voor ${klant.getnaam()}|"></p>
+        <a th:href="@{/bevestigen/bevestigd}">Bevestigen</a>
+    </form>
+</div>
 </body>
 </html>

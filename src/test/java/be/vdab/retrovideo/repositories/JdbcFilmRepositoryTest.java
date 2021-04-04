@@ -1,7 +1,10 @@
 package be.vdab.retrovideo.repositories;
+import static org.assertj.core.api.Assertions.as;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import be.vdab.retrovideo.domain.Film;
+import be.vdab.retrovideo.domain.Reservatie;
+import be.vdab.retrovideo.forms.ReservatieForm;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.autoconfigure.jdbc.JdbcTest;
 import org.springframework.context.annotation.Import;
@@ -9,6 +12,7 @@ import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.junit4.AbstractTransactionalJUnit4SpringContextTests;
 
 import java.math.BigDecimal;
+import java.util.List;
 import java.util.Set;
 
 @JdbcTest
@@ -60,8 +64,13 @@ class JdbcFilmRepositoryTest extends AbstractTransactionalJUnit4SpringContextTes
         var id2=idVanTest2Film();
         assertThat(repository.findTotalePrijsByIds(Set.of(id1, id2)))
                 .isEqualTo(totalePrijsVanTweeTestEntry());
+    }
 
-
+    @Test
+    void eenStukvanVoorraadNaarGereserveerd() {
+        repository.eenStukvanVoorraadNaarGereserveerd(new ReservatieForm(idVanTest2Film(),List.of()));
+        assertThat(countRowsInTableWhere(FILMS,"titel='test2'" +
+                "and voorraad="+voorraadVanTest2Film())).isOne();
     }
 
     private long idVanTestFilm() {
@@ -72,6 +81,10 @@ class JdbcFilmRepositoryTest extends AbstractTransactionalJUnit4SpringContextTes
     private long idVanTest2Film() {
         return jdbcTemplate.queryForObject(
                 "select id from films where titel='test2'", Long.class);
+    }
+    private long voorraadVanTest2Film() {
+        return jdbcTemplate.queryForObject(
+                "select voorraad from films where titel='test2'", Long.class);
     }
 
     private BigDecimal totalePrijsVanTweeTestEntry() {

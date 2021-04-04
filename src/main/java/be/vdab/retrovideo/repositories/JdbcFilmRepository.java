@@ -1,6 +1,7 @@
 package be.vdab.retrovideo.repositories;
 
 import be.vdab.retrovideo.domain.Film;
+import be.vdab.retrovideo.domain.Reservatie;
 import org.springframework.dao.DataAccessException;
 import org.springframework.dao.IncorrectResultSizeDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -69,4 +70,12 @@ public class JdbcFilmRepository implements FilmRepository {
             return BigDecimal.ZERO;
         }
     }
+
+    @Override
+    public void eenStukvanVoorraadNaarGereserveerd(Reservatie reservatie) {
+        var sql = "update films set voorraad = voorraad-1,gereserveerd=gereserveerd+1 " +
+                "where id=? and voorraad>0";
+        template.update(sql,reservatie.getFilmids());
+    }
+
 }

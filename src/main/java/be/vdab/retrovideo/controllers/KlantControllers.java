@@ -2,11 +2,13 @@ package be.vdab.retrovideo.controllers;
 
 import be.vdab.retrovideo.forms.ZoekForm;
 import be.vdab.retrovideo.services.FilmService;
-import be.vdab.retrovideo.services.KlantService;
+import be.vdab.retrovideo.services.ReservatieService;
 import be.vdab.retrovideo.sessions.Mandje;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -16,13 +18,15 @@ import javax.validation.Valid;
 @RequestMapping("klant")
 class KlantControllers {
     private final FilmService filmService;
-    private final KlantService klantService;
+    private final ReservatieService reservatieService;
     private final Mandje mandje;
 
-    KlantControllers(FilmService filmService, KlantService klantService, Mandje mandje) {
+
+    KlantControllers(FilmService filmService, ReservatieService reservatieService, Mandje mandje) {
         this.filmService = filmService;
-        this.klantService = klantService;
+        this.reservatieService = reservatieService;
         this.mandje = mandje;
+
     }
 
 
@@ -31,6 +35,7 @@ class KlantControllers {
         return new ModelAndView("klant")
                 .addObject(new ZoekForm("letters hier"));
     }
+
     @GetMapping()
     public ModelAndView beginNaam(@Valid ZoekForm form, Errors error) {
         var modelAndView = new ModelAndView("klant");
@@ -38,14 +43,9 @@ class KlantControllers {
             return modelAndView;
         }
         return new ModelAndView("klant", "klanten",
-                klantService.fintKlantByLetters(form.getLetters()));
+                reservatieService.fintKlantByLetters(form.getLetters()));
     }
 
-    @GetMapping("bevestigen")
-    public ModelAndView bevestigen() {
-        var modelAndView = new ModelAndView("bevestigen","films",
-                filmService.findFilmsByIds(mandje.getIds()));
-        return modelAndView;
-    }
+
 
 }

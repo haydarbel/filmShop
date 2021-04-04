@@ -1,16 +1,21 @@
 package be.vdab.retrovideo.services;
 
 import be.vdab.retrovideo.domain.Klant;
+import be.vdab.retrovideo.domain.Reservatie;
 import be.vdab.retrovideo.repositories.KlantRepository;
+import be.vdab.retrovideo.repositories.ReservatieRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+
 @Service
-public class DefaultKlantService implements KlantService{
+public class DefaultReservatieService implements ReservatieService{
+    private final ReservatieRepository reservatieRepository;
     private final KlantRepository klantRepository;
 
-    public DefaultKlantService(KlantRepository klantRepository) {
+    public DefaultReservatieService(ReservatieRepository reservatieRepository, KlantRepository klantRepository) {
+        this.reservatieRepository = reservatieRepository;
         this.klantRepository = klantRepository;
     }
 
@@ -27,5 +32,10 @@ public class DefaultKlantService implements KlantService{
     @Override
     public List<Klant> fintKlantByLetters(String letters) {
         return klantRepository.findByLetters(letters);
+    }
+
+    @Override
+    public void createResevatie(Reservatie reservatie) {
+         reservatieRepository.create(reservatie);
     }
 }
