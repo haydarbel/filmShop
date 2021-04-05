@@ -9,7 +9,6 @@ import org.springframework.stereotype.Repository;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.util.List;
 
 @Repository
 public class JdbcReservatieRepository implements ReservatieRepository {
@@ -24,8 +23,8 @@ public class JdbcReservatieRepository implements ReservatieRepository {
     }
 
     @Override
-    public void create(Reservatie reservatie) {
-        template.batchUpdate(
+    public int[] create(Reservatie reservatie) {
+        return template.batchUpdate(
                 "INSERT INTO reservaties (klantid,filmid,reservatie) VALUES (?, ?, ?)",
                 new BatchPreparedStatementSetter() {
                     @Override

@@ -3,12 +3,12 @@
 <head th:replace="fragment::head(title=${film.titel})"></head>
 <body>
 <h3><a th:href="@{/}" th:text="Genres"></a></h3>
-<div th:if="${film}">
+<div th:if="${film}" id="film">
     <dl th:object="${film}">
         <h2 th:text="*{titel}"></h2>
         <img th:src="@{/images/{id}.jpg (id=*{id})}">
         <dt>Prijs :</dt>
-        <dd th:text="|€*{prijs}|"></dd>
+        <dd th:text="|€*{{prijs}}|"></dd>
         <th:block th:object="${stock}">
             <dd>Voorraad :</dd>
             <dt th:text="*{voorraad}"></dt>
@@ -23,4 +23,5 @@
     </dl>
 </div>
 </body>
+<script th:src="@{/js/preventDoubleSubmit.js}" defer></script>
 </html>

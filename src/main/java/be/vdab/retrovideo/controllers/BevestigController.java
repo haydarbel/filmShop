@@ -13,7 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @RequestMapping("bevestigen")
-public class BevestigController {
+ class BevestigController {
     private final ReservatieService reservatieService;
     private final Mandje mandje;
 

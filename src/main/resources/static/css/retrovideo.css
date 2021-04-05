@@ -15,6 +15,12 @@ body {
 .fullwidth {
     width: 100%;
 }
+.naastMekaar{
+    padding-left: 0;
+}
+.naastMekaar li{
+    display: inline;
+}
 
 dd, dt {
     margin-left: 0;
@@ -26,6 +32,10 @@ dt {
 
 dd {
     font-weight: bold;
+}
+h3 a{
+    text-decoration: none;
+    padding: 50px;;
 }
 
 label span, .fout {
@@ -92,10 +102,11 @@ nav li a {
 
 nav li a:hover {
     color: #F7FFCC;
+
 }
 
 button {
-    background-color: #4CAF50;
+    background-color: #265728;
     border: none;
     color: white;
     cursor: pointer;
@@ -154,4 +165,11 @@ tr:nth-child(odd) {
 
 tr:hover {
     background-color: gold;
+}
+
+#genre{
+    padding-left: 50px;
+}
+#film{
+    margin-left: 50px;
 }

@@ -25,9 +25,6 @@
     <tr th:each="klant:${klanten}" th:object="${klant}">
         <td>
             <a th:text="*{getnaam()}" th:href="@{/bevestigen/{id}(id=*{id})}"></a>
-<!--            <form method="post" th:action="@{/bevestigen/{id}(id=*{id})}">-->
-<!--                <a href="#" th:text="*{getnaam()}" onclick="this.parentNode.submit()"></a>-->
-<!--            </form>-->
         </td>
         <td th:text="*{straatNummer}"></td>
         <td th:text="*{postcode}"></td>
@@ -36,4 +33,5 @@
     </tbody>
 </table>
 </body>
+<script th:src="@{/js/preventDoubleSubmit.js}" defer></script>
 </html>

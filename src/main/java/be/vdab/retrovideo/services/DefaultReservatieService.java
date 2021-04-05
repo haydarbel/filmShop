@@ -30,7 +30,7 @@ public class DefaultReservatieService implements ReservatieService{
     }
 
     @Override
-    @Transactional(readOnly = false)
+    @Transactional(readOnly = false,timeout = 5)
     public void createResevatie(Reservatie reservatie) {
         filmRepository.slaDeGereserveerdeFilmsenVerhoogMetEen(reservatie);
         reservatieRepository.create(reservatie);
