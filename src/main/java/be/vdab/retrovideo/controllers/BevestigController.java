@@ -1,21 +1,17 @@
 package be.vdab.retrovideo.controllers;
 
-import be.vdab.retrovideo.domain.Reservatie;
 import be.vdab.retrovideo.forms.ReservatieForm;
 import be.vdab.retrovideo.services.FilmService;
 import be.vdab.retrovideo.services.ReservatieService;
 import be.vdab.retrovideo.sessions.Identificatie;
 import be.vdab.retrovideo.sessions.Mandje;
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.validation.Valid;
-import java.time.LocalDate;
 import java.util.List;
 
 @Controller
@@ -62,6 +58,7 @@ public class BevestigController {
         System.out.println(mandje.getKlantid());
         var reservatie = new ReservatieForm(mandje.getKlantid(), mandje.getIdsList());
         reservatieService.createResevatie(reservatie);
+        mandje.resetMandje();
         return new ModelAndView("redirect:/bevestigen/bevestigd");
     }
 

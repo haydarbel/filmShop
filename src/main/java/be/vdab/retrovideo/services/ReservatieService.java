@@ -14,4 +14,6 @@ public interface ReservatieService {
     List<Klant> findAllKlanten();
     List<Klant> findKlantByLetters(String letters);
     void createResevatie(Reservatie reservatie);
+    List<Klant> findKlantByLetters(String tekst);
+
 }

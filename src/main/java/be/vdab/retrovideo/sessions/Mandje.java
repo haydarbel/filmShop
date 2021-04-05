@@ -21,6 +21,10 @@ public class Mandje implements Serializable {
         System.out.println(klantid);
     }
 
+    public void resetMandje() {
+        idsVanFilms.clear();
+    }
+
     public long getKlantid() {
         return klantid;
     }

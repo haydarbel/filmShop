@@ -19,7 +19,6 @@ public class DefaultReservatieService implements ReservatieService{
 
     public DefaultReservatieService(ReservatieRepository reservatieRepository, KlantRepository klantRepository, FilmRepository filmRepository) {
         this.reservatieRepository = reservatieRepository;
-        this.klantRepository = klantRepository;
         this.filmRepository = filmRepository;
     }
 
@@ -29,19 +28,15 @@ public class DefaultReservatieService implements ReservatieService{
     }
 
     @Override
-    public List<Klant> findAllKlanten() {
-        return klantRepository.findAll();
-    }
-
-    @Override
-    public List<Klant> findKlantByLetters(String letters) {
-        return klantRepository.findByLetters(letters);
-    }
-
-    @Override
-    @Transactional
     public void createResevatie(Reservatie reservatie) {
         filmRepository.slaDeGereserveerdeFilmsenVerhoogMetEen(reservatie);
         reservatieRepository.create(reservatie);
     }
+
+    @Override
+    public List<Klant> findKlantByLetters(String tekst) {
+        return klantRepository.findByLetters(tekst);
+    }
+
 }
+
