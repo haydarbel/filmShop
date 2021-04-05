@@ -3,6 +3,7 @@ package be.vdab.retrovideo.sessions;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.annotation.SessionScope;
 
+import javax.validation.constraints.PositiveOrZero;
 import java.io.Serializable;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -12,6 +13,7 @@ import java.util.stream.Stream;
 @SessionScope
 public class Mandje implements Serializable {
     private static final long serialVersionUID = 1L;
+    @PositiveOrZero
     private long klantid;
     private final Set<Long> idsVanFilms = new LinkedHashSet<>();
 

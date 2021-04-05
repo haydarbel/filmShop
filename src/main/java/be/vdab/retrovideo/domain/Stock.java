@@ -1,7 +1,11 @@
 package be.vdab.retrovideo.domain;
 
+import javax.validation.constraints.PositiveOrZero;
+
 public class Stock {
+    @PositiveOrZero
     private final long voorraad;
+    @PositiveOrZero
     private long gereserveerd;
 
     public Stock(long voorraad, long gereserveerd) {
@@ -17,12 +21,10 @@ public class Stock {
         return gereserveerd;
     }
 
-
-
     public void setGereserveerd(long gereserveerd) {
         this.gereserveerd = gereserveerd;
     }
-
+    @PositiveOrZero
     public long getBeschikebaar() {
         return voorraad - gereserveerd;
     }

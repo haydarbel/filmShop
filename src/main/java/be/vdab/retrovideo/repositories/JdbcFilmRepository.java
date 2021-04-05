@@ -46,12 +46,12 @@ public class JdbcFilmRepository implements FilmRepository {
                 "order by id";
         return template.query(sql, filmMapper,genreId);
     }
-
-    @Override
-    public List<Film> findAllFilms() {
-        var sql = "select id,genreid,titel,prijs from films order by id";
-        return template.query(sql,filmMapper);
-    }
+//Gereksiz olabilir
+//    @Override
+//    public List<Film> findAllFilms() {
+//        var sql = "select id,genreid,titel,prijs from films order by id";
+//        return template.query(sql,filmMapper);
+//    }
 
     @Override
     public List<Film> findFilmsByIds(Set<Long> ids) {

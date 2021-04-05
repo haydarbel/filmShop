@@ -29,10 +29,10 @@ public class DefaultFilmService implements FilmService{
         return filmRepository.findFilmById(id);
     }
 
-    @Override
-    public List<Film> findAllFilms() {
-        return filmRepository.findAllFilms();
-    }
+//    @Override
+//    public List<Film> findAllFilms() {
+//        return filmRepository.findAllFilms();
+//    }
 
     @Override
     public List<Genre> findAllGenres() {

@@ -14,7 +14,7 @@ import java.util.Set;
 
 public interface FilmService {
     Optional<Film> findFilmById(long id);
-    List<Film> findAllFilms();
+//    List<Film> findAllFilms();
     List<Genre> findAllGenres();
     Optional<Genre> findGenreById(long id);
     List<Film> findFilmsByGenreId(long id);

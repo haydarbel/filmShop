@@ -9,6 +9,7 @@ import java.time.LocalDate;
 import java.util.*;
 
 public class Reservatie {
+    @Positive
     private final long klantId;
     private List<Long> filmids;
     @DateTimeFormat(style = "S-")

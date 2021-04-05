@@ -26,8 +26,7 @@ class IndexController {
 
     @GetMapping
     public ModelAndView index() {
-        return new ModelAndView("index", "genres", filmService.findAllGenres())
-                .addObject("films", filmService.findAllFilms());
+        return new ModelAndView("index", "genres", filmService.findAllGenres());
     }
 
     @GetMapping("films/genre/{id}")
@@ -38,13 +37,9 @@ class IndexController {
 
     @GetMapping("film/{id}")
     public ModelAndView film(@PathVariable long id) {
-        var modelAndView = new ModelAndView("film");
-        filmService.findAllFilms().stream()
-                .filter(film -> film.getId() == id)
-                .findFirst()
-                .ifPresent(film -> modelAndView.addObject("film", film).addObject(
-                        "stock", filmService.findStockById(film.getId()).get()
-                ));
+       var modelAndView = new ModelAndView("film");
+         filmService.findFilmById(id).ifPresent(film ->modelAndView.addObject("film",film)
+                .addObject("stock", filmService.findStockById(id).get()));
         return modelAndView;
     }
 
