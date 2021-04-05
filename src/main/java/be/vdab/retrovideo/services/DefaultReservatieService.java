@@ -6,18 +6,18 @@ import be.vdab.retrovideo.repositories.FilmRepository;
 import be.vdab.retrovideo.repositories.KlantRepository;
 import be.vdab.retrovideo.repositories.ReservatieRepository;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
 
 @Service
 public class DefaultReservatieService implements ReservatieService{
-    private final ReservatieRepository reservatieRepository;
     private final KlantRepository klantRepository;
+    private final ReservatieRepository reservatieRepository;
     private final FilmRepository filmRepository;
 
-    public DefaultReservatieService(ReservatieRepository reservatieRepository, KlantRepository klantRepository, FilmRepository filmRepository) {
+    public DefaultReservatieService(KlantRepository klantRepository, ReservatieRepository reservatieRepository, FilmRepository filmRepository) {
+        this.klantRepository = klantRepository;
         this.reservatieRepository = reservatieRepository;
         this.filmRepository = filmRepository;
     }
