@@ -6,11 +6,13 @@ import be.vdab.retrovideo.repositories.FilmRepository;
 import be.vdab.retrovideo.repositories.KlantRepository;
 import be.vdab.retrovideo.repositories.ReservatieRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
 
 @Service
+@Transactional(readOnly = true)
 public class DefaultReservatieService implements ReservatieService{
     private final KlantRepository klantRepository;
     private final ReservatieRepository reservatieRepository;
@@ -28,6 +30,7 @@ public class DefaultReservatieService implements ReservatieService{
     }
 
     @Override
+    @Transactional(readOnly = false)
     public void createResevatie(Reservatie reservatie) {
         filmRepository.slaDeGereserveerdeFilmsenVerhoogMetEen(reservatie);
         reservatieRepository.create(reservatie);

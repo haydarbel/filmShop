@@ -1,18 +1,11 @@
 package be.vdab.retrovideo.controllers;
 
-import be.vdab.retrovideo.domain.Film;
-import be.vdab.retrovideo.domain.Genre;
 import be.vdab.retrovideo.services.FilmService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-
-import java.math.BigDecimal;
-import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping("/")

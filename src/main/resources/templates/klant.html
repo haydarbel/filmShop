@@ -24,13 +24,13 @@
     <tbody>
     <tr th:each="klant:${klanten}" th:object="${klant}">
         <td>
-            <form method="post" th:action="@{/bevestigen/{id}(id=*{id})}">
-                <a href="#" th:text="*{getnaam()}" onclick="this.parentNode.submit()"></a>
-            </form>
+            <a th:text="*{getnaam()}" th:href="@{/bevestigen/{id}(id=*{id})}"></a>
+<!--            <form method="post" th:action="@{/bevestigen/{id}(id=*{id})}">-->
+<!--                <a href="#" th:text="*{getnaam()}" onclick="this.parentNode.submit()"></a>-->
+<!--            </form>-->
         </td>
         <td th:text="*{straatNummer}"></td>
         <td th:text="*{postcode}"></td>
-
         <td th:text="*{gemeente}"></td>
     </tr>
     </tbody>

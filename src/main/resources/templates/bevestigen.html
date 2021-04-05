@@ -6,11 +6,10 @@
 <div>
     <h1>Bevestigen</h1>
     <p th:text="|${mandje.getIds().size()} film(s) voor ${klant.getnaam()}|"></p>
-    <form th:action="@{/bevestigen/gedaan}" method="post">
+    <form th:action="@{/bevestigen/gedaan}" method="get">
         <button>Bevestigen</button>
     </form>
-    <a th:href="@{/bevestigen/bevestigd}">Bevestigen</a>
-    </form>
+
 </div>
 </body>
 </html>

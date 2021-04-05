@@ -7,6 +7,7 @@ import org.springframework.jdbc.core.BatchPreparedStatementSetter;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
 import java.sql.PreparedStatement;
@@ -46,12 +47,6 @@ public class JdbcFilmRepository implements FilmRepository {
                 "order by id";
         return template.query(sql, filmMapper,genreId);
     }
-//Gereksiz olabilir
-//    @Override
-//    public List<Film> findAllFilms() {
-//        var sql = "select id,genreid,titel,prijs from films order by id";
-//        return template.query(sql,filmMapper);
-//    }
 
     @Override
     public List<Film> findFilmsByIds(Set<Long> ids) {

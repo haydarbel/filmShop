@@ -34,7 +34,6 @@ import java.util.Optional;
         return "redirect:/mandje";
     }
 
-
     @PostMapping("verwijderen")
     public String verwijderFilms(Optional<Long[]> id) {
         id.ifPresent(mandje::verwijderFilms);
