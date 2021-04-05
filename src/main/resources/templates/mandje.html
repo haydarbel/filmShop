@@ -5,7 +5,7 @@
 <nav th:replace="fragment::navbar"></nav>
 <h1>Mandje</h1>
 <form method="post" th:action="@{/mandje/verwijderen}"
-      th:if="not ${films.empty}">
+      th:if="not ${films.isEmpty()}">
 <table>
     <thead>
     <tr>

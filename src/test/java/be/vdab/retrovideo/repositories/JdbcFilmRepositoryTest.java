@@ -32,12 +32,12 @@ class JdbcFilmRepositoryTest extends AbstractTransactionalJUnit4SpringContextTes
         assertThat(repository.findFilmById(idVanTest2Film()).get().getTitel()).isEqualTo("test2");
     }
 
-    @Test
-    void findAllGeeftAlleFilmsGesorteerdOpId() {
-        assertThat(repository.findAllFilms())
-                .hasSize(countRowsInTable(FILMS))
-                .extracting(Film::getId).isSorted();
-    }
+//    @Test
+//    void findAllFilmsSortedById() {
+//        assertThat(repository.findAllFilms())
+//                .hasSize(countRowsInTable(FILMS))
+//                .extracting(Film::getId).isSorted();
+//    }
 
     @Test
     void findFilmsByGenreId() {
@@ -59,7 +59,7 @@ class JdbcFilmRepositoryTest extends AbstractTransactionalJUnit4SpringContextTes
     }
 
     @Test
-    void findTotalePrijsGeeftDeTotalePrijsVanGekozenFilms() {
+    void findTotalePrijsByIds() {
         var id1 = idVanTestFilm();
         var id2=idVanTest2Film();
         assertThat(repository.findTotalePrijsByIds(Set.of(id1, id2)))
@@ -67,11 +67,19 @@ class JdbcFilmRepositoryTest extends AbstractTransactionalJUnit4SpringContextTes
     }
 
     @Test
-    void eenStukvanVoorraadNaarGereserveerd() {
-        repository.eenStukvanVoorraadNaarGereserveerd(new ReservatieForm(idVanTest2Film(),List.of()));
-        assertThat(countRowsInTableWhere(FILMS,"titel='test2'" +
-                "and voorraad="+voorraadVanTest2Film())).isOne();
+    void findStockById() {
+        assertThat(repository.findStockById(idVanTest2Film()).get().getGereserveerd())
+                .isEqualTo(gereserveerdVanTest2Film());
     }
+
+    @Test
+    void slaDeGereserveerdeFilmsenVerhoogMetEen() {
+        var eerstGereserveerdWaarde = gereserveerdVanTest2Film();
+        repository.slaDeGereserveerdeFilmsenVerhoogMetEen(new ReservatieForm(1,List.of(idVanTest2Film())));
+        assertThat(countRowsInTableWhere(FILMS,"titel='test2'" +
+                "and gereserveerd="+(eerstGereserveerdWaarde+1L))).isOne();
+    }
+
 
     private long idVanTestFilm() {
         return jdbcTemplate.queryForObject(
@@ -82,9 +90,9 @@ class JdbcFilmRepositoryTest extends AbstractTransactionalJUnit4SpringContextTes
         return jdbcTemplate.queryForObject(
                 "select id from films where titel='test2'", Long.class);
     }
-    private long voorraadVanTest2Film() {
+    private long gereserveerdVanTest2Film() {
         return jdbcTemplate.queryForObject(
-                "select voorraad from films where titel='test2'", Long.class);
+                "select gereserveerd from films where titel='test2'", Long.class);
     }
 
     private BigDecimal totalePrijsVanTweeTestEntry() {

@@ -12,6 +12,7 @@ import java.time.LocalDate;
 import java.util.Comparator;
 import java.util.List;
 
+import static java.util.List.of;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @JdbcTest
@@ -27,9 +28,9 @@ class JdbcReservatieRepositoryTest extends AbstractTransactionalJUnit4SpringCont
 
     @Test
     void create() {
-        var reservatie = new ReservatieForm(4,List.of());
+        var reservatie = new ReservatieForm(4,List.of(5L,6L,7L));
         repository.create(reservatie);
-        assertThat(countRowsInTableWhere(RESERVATIES, "klantid=4")).isEqualTo(2);
+        assertThat(countRowsInTableWhere(RESERVATIES, "klantid=4")).isEqualTo(3);
     }
 
 

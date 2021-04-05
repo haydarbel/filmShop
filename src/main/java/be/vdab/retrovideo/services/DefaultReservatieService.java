@@ -2,6 +2,7 @@ package be.vdab.retrovideo.services;
 
 import be.vdab.retrovideo.domain.Klant;
 import be.vdab.retrovideo.domain.Reservatie;
+import be.vdab.retrovideo.repositories.FilmRepository;
 import be.vdab.retrovideo.repositories.KlantRepository;
 import be.vdab.retrovideo.repositories.ReservatieRepository;
 import org.springframework.stereotype.Service;
@@ -11,12 +12,14 @@ import java.util.Optional;
 
 @Service
 public class DefaultReservatieService implements ReservatieService{
-    private final ReservatieRepository reservatieRepository;
     private final KlantRepository klantRepository;
+    private final ReservatieRepository reservatieRepository;
+    private final FilmRepository filmRepository;
 
-    public DefaultReservatieService(ReservatieRepository reservatieRepository, KlantRepository klantRepository) {
-        this.reservatieRepository = reservatieRepository;
+    public DefaultReservatieService(KlantRepository klantRepository, ReservatieRepository reservatieRepository, FilmRepository filmRepository) {
         this.klantRepository = klantRepository;
+        this.reservatieRepository = reservatieRepository;
+        this.filmRepository = filmRepository;
     }
 
     @Override
@@ -25,17 +28,15 @@ public class DefaultReservatieService implements ReservatieService{
     }
 
     @Override
-    public List<Klant> findAllKlanten() {
-        return klantRepository.findAll();
-    }
-
-    @Override
-    public List<Klant> fintKlantByLetters(String letters) {
-        return klantRepository.findByLetters(letters);
-    }
-
-    @Override
     public void createResevatie(Reservatie reservatie) {
-         reservatieRepository.create(reservatie);
+        filmRepository.slaDeGereserveerdeFilmsenVerhoogMetEen(reservatie);
+        reservatieRepository.create(reservatie);
     }
+
+    @Override
+    public List<Klant> findKlantByLetters(String tekst) {
+        return klantRepository.findByLetters(tekst);
+    }
+
 }
+

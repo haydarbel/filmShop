@@ -2,6 +2,7 @@ package be.vdab.retrovideo.services;
 
 import be.vdab.retrovideo.domain.Film;
 import be.vdab.retrovideo.domain.Genre;
+import be.vdab.retrovideo.domain.Stock;
 import be.vdab.retrovideo.repositories.FilmRepository;
 import be.vdab.retrovideo.repositories.GenreRepository;
 import org.springframework.stereotype.Service;
@@ -28,10 +29,10 @@ public class DefaultFilmService implements FilmService{
         return filmRepository.findFilmById(id);
     }
 
-    @Override
-    public List<Film> findAllFilms() {
-        return filmRepository.findAllFilms();
-    }
+//    @Override
+//    public List<Film> findAllFilms() {
+//        return filmRepository.findAllFilms();
+//    }
 
     @Override
     public List<Genre> findAllGenres() {
@@ -57,4 +58,10 @@ public class DefaultFilmService implements FilmService{
     public BigDecimal findTotalePrijsByIds(Set<Long> ids) {
         return filmRepository.findTotalePrijsByIds(ids);
     }
+
+    @Override
+    public Optional<Stock> findStockById(long id) {
+        return filmRepository.findStockById(id);
+    }
+
 }
