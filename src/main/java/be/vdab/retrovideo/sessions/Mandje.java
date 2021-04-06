@@ -15,16 +15,10 @@ public class Mandje implements Serializable {
     private static final long serialVersionUID = 1L;
     @PositiveOrZero
     private long klantid;
-    private final Set<Long> idsVanFilms = new LinkedHashSet<>();
-
+    private final Set<Long> idsVanFilms = new HashSet<>();
 
     public void setKlantid(long klantid) {
         this.klantid = klantid;
-        System.out.println(klantid);
-    }
-
-    public void resetMandje() {
-        idsVanFilms.clear();
     }
 
     public long getKlantid() {
@@ -39,7 +33,7 @@ public class Mandje implements Serializable {
         return idsVanFilms;
     }
 
-    public List<Long> getIdsList() {
+    public List<Long> getIdsAlsList() {
         return new ArrayList<>(idsVanFilms);
     }
 

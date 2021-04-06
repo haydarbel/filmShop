@@ -58,4 +58,5 @@ public class Klant {
     public String toString() {
         return voornaam + " " + familienaam;
     }
+
 }

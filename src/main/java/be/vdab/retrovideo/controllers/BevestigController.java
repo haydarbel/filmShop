@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 
 @Controller
@@ -45,11 +47,10 @@ class BevestigController {
     @GetMapping("gedaan")
     public ModelAndView bevestigenform() {
         var nietgereserveerdeFilms =
-                reservatieService.createResevaties(reservatieListVanMandje());
-        mandje.resetMandje();
-            return new ModelAndView("bevestigd","nietger",
-                    filmService.findFilmsByIds(nietgereserveerdeFilms));
-
+                reservatieService.createResevaties(reservatieSetVanMandje());
+        mandje.getIds().retainAll(nietgereserveerdeFilms);
+        return new ModelAndView("bevestigd", "nietgereserveerdeFilms",
+                filmService.findFilmsByIds(nietgereserveerdeFilms));
     }
 
     @GetMapping("bevestigd")
@@ -57,12 +58,12 @@ class BevestigController {
         return new ModelAndView("bevestigd");
     }
 
-    public List<Reservatie> reservatieListVanMandje() {
-        var reservatielist = new ArrayList<Reservatie>();
-        var klantid = mandje.getKlantid();
-        for (long film : mandje.getIdsList()) {
-            reservatielist.add(new ReservatieForm(klantid, film));
+
+    public Set<Reservatie> reservatieSetVanMandje() {
+        var reservatieSet = new HashSet<Reservatie>();
+        for (long film : mandje.getIds()) {
+            reservatieSet.add(new ReservatieForm(mandje.getKlantid(), film));
         }
-        return reservatielist;
+        return reservatieSet;
     }
 }
