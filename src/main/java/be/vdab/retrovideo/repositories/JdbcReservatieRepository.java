@@ -21,14 +21,18 @@ public class JdbcReservatieRepository implements ReservatieRepository {
     public JdbcReservatieRepository(JdbcTemplate template) {
         this.template = template;
         insert = new SimpleJdbcInsert(template)
-                .withTableName("reservaties")
-                .usingColumns("klantid", "filmid", "reservatie");
+                .withTableName("reservaties");
+             //   .usingColumns("klantid", "filmid", "reservatie");
     }
 
     @Override
     public int create(Reservatie reservatie) {
-        return insert.execute(Map.of("klantid",reservatie.getKlantId(),"filmid",reservatie.getFilmid(),
-                "reservatie",reservatie.getDatum()));
+        try {
+            return insert.execute(Map.of("klantid",reservatie.getKlantId(),"filmid",reservatie.getFilmid(),
+                    "reservatie",reservatie.getDatum()));
+        } catch (Exception e) {
+            return 0;
+        }
     }
 
 //    @Override

@@ -2,12 +2,12 @@ package be.vdab.retrovideo.controllers;
 
 import be.vdab.retrovideo.domain.Reservatie;
 import be.vdab.retrovideo.forms.ReservatieForm;
+import be.vdab.retrovideo.services.FilmService;
 import be.vdab.retrovideo.services.ReservatieService;
 import be.vdab.retrovideo.sessions.Mandje;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -19,10 +19,12 @@ import java.util.List;
 @RequestMapping("bevestigen")
 class BevestigController {
     private final ReservatieService reservatieService;
+    private final FilmService filmService;
     private final Mandje mandje;
 
-    public BevestigController(ReservatieService reservatieService, Mandje mandje) {
+    public BevestigController(ReservatieService reservatieService, FilmService filmService, Mandje mandje) {
         this.reservatieService = reservatieService;
+        this.filmService = filmService;
         this.mandje = mandje;
     }
 
@@ -44,7 +46,9 @@ class BevestigController {
     public ModelAndView bevestigenform() {
         var nietgereserveerdeFilms =
                 reservatieService.createResevaties(reservatieListVanMandje());
-            return new ModelAndView("bevestigd","nietger",nietgereserveerdeFilms);
+        mandje.resetMandje();
+            return new ModelAndView("bevestigd","nietger",
+                    filmService.findFilmsByIds(nietgereserveerdeFilms));
 
     }
 

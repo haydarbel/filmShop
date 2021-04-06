@@ -9,9 +9,7 @@ import be.vdab.retrovideo.repositories.ReservatieRepository;
 import be.vdab.retrovideo.sessions.Mandje;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @Service
 public class DefaultReservatieService implements ReservatieService{
@@ -33,18 +31,20 @@ public class DefaultReservatieService implements ReservatieService{
         return klantRepository.findById(id);
     }
 
+
     @Override
-    public List<Reservatie> createResevaties(List<Reservatie> reservaties) {
-        var nietGereserveerdeFilms = new ArrayList<Reservatie>();
+    public Set<Long> createResevaties(List<Reservatie> reservaties) {
+        var nietGereserveerdeFilms = new ArrayList<Long>();
         for (Reservatie reservatie : reservaties) {
             if(reservatieRepository.create(reservatie)==1){
                 filmRepository.slaDeGereserveerdeFilmsenVerhoogMetEen(reservatie);
             }else {
-               nietGereserveerdeFilms.add(reservatie);
+               nietGereserveerdeFilms.add(reservatie.getFilmid());
             }
         }
-            return nietGereserveerdeFilms;
+            return new LinkedHashSet<>(nietGereserveerdeFilms);
     }
+
 
     @Override
     public List<Klant> findKlantByLetters(String tekst) {

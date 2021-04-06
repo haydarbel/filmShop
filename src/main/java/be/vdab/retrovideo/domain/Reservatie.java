@@ -15,11 +15,6 @@ public class Reservatie {
     @DateTimeFormat(style = "S-")
     private final LocalDate datum;
 
-    public Reservatie(long klantId,List<Long> filmids,@NotNull LocalDate datum) {
-        this.klantId = klantId;
-        this.filmid = filmid;
-        this.datum = datum;
-    }
 
     public Reservatie(long klantId, long filmid) {
         this.klantId = klantId;
@@ -32,15 +27,16 @@ public class Reservatie {
         this.datum = datum;
     }
 
-    public Reservatie(long id, long klantId, LocalDate now) {
+    public Reservatie(long klantId, long filmid, LocalDate localDate) {
         this.klantId = klantId;
-        this.datum = LocalDate.now();
+        this.filmid = filmid;
+        this.datum = localDate;
     }
 
     public long getKlantId() {
         return klantId;
     }
-    public Long getFilmid() {
+    public long getFilmid() {
         return filmid;
     }
     public LocalDate getDatum() {

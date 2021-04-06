@@ -5,10 +5,11 @@ import be.vdab.retrovideo.domain.Reservatie;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 public interface ReservatieService {
     Optional<Klant> findKlantById(long id);
-    List<Reservatie> createResevaties(List<Reservatie> reservaties);
+    Set<Long> createResevaties(List<Reservatie> reservaties);
     List<Klant> findKlantByLetters(String tekst);
 
 }
