@@ -1,6 +1,7 @@
 package be.vdab.retrovideo.controllers;
 
 import be.vdab.retrovideo.domain.Reservatie;
+import be.vdab.retrovideo.exceptions.ReservatieException;
 import be.vdab.retrovideo.forms.ReservatieForm;
 import be.vdab.retrovideo.services.FilmService;
 import be.vdab.retrovideo.services.ReservatieService;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.HashSet;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -44,12 +46,30 @@ class BevestigController {
 
     @GetMapping("gedaan")
     public ModelAndView bevestigenform() {
-        var nietgereserveerdeFilms =
-                reservatieService.createReservaties(reservatieSetVanHetMandje());
-        mandje.getIds().retainAll(nietgereserveerdeFilms);
+        var gereserveerdeFilms = new HashSet<Long>();
+        var reservatieSet = reservatieSetVanHetMandje();
+        for (Reservatie reservatie : reservatieSet) {
+            try {
+                if (reservatieService.maakResevatie(reservatie)) {
+                    gereserveerdeFilms.add(reservatie.getFilmid());
+                }
+            } catch (ReservatieException e) {
+                System.out.println("hurraaaaaaaaaa");
+            }
+        }
+        mandje.getIds().removeAll(gereserveerdeFilms);
         return new ModelAndView("bevestigd", "nietgereserveerdeFilms",
-                filmService.findFilmsByIds(nietgereserveerdeFilms));
+                filmService.findFilmsByIds(mandje.getIds()));
     }
+
+//    @GetMapping("gedaan")
+//    public ModelAndView bevestigenform() {
+//        var nietgereserveerdeFilms =
+//                reservatieService.createReservaties(reservatieSetVanHetMandje());
+//        mandje.getIds().retainAll(nietgereserveerdeFilms);
+//        return new ModelAndView("bevestigd", "nietgereserveerdeFilms",
+//                filmService.findFilmsByIds(nietgereserveerdeFilms));
+//    }
 
     @GetMapping("bevestigd")
     public ModelAndView bevestigd() {
