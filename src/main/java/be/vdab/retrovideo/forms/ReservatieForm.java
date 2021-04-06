@@ -7,8 +7,8 @@ import java.time.LocalDate;
 import java.util.List;
 
 public class ReservatieForm extends Reservatie {
-    public ReservatieForm(long klantId, List<Long> filmids) {
-        super(klantId, filmids, LocalDate.now());
+    public ReservatieForm(long klantId, long filmid) {
+        super(klantId,filmid, LocalDate.now());
     }
 
 }

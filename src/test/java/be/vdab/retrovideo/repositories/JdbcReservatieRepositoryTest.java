@@ -28,7 +28,7 @@ class JdbcReservatieRepositoryTest extends AbstractTransactionalJUnit4SpringCont
 
     @Test
     void create() {
-        var reservatie = new ReservatieForm(4,List.of(5L,6L,7L));
+        var reservatie = new ReservatieForm(4,7L);
         repository.create(reservatie);
         assertThat(countRowsInTableWhere(RESERVATIES, "klantid=4")).isEqualTo(3);
     }

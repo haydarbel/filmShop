@@ -11,19 +11,19 @@ import java.util.*;
 public class Reservatie {
     @Positive
     private final long klantId;
-    private List<Long> filmids;
+    private long filmid;
     @DateTimeFormat(style = "S-")
     private final LocalDate datum;
 
     public Reservatie(long klantId,List<Long> filmids,@NotNull LocalDate datum) {
         this.klantId = klantId;
-        this.filmids = filmids;
+        this.filmid = filmid;
         this.datum = datum;
     }
 
-    public Reservatie(long klantId, List<Long> filmids) {
+    public Reservatie(long klantId, long filmid) {
         this.klantId = klantId;
-        this.filmids = filmids;
+        this.filmid = filmid;
         this.datum = LocalDate.now();
     }
 
@@ -32,7 +32,7 @@ public class Reservatie {
         this.datum = datum;
     }
 
-    public Reservatie(long klantId) {
+    public Reservatie(long id, long klantId, LocalDate now) {
         this.klantId = klantId;
         this.datum = LocalDate.now();
     }
@@ -40,19 +40,13 @@ public class Reservatie {
     public long getKlantId() {
         return klantId;
     }
-    public List<Long> getFilmids() {
-        return filmids;
+    public Long getFilmid() {
+        return filmid;
     }
     public LocalDate getDatum() {
         return datum;
     }
 
-    public void addFilm(long id) {
-        filmids.add(id);
-    }
 
-    public void setFilmids(List<Long> filmids) {
-        this.filmids = filmids;
-    }
 
 }

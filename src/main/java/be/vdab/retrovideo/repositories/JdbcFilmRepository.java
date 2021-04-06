@@ -1,4 +1,5 @@
 package be.vdab.retrovideo.repositories;
+
 import be.vdab.retrovideo.domain.Film;
 import be.vdab.retrovideo.domain.Reservatie;
 import be.vdab.retrovideo.domain.Stock;
@@ -45,7 +46,7 @@ public class JdbcFilmRepository implements FilmRepository {
     public List<Film> findFilmsByGenreId(long genreId) {
         var sql = "select id,genreid,titel,prijs from films where genreid = ? " +
                 "order by id";
-        return template.query(sql, filmMapper,genreId);
+        return template.query(sql, filmMapper, genreId);
     }
 
     @Override
@@ -53,19 +54,19 @@ public class JdbcFilmRepository implements FilmRepository {
         if (ids.isEmpty()) {
             return List.of();
         }
-        var sql = "select id,genreid,titel,prijs from films where id in ("+
-                "?,".repeat(ids.size() - 1)+
+        var sql = "select id,genreid,titel,prijs from films where id in (" +
+                "?,".repeat(ids.size() - 1) +
                 "?) order by id";
-        return template.query(sql,filmMapper,ids.toArray());
+        return template.query(sql, filmMapper, ids.toArray());
     }
 
     @Override
     public BigDecimal findTotalePrijsByIds(Set<Long> ids) {
         if (ids.size() != 0) {
-            var sql = "select sum(prijs) from films where id in ("+
+            var sql = "select sum(prijs) from films where id in (" +
                     "?,".repeat(ids.size() - 1) +
                     "?)";
-            return template.queryForObject(sql,BigDecimal.class,ids.toArray());
+            return template.queryForObject(sql, BigDecimal.class, ids.toArray());
         } else {
             return BigDecimal.ZERO;
         }
@@ -83,20 +84,26 @@ public class JdbcFilmRepository implements FilmRepository {
 
     @Override
     public void slaDeGereserveerdeFilmsenVerhoogMetEen(Reservatie reservatie) {
-        template.batchUpdate(
-                "update films set gereserveerd=gereserveerd+1 where id=? and voorraad-gereserveerd>0",
-                new BatchPreparedStatementSetter() {
-                    @Override
-                    public void setValues(PreparedStatement ps, int i) throws SQLException {
-                        ps.setLong(1,reservatie.getFilmids().get(i));
-                    }
-                    @Override
-                    public int getBatchSize() {
-                        return reservatie.getFilmids().size();
-                    }
-                }
-        );
+        var sql = "update films set gereserveerd=gereserveerd+1 where id=? and voorraad-gereserveerd>0";
+        template.update(sql,reservatie.getFilmid());
     }
+
+//    @Override
+//    public void slaDeGereserveerdeFilmsenVerhoogMetEen(Reservatie reservatie) {
+//        template.batchUpdate(
+//                "update films set gereserveerd=gereserveerd+1 where id=? and voorraad-gereserveerd>0",
+//                new BatchPreparedStatementSetter() {
+//                    @Override
+//                    public void setValues(PreparedStatement ps, int i) throws SQLException {
+//                        ps.setLong(1,reservatie.getFilmid().get(i));
+//                    }
+//                    @Override
+//                    public int getBatchSize() {
+//                        return reservatie.getFilmid().size();
+//                    }
+//                }
+//        );
+//    }
 
 }
 

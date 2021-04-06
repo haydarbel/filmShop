@@ -9,5 +9,8 @@
 </nav>
 <h1>Rapport</h1>
 <p>De reservatie is OK</p>
+<ul th:object="${nietger}">
+    <li th:each="reservatie:${nietger}" th:text="${reservatie.klantId}"></li>
+</ul>
 </body>
 </html>

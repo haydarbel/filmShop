@@ -1,5 +1,6 @@
 package be.vdab.retrovideo.controllers;
 
+import be.vdab.retrovideo.domain.Reservatie;
 import be.vdab.retrovideo.forms.ReservatieForm;
 import be.vdab.retrovideo.services.ReservatieService;
 import be.vdab.retrovideo.sessions.Mandje;
@@ -10,14 +11,17 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 @Controller
 @RequestMapping("bevestigen")
- class BevestigController {
+class BevestigController {
     private final ReservatieService reservatieService;
     private final Mandje mandje;
 
-    public BevestigController(ReservatieService reservatieService,  Mandje mandje) {
+    public BevestigController(ReservatieService reservatieService, Mandje mandje) {
         this.reservatieService = reservatieService;
         this.mandje = mandje;
     }
@@ -30,18 +34,18 @@ import org.springframework.web.servlet.ModelAndView;
 
     @GetMapping("form")
     public ModelAndView bevestig() {
-        var modelAndView = new ModelAndView("bevestigen","mandje",mandje);
+        var modelAndView = new ModelAndView("bevestigen", "mandje", mandje);
         reservatieService.findKlantById(mandje.getKlantid()).ifPresent(
                 klant -> modelAndView.addObject("klant", klant));
         return modelAndView;
     }
 
     @GetMapping("gedaan")
-    public String bevestigenform() {
-        var reservatie = new ReservatieForm(mandje.getKlantid(), mandje.getIdsList());
-        reservatieService.createResevatie(reservatie);
-        mandje.resetMandje();
-        return "redirect:/bevestigen/bevestigd";
+    public ModelAndView bevestigenform() {
+        var nietgereserveerdeFilms =
+                reservatieService.createResevaties(reservatieListVanMandje());
+            return new ModelAndView("bevestigd","nietger",nietgereserveerdeFilms);
+
     }
 
     @GetMapping("bevestigd")
@@ -49,4 +53,12 @@ import org.springframework.web.servlet.ModelAndView;
         return new ModelAndView("bevestigd");
     }
 
+    public List<Reservatie> reservatieListVanMandje() {
+        var reservatielist = new ArrayList<Reservatie>();
+        var klantid = mandje.getKlantid();
+        for (long film : mandje.getIdsList()) {
+            reservatielist.add(new ReservatieForm(klantid, film));
+        }
+        return reservatielist;
+    }
 }

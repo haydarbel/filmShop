@@ -8,7 +8,7 @@ import java.util.Optional;
 
 public interface ReservatieService {
     Optional<Klant> findKlantById(long id);
-    void createResevatie(Reservatie reservatie);
+    List<Reservatie> createResevaties(List<Reservatie> reservaties);
     List<Klant> findKlantByLetters(String tekst);
 
 }
