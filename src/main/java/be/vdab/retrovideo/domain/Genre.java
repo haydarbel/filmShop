@@ -26,4 +26,5 @@ public class Genre {
     public String toString() {
         return naam;
     }
+
 }

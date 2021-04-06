@@ -8,10 +8,10 @@
     </ul>
 </nav>
 <h1>Rapport</h1>
-<p >De reservatie is OK</p>
-<p th:if="not ${nietger.isEmpty()}">Die films kan niet gereserveerd worden.</p>
-<ul th:object="${nietger}">
-    <li th:each="film:${nietger}" th:text="${film.titel}"></li>
+<h3 th:if="${nietgereserveerdeFilms.isEmpty()}">De reservatie is OK</h3>
+<h4 th:if="not ${nietgereserveerdeFilms.isEmpty()}">De reservatie van volgende film(s) zijn mislukt.</h4>
+<ul th:object="${nietgereserveerdeFilms}">
+    <li th:each="film:${nietgereserveerdeFilms}" th:text="${film.titel}"></li>
 </ul>
 </body>
 </html>

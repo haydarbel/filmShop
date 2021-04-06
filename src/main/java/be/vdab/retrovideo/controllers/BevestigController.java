@@ -11,10 +11,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 
 @Controller
@@ -47,7 +45,7 @@ class BevestigController {
     @GetMapping("gedaan")
     public ModelAndView bevestigenform() {
         var nietgereserveerdeFilms =
-                reservatieService.createResevaties(reservatieSetVanMandje());
+                reservatieService.createReservaties(reservatieSetVanHetMandje());
         mandje.getIds().retainAll(nietgereserveerdeFilms);
         return new ModelAndView("bevestigd", "nietgereserveerdeFilms",
                 filmService.findFilmsByIds(nietgereserveerdeFilms));
@@ -59,11 +57,27 @@ class BevestigController {
     }
 
 
-    public Set<Reservatie> reservatieSetVanMandje() {
-        var reservatieSet = new HashSet<Reservatie>();
-        for (long film : mandje.getIds()) {
-            reservatieSet.add(new ReservatieForm(mandje.getKlantid(), film));
-        }
-        return reservatieSet;
+    private Set<Reservatie> reservatieSetVanHetMandje() {
+           return mandje.getIds().stream()
+                    .map(id->new ReservatieForm(mandje.getKlantid(),id))
+                    .collect(Collectors.toSet());
     }
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -2,6 +2,7 @@ package be.vdab.retrovideo.domain;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Positive;
+import java.util.Objects;
 
 public class Klant {
     @Positive
@@ -59,4 +60,16 @@ public class Klant {
         return voornaam + " " + familienaam;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Klant)) return false;
+        Klant klant = (Klant) o;
+        return id == klant.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
 }

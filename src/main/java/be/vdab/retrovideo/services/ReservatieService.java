@@ -9,7 +9,7 @@ import java.util.Set;
 
 public interface ReservatieService {
     Optional<Klant> findKlantById(long id);
-    Set<Long> createResevaties(Set<Reservatie> reservaties);
+    Set<Long> createReservaties(Set<Reservatie> reservaties);
     List<Klant> findKlantByLetters(String tekst);
 
 }

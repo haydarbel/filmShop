@@ -8,6 +8,7 @@ import be.vdab.retrovideo.repositories.ReservatieRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 @Service
 public class DefaultReservatieService implements ReservatieService{
@@ -31,16 +32,15 @@ public class DefaultReservatieService implements ReservatieService{
 
 
     @Override
-    public Set<Long> createResevaties(Set<Reservatie> reservaties) {
+    public Set<Long> createReservaties(Set<Reservatie> reservaties) {
         var nietGereserveerdeFilms = new HashSet<Long>();
-        for (Reservatie reservatie : reservaties) {
+        reservaties.forEach(reservatie -> {
             if(reservatieRepository.createReservatie(reservatie)==1){
                 filmRepository.slaDeGereserveerdeFilmsenVerhoogMetEen(reservatie);
             }else {
-               nietGereserveerdeFilms.add(reservatie.getFilmid());
-            }
-        }
-            return nietGereserveerdeFilms;
+                nietGereserveerdeFilms.add(reservatie.getFilmid());
+            }});
+        return nietGereserveerdeFilms;
     }
 
 

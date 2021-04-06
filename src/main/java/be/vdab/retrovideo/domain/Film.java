@@ -5,6 +5,7 @@ import org.springframework.format.annotation.NumberFormat;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Positive;
 import java.math.BigDecimal;
+import java.util.Objects;
 
 public class Film {
     @Positive
@@ -44,4 +45,16 @@ public class Film {
         return titel;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Film)) return false;
+        Film film = (Film) o;
+        return id == film.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
 }
