@@ -1,7 +1,6 @@
 package be.vdab.retrovideo.repositories;
 
 import be.vdab.retrovideo.domain.Reservatie;
-import be.vdab.retrovideo.exceptions.ReservatieException;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
@@ -22,15 +21,6 @@ public class JdbcReservatieRepository implements ReservatieRepository {
                 .usingColumns("klantid", "filmid", "reservatie");
     }
 
-    //    @Override
-//    public int createReservatie(Reservatie reservatie) {
-//        try {
-//            return insert.execute(Map.of("klantid", reservatie.getKlantId(), "filmid", reservatie.getFilmid(),
-//                    "reservatie", reservatie.getDatum()));
-//        } catch (DuplicateKeyException e) {
-//            return 0;
-//        }
-//    }
     @Override
     public boolean createReservatie(Reservatie reservatie) {
         try {

@@ -2,6 +2,7 @@ package be.vdab.retrovideo.domain;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Positive;
+import java.util.Objects;
 
 public class Genre {
     @Positive
@@ -27,4 +28,16 @@ public class Genre {
         return naam;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Genre)) return false;
+        Genre genre = (Genre) o;
+        return id == genre.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
 }

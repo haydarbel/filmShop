@@ -33,12 +33,6 @@ public class JdbcKlantRepository implements KlantRepository {
     }
 
     @Override
-    public List<Klant> findAll() {
-        var sql = "select id,familienaam,voornaam,straatnummer,postcode,gemeente from klanten order by familienaam";
-        return template.query(sql, klantMapper);
-    }
-
-    @Override
     public List<Klant> findByLetters(String tekst) {
         var sql = "select id,familienaam,voornaam,straatnummer,postcode,gemeente" +
                 " from klanten where familienaam like ? order by familienaam";

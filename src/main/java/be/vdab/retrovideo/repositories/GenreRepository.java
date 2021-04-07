@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Optional;
 
 public interface GenreRepository {
-    Optional<Genre> findbyId(long id);
+
     List<Genre> findAll();
 
 }

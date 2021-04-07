@@ -26,15 +26,15 @@ class JdbcReservatieRepositoryTest extends AbstractTransactionalJUnit4SpringCont
         this.repository = repository;
     }
 
-//    @Test
-//    void create() {
-//        var reservatie = new ReservatieForm(4, 3);
-//        assertThat(repository.createReservatie(reservatie)).isEqualTo(1);
-//        assertThat(countRowsInTableWhere(RESERVATIES, "klantid=4")).isEqualTo(1);
-//        //teweede keer dezelfde film kan niet gereserveerd worden.
-//        assertThat(repository.createReservatie(reservatie)).isEqualTo(0);
-//        assertThat(repository.createReservatie(reservatie)).isEqualTo(0);
-//    }
+    @Test
+    void create() {
+        var reservatie = new ReservatieForm(4, 3);
+        assertThat(repository.createReservatie(reservatie)).isTrue();
+        assertThat(countRowsInTableWhere(RESERVATIES, "klantid=4 and filmid=3")).isEqualTo(1);
+        //Duplicate key bij Reservatie Tabel kan niet opgeslagen worden
+        assertThat(repository.createReservatie(reservatie)).isFalse();
+
+    }
 
 
 }

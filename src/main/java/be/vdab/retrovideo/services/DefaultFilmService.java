@@ -15,7 +15,7 @@ import java.util.Set;
 
 @Service
 @Transactional(readOnly = true)
-public class DefaultFilmService implements FilmService{
+public class DefaultFilmService implements FilmService {
     private final FilmRepository filmRepository;
     private final GenreRepository genreRepository;
 
@@ -32,11 +32,6 @@ public class DefaultFilmService implements FilmService{
     @Override
     public List<Genre> findAllGenres() {
         return genreRepository.findAll();
-    }
-
-    @Override
-    public Optional<Genre> findGenreById(long id) {
-        return genreRepository.findbyId(id);
     }
 
     @Override

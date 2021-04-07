@@ -14,12 +14,14 @@ import java.util.Set;
 
 public interface FilmService {
     Optional<Film> findFilmById(long id);
-//    List<Film> findAllFilms();
-    List<Genre> findAllGenres();
-    Optional<Genre> findGenreById(long id);
+
     List<Film> findFilmsByGenreId(long id);
+
     List<Film> findFilmsByIds(Set<Long> ids);
+
     BigDecimal findTotalePrijsByIds(Set<Long> ids);
+
     Optional<Stock> findStockById(long id);
 
+    List<Genre> findAllGenres();
 }

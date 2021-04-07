@@ -24,7 +24,7 @@
     <tbody>
     <tr th:each="klant:${klanten}" th:object="${klant}">
         <td>
-            <a th:text="*{getnaam()}" th:href="@{/bevestigen/{id}(id=*{id})}"></a>
+            <a th:text="${klant}" th:href="@{/bevestigen/{id}(id=*{id})}"></a>
         </td>
         <td th:text="*{straatNummer}"></td>
         <td th:text="*{postcode}"></td>

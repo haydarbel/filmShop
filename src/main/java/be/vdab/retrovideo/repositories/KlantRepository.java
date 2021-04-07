@@ -7,6 +7,5 @@ import java.util.Optional;
 
 public interface KlantRepository {
     Optional<Klant> findById(long id);
-    List<Klant> findAll();
     List<Klant> findByLetters(String tekst);
 }

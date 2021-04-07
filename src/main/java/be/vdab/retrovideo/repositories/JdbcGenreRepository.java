@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
+
 @Repository
 public class JdbcGenreRepository implements GenreRepository {
     private final JdbcTemplate template;
@@ -20,20 +21,11 @@ public class JdbcGenreRepository implements GenreRepository {
         this.template = template;
     }
 
-    @Override
-    public Optional<Genre>findbyId(long id){
-        try {
-            return Optional.of(template.queryForObject("select id,naam from" +
-                    " genres where id=?",genreMapper,id));
-        } catch (IncorrectResultSizeDataAccessException e) {
-            return Optional.empty();
-        }
-    }
 
     @Override
     public List<Genre> findAll() {
         var sql = "select id,naam from genres order by naam";
-        return template.query(sql,genreMapper);
+        return template.query(sql, genreMapper);
     }
 
 }

@@ -33,10 +33,6 @@ public class Mandje implements Serializable {
         return idsVanFilms;
     }
 
-    public List<Long> getIdsAlsList() {
-        return new ArrayList<>(idsVanFilms);
-    }
-
     public void verwijderFilms(Long[] ids) {
         Set<Long> gekozenFilmsOmTeVerwijderen = Arrays.stream(ids).collect(Collectors.toSet());
         idsVanFilms.removeAll(gekozenFilmsOmTeVerwijderen);

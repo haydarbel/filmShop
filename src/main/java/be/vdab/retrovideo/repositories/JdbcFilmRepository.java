@@ -4,15 +4,11 @@ import be.vdab.retrovideo.domain.Film;
 import be.vdab.retrovideo.domain.Reservatie;
 import be.vdab.retrovideo.domain.Stock;
 import org.springframework.dao.IncorrectResultSizeDataAccessException;
-import org.springframework.jdbc.core.BatchPreparedStatementSetter;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
@@ -83,27 +79,10 @@ public class JdbcFilmRepository implements FilmRepository {
     }
 
     @Override
-    public void slaDeGereserveerdeFilmsenVerhoogMetEen(Reservatie reservatie) {
+    public void verhoogGereserveerdWaardeMetEen(Reservatie reservatie) {
         var sql = "update films set gereserveerd=gereserveerd+1 where id=? and voorraad-gereserveerd>0";
         template.update(sql,reservatie.getFilmid());
     }
-
-//    @Override
-//    public void slaDeGereserveerdeFilmsenVerhoogMetEen(Reservatie reservatie) {
-//        template.batchUpdate(
-//                "update films set gereserveerd=gereserveerd+1 where id=? and voorraad-gereserveerd>0",
-//                new BatchPreparedStatementSetter() {
-//                    @Override
-//                    public void setValues(PreparedStatement ps, int i) throws SQLException {
-//                        ps.setLong(1,reservatie.getFilmid().get(i));
-//                    }
-//                    @Override
-//                    public int getBatchSize() {
-//                        return reservatie.getFilmid().size();
-//                    }
-//                }
-//        );
-//    }
 
 }
 

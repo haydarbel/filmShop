@@ -13,6 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.*;
 
 @Service
+@Transactional
 public class DefaultReservatieService implements ReservatieService {
     private final KlantRepository klantRepository;
     private final ReservatieRepository reservatieRepository;
@@ -32,30 +33,15 @@ public class DefaultReservatieService implements ReservatieService {
         return klantRepository.findById(id);
     }
 
-
-//    @Override
-//    public Set<Long> createReservaties(Set<Reservatie> reservaties) {
-//        var nietGereserveerdeFilms = new HashSet<Long>();
-//        reservaties.forEach(reservatie -> {
-//            if(reservatieRepository.createReservatie(reservatie)==1){
-//                filmRepository.slaDeGereserveerdeFilmsenVerhoogMetEen(reservatie);
-//            }else {
-//                nietGereserveerdeFilms.add(reservatie.getFilmid());
-//            }});
-//        return nietGereserveerdeFilms;
-//    }
-
-
     @Override
     public List<Klant> findKlantByLetters(String tekst) {
         return klantRepository.findByLetters(tekst);
     }
 
     @Override
-    @Transactional
     public boolean maakResevatie(Reservatie reservatie) {
-        filmRepository.slaDeGereserveerdeFilmsenVerhoogMetEen(reservatie);
-        if (!reservatieRepository.createReservatie(reservatie)){
+        filmRepository.verhoogGereserveerdWaardeMetEen(reservatie);
+        if (!reservatieRepository.createReservatie(reservatie)) {
             throw new ReservatieException();
         }
         return true;

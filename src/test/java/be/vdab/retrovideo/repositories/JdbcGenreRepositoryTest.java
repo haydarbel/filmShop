@@ -24,25 +24,12 @@ class JdbcGenreRepositoryTest extends AbstractTransactionalJUnit4SpringContextTe
     }
 
     @Test
-    void findbyId() {
-        assertThat(repository.findbyId(idVanTestGenre())
-                .get().getNaam()).isEqualTo("test1");
-
-    }
-
-    @Test
     void findAllGeeftAlleGenresGesorteerdOpNaam() {
         assertThat(repository.findAll())
                 .hasSize(countRowsInTable(GENRES))
                 .extracting(Genre::getNaam)
                 .isSortedAccordingTo(String::compareToIgnoreCase);
     }
-
-    private long idVanTestGenre() {
-        return jdbcTemplate.queryForObject("select id from genres where naam='test1'", long.class);
-    }
-
-
 
 }
 
