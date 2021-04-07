@@ -6,7 +6,7 @@ public class Stock {
     @PositiveOrZero
     private final long voorraad;
     @PositiveOrZero
-    private long gereserveerd;
+    private final long gereserveerd;
 
     public Stock(long voorraad, long gereserveerd) {
         this.voorraad = voorraad;

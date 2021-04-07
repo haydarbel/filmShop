@@ -26,7 +26,7 @@ public class JdbcKlantRepository implements KlantRepository {
         var sql = "select id,familienaam,voornaam,straatnummer,postcode,gemeente" +
                 " from klanten  where id = ?";
         try {
-            return Optional.of(template.queryForObject(sql, klantMapper, id));
+            return Optional.ofNullable(template.queryForObject(sql, klantMapper, id));
         } catch (IncorrectResultSizeDataAccessException ex) {
             return Optional.empty();
         }

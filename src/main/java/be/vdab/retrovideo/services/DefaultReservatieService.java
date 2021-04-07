@@ -38,7 +38,7 @@ public class DefaultReservatieService implements ReservatieService {
     }
 
     @Override
-    public boolean maakResevatie(Reservatie reservatie) {
+    public boolean maakReservatie(Reservatie reservatie) {
         filmRepository.verhoogGereserveerdWaardeMetEen(reservatie);
         if (!reservatieRepository.createReservatie(reservatie)) {
             throw new DuplicateReservatieException();

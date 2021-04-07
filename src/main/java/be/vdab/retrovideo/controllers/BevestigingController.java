@@ -43,7 +43,7 @@ class BevestigingController {
                 .map(id -> new ReservatieForm(mandje.getKlantid(), id))
                 .forEach(reservatieForm -> {
                     try {
-                        reservatieService.maakResevatie(reservatieForm);
+                        reservatieService.maakReservatie(reservatieForm);
                     } catch (DuplicateReservatieException e) {
                         setVanNietGereserveerd.add(reservatieForm.getFilmid());
                     }

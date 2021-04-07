@@ -2,17 +2,15 @@ package be.vdab.retrovideo.domain;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Positive;
-import java.sql.Date;
 import java.time.LocalDate;
-import java.util.*;
+import java.util.Objects;
 
 public class Reservatie {
     @Positive
     private final long klantId;
     @Positive
-    private long filmid;
+    private final long filmid;
     @DateTimeFormat(style = "S-")
     private final LocalDate datum;
 
