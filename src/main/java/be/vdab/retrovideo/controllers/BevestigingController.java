@@ -1,6 +1,5 @@
 package be.vdab.retrovideo.controllers;
 
-import be.vdab.retrovideo.domain.Reservatie;
 import be.vdab.retrovideo.exceptions.DuplicateReservatieException;
 import be.vdab.retrovideo.forms.ReservatieForm;
 import be.vdab.retrovideo.services.FilmService;
@@ -13,8 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.HashSet;
-import java.util.Set;
-import java.util.stream.Collectors;
 
 
 @Controller
@@ -41,28 +38,54 @@ class BevestigingController {
 
     @GetMapping("gedaan")
     public ModelAndView bevestigenform() {
-        var nietGereserveerdeFilms = new HashSet<Long>();
-        var deSetVoorReservatie = reservatieSetVanHetMandje();
-        for (Reservatie reservatie : deSetVoorReservatie) {
-            try {
-                reservatieService.maakResevatie(reservatie);
-            } catch (DuplicateReservatieException e) {
-                nietGereserveerdeFilms.add(reservatie.getFilmid());
-            }
-        }
-        mandje.getIds().retainAll(nietGereserveerdeFilms);
-        return new ModelAndView("bevestigd","nietgereserveerdeFilms",
-                filmService.findFilmsByIds(mandje.getIds()));
-    }
-
-
-    private Set<Reservatie> reservatieSetVanHetMandje() {
-        return mandje.getIds().stream()
+        var setVanNietGereserveerd = new HashSet<Long>();
+        mandje.getIdsVanFilms().stream()
                 .map(id -> new ReservatieForm(mandje.getKlantid(), id))
-                .collect(Collectors.toSet());
+                .forEach(reservatieForm -> {
+                    try {
+                        reservatieService.maakResevatie(reservatieForm);
+                    } catch (DuplicateReservatieException e) {
+                        setVanNietGereserveerd.add(reservatieForm.getFilmid());
+                    }
+                });
+        mandje.getIdsVanFilms().retainAll(setVanNietGereserveerd);
+        return new ModelAndView("bevestigd", "nietgereserveerdeFilms",
+                filmService.findFilmsByIds(mandje.getIdsVanFilms()));
     }
-
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

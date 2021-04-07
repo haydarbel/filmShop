@@ -29,7 +29,7 @@ public class Mandje implements Serializable {
         idsVanFilms.add(id);
     }
 
-    public Set<Long> getIds() {
+    public Set<Long> getIdsVanFilms() {
         return idsVanFilms;
     }
 

@@ -20,13 +20,13 @@ class KlantControllers {
         this.reservatieService = reservatieService;
     }
 
-    @GetMapping("form")
+    @GetMapping("byletters/form")
     public ModelAndView klant() {
         return new ModelAndView("klant")
                 .addObject(new ZoekForm(""));
     }
 
-    @PostMapping("letter")
+    @GetMapping("byletters")
     public ModelAndView beginNaam(@Valid ZoekForm form, Errors error) {
         if (error.hasErrors()) {
             return new ModelAndView("klant");

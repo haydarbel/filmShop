@@ -19,7 +19,6 @@ public class DefaultReservatieService implements ReservatieService {
     private final ReservatieRepository reservatieRepository;
     private final FilmRepository filmRepository;
 
-
     public DefaultReservatieService(KlantRepository klantRepository, ReservatieRepository reservatieRepository,
                                     FilmRepository filmRepository) {
         this.klantRepository = klantRepository;

@@ -24,8 +24,8 @@ import java.util.Optional;
     @GetMapping
     public ModelAndView toonMandje() {
         return new ModelAndView("mandje",
-                "films", filmService.findFilmsByIds(mandje.getIds()))
-                .addObject("totalePrijs",filmService.findTotalePrijsByIds(mandje.getIds()));
+                "films", filmService.findFilmsByIds(mandje.getIdsVanFilms()))
+                .addObject("totalePrijs",filmService.findTotalePrijsByIds(mandje.getIdsVanFilms()));
     }
 
     @PostMapping("{id}")

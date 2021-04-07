@@ -7,7 +7,7 @@
         <h3><a th:href="@{/}" th:text="Genres"></a></h3>
         <h1 id="genre">Genres</h1>
         <li th:each="genre:${genres}">
-            <a th:object="${genre}" th:text="*{naam}" th:href="@{/films/genre/{id}(id=*{id})}">Welkom</a>
+            <a th:text="${genre}" th:href="@{/films/genre/{id}(id=${genre.id})}">Welkom</a>
         </li>
     </ul>
 </nav>
