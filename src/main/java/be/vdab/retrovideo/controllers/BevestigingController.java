@@ -30,49 +30,36 @@ class BevestigingController {
         this.mandje = mandje;
     }
 
-    @GetMapping("{id}")
-    public String identificatie(@PathVariable long id) {
-        mandje.setKlantid(id);
-        return "redirect:/bevestiging/form";
-    }
-
-    @GetMapping("form")
-    public ModelAndView bevestig() {
+    @GetMapping("form/{id}")
+    public ModelAndView bevestig(@PathVariable long id) {
         var modelAndView = new ModelAndView("bevestiging", "mandje", mandje);
-        reservatieService.findKlantById(mandje.getKlantid()).ifPresent(
+        mandje.setKlantid(id);
+        reservatieService.findKlantById(id).ifPresent(
                 klant -> modelAndView.addObject("klant", klant));
         return modelAndView;
     }
 
     @GetMapping("gedaan")
     public ModelAndView bevestigenform() {
-        var gereserveerdeFilms = new HashSet<Long>();
-        var reservatieSet = reservatieSetVanHetMandje();
-        for (Reservatie reservatie : reservatieSet) {
+        var nietGereserveerdeFilms = new HashSet<Long>();
+        var deSetVoorReservatie = reservatieSetVanHetMandje();
+        for (Reservatie reservatie : deSetVoorReservatie) {
             try {
-                if (reservatieService.maakResevatie(reservatie)) {
-                    gereserveerdeFilms.add(reservatie.getFilmid());
-                }
+                reservatieService.maakResevatie(reservatie);
             } catch (DuplicateReservatieException e) {
-
+                nietGereserveerdeFilms.add(reservatie.getFilmid());
             }
         }
-        mandje.getIds().removeAll(gereserveerdeFilms);
-        return new ModelAndView("bevestigd", "nietgereserveerdeFilms",
+        mandje.getIds().retainAll(nietGereserveerdeFilms);
+        return new ModelAndView("bevestigd","nietgereserveerdeFilms",
                 filmService.findFilmsByIds(mandje.getIds()));
     }
 
 
-    @GetMapping("bevestigd")
-    public ModelAndView bevestigd() {
-        return new ModelAndView("bevestigd");
-    }
-
-
     private Set<Reservatie> reservatieSetVanHetMandje() {
-           return mandje.getIds().stream()
-                    .map(id->new ReservatieForm(mandje.getKlantid(),id))
-                    .collect(Collectors.toSet());
+        return mandje.getIds().stream()
+                .map(id -> new ReservatieForm(mandje.getKlantid(), id))
+                .collect(Collectors.toSet());
     }
 
 }

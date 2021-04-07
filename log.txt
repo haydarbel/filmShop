@@ -5891,3 +5891,1146 @@ Caused by: org.thymeleaf.exceptions.TemplateInputException: Error resolving temp
 2021-04-07 14:35:40.105 TRACE 6416 --- [http-nio-8080-exec-10] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 2, parameter value [18], value class [java.lang.Long], SQL type 4
 2021-04-07 14:35:40.106 TRACE 6416 --- [http-nio-8080-exec-10] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 3, parameter value [2021-04-07], value class [java.time.LocalDate], SQL type 93
 2021-04-07 14:35:52.270 DEBUG 6416 --- [http-nio-8080-exec-3] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [select id,naam from genres order by naam]
+2021-04-07 14:45:05.488 DEBUG 6416 --- [http-nio-8080-exec-9] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [select id,naam from genres order by naam]
+2021-04-07 14:45:06.121 DEBUG 6416 --- [http-nio-8080-exec-2] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [select id,naam from genres order by naam]
+2021-04-07 14:45:06.326 DEBUG 6416 --- [http-nio-8080-exec-6] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [select id,naam from genres order by naam]
+2021-04-07 14:45:07.839 DEBUG 6416 --- [http-nio-8080-exec-8] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [select id,naam from genres order by naam]
+2021-04-07 14:45:07.844 DEBUG 6416 --- [http-nio-8080-exec-8] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 14:45:07.844 DEBUG 6416 --- [http-nio-8080-exec-8] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,genreid,titel,prijs from films where genreid = ? order by id]
+2021-04-07 14:45:07.844 TRACE 6416 --- [http-nio-8080-exec-8] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [1], value class [java.lang.Long], SQL type unknown
+2021-04-07 14:45:08.787 DEBUG 6416 --- [http-nio-8080-exec-10] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 14:45:08.787 DEBUG 6416 --- [http-nio-8080-exec-10] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,genreid,titel,prijs from films where id = ?]
+2021-04-07 14:45:08.787 TRACE 6416 --- [http-nio-8080-exec-10] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [26], value class [java.lang.Long], SQL type unknown
+2021-04-07 14:45:08.791 DEBUG 6416 --- [http-nio-8080-exec-10] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 14:45:08.791 DEBUG 6416 --- [http-nio-8080-exec-10] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select voorraad,gereserveerd from films where id = ?]
+2021-04-07 14:45:08.791 TRACE 6416 --- [http-nio-8080-exec-10] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [26], value class [java.lang.Long], SQL type unknown
+2021-04-07 14:45:10.100 DEBUG 6416 --- [http-nio-8080-exec-5] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 14:45:10.100 DEBUG 6416 --- [http-nio-8080-exec-5] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,genreid,titel,prijs from films where id in (?) order by id]
+2021-04-07 14:45:10.100 TRACE 6416 --- [http-nio-8080-exec-5] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [26], value class [java.lang.Long], SQL type unknown
+2021-04-07 14:45:10.103 DEBUG 6416 --- [http-nio-8080-exec-5] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 14:45:10.103 DEBUG 6416 --- [http-nio-8080-exec-5] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select sum(prijs) from films where id in (?)]
+2021-04-07 14:45:10.103 TRACE 6416 --- [http-nio-8080-exec-5] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [26], value class [java.lang.Long], SQL type unknown
+2021-04-07 14:45:15.267 DEBUG 6416 --- [http-nio-8080-exec-2] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 14:45:15.267 DEBUG 6416 --- [http-nio-8080-exec-2] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,familienaam,voornaam,straatnummer,postcode,gemeente from klanten where familienaam like ? order by familienaam]
+2021-04-07 14:45:15.268 TRACE 6416 --- [http-nio-8080-exec-2] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [%a%], value class [java.lang.String], SQL type unknown
+2021-04-07 14:45:17.210 DEBUG 6416 --- [http-nio-8080-exec-5] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 14:45:17.210 DEBUG 6416 --- [http-nio-8080-exec-5] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,familienaam,voornaam,straatnummer,postcode,gemeente from klanten  where id = ?]
+2021-04-07 14:45:17.210 TRACE 6416 --- [http-nio-8080-exec-5] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [13], value class [java.lang.Long], SQL type unknown
+2021-04-07 14:45:18.729 DEBUG 6416 --- [http-nio-8080-exec-1] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2021-04-07 14:45:18.730 DEBUG 6416 --- [http-nio-8080-exec-1] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [update films set gereserveerd=gereserveerd+1 where id=? and voorraad-gereserveerd>0]
+2021-04-07 14:45:18.730 TRACE 6416 --- [http-nio-8080-exec-1] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [26], value class [java.lang.Long], SQL type unknown
+2021-04-07 14:45:18.731 DEBUG 6416 --- [http-nio-8080-exec-1] o.s.jdbc.core.simple.SimpleJdbcInsert    : The following parameters are used for insert INSERT INTO reservaties (klantid, filmid, reservatie) VALUES(?, ?, ?) with: [13, 26, 2021-04-07]
+2021-04-07 14:45:18.731 DEBUG 6416 --- [http-nio-8080-exec-1] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2021-04-07 14:45:18.732 DEBUG 6416 --- [http-nio-8080-exec-1] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [INSERT INTO reservaties (klantid, filmid, reservatie) VALUES(?, ?, ?)]
+2021-04-07 14:45:18.732 TRACE 6416 --- [http-nio-8080-exec-1] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [13], value class [java.lang.Long], SQL type 4
+2021-04-07 14:45:18.732 TRACE 6416 --- [http-nio-8080-exec-1] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 2, parameter value [26], value class [java.lang.Long], SQL type 4
+2021-04-07 14:45:18.732 TRACE 6416 --- [http-nio-8080-exec-1] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 3, parameter value [2021-04-07], value class [java.time.LocalDate], SQL type 93
+2021-04-07 14:45:49.759 DEBUG 6416 --- [http-nio-8080-exec-9] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [select id,naam from genres order by naam]
+2021-04-07 14:45:51.413 DEBUG 6416 --- [http-nio-8080-exec-3] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [select id,naam from genres order by naam]
+2021-04-07 14:45:51.416 DEBUG 6416 --- [http-nio-8080-exec-3] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 14:45:51.417 DEBUG 6416 --- [http-nio-8080-exec-3] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,genreid,titel,prijs from films where genreid = ? order by id]
+2021-04-07 14:45:51.417 TRACE 6416 --- [http-nio-8080-exec-3] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [1], value class [java.lang.Long], SQL type unknown
+2021-04-07 14:45:52.100 DEBUG 6416 --- [http-nio-8080-exec-5] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 14:45:52.100 DEBUG 6416 --- [http-nio-8080-exec-5] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,genreid,titel,prijs from films where id = ?]
+2021-04-07 14:45:52.100 TRACE 6416 --- [http-nio-8080-exec-5] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [26], value class [java.lang.Long], SQL type unknown
+2021-04-07 14:45:52.104 DEBUG 6416 --- [http-nio-8080-exec-5] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 14:45:52.104 DEBUG 6416 --- [http-nio-8080-exec-5] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select voorraad,gereserveerd from films where id = ?]
+2021-04-07 14:45:52.104 TRACE 6416 --- [http-nio-8080-exec-5] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [26], value class [java.lang.Long], SQL type unknown
+2021-04-07 14:45:53.819 DEBUG 6416 --- [http-nio-8080-exec-9] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 14:45:53.819 DEBUG 6416 --- [http-nio-8080-exec-9] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,genreid,titel,prijs from films where id in (?) order by id]
+2021-04-07 14:45:53.819 TRACE 6416 --- [http-nio-8080-exec-9] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [26], value class [java.lang.Long], SQL type unknown
+2021-04-07 14:45:53.822 DEBUG 6416 --- [http-nio-8080-exec-9] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 14:45:53.822 DEBUG 6416 --- [http-nio-8080-exec-9] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select sum(prijs) from films where id in (?)]
+2021-04-07 14:45:53.822 TRACE 6416 --- [http-nio-8080-exec-9] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [26], value class [java.lang.Long], SQL type unknown
+2021-04-07 14:45:58.739 DEBUG 6416 --- [http-nio-8080-exec-1] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 14:45:58.739 DEBUG 6416 --- [http-nio-8080-exec-1] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,familienaam,voornaam,straatnummer,postcode,gemeente from klanten where familienaam like ? order by familienaam]
+2021-04-07 14:45:58.739 TRACE 6416 --- [http-nio-8080-exec-1] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [%a%], value class [java.lang.String], SQL type unknown
+2021-04-07 14:45:59.659 DEBUG 6416 --- [http-nio-8080-exec-9] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 14:45:59.659 DEBUG 6416 --- [http-nio-8080-exec-9] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,familienaam,voornaam,straatnummer,postcode,gemeente from klanten  where id = ?]
+2021-04-07 14:45:59.659 TRACE 6416 --- [http-nio-8080-exec-9] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [13], value class [java.lang.Long], SQL type unknown
+2021-04-07 14:46:00.978 DEBUG 6416 --- [http-nio-8080-exec-6] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2021-04-07 14:46:00.978 DEBUG 6416 --- [http-nio-8080-exec-6] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [update films set gereserveerd=gereserveerd+1 where id=? and voorraad-gereserveerd>0]
+2021-04-07 14:46:00.978 TRACE 6416 --- [http-nio-8080-exec-6] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [26], value class [java.lang.Long], SQL type unknown
+2021-04-07 14:46:00.981 DEBUG 6416 --- [http-nio-8080-exec-6] o.s.jdbc.core.simple.SimpleJdbcInsert    : The following parameters are used for insert INSERT INTO reservaties (klantid, filmid, reservatie) VALUES(?, ?, ?) with: [13, 26, 2021-04-07]
+2021-04-07 14:46:00.981 DEBUG 6416 --- [http-nio-8080-exec-6] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2021-04-07 14:46:00.981 DEBUG 6416 --- [http-nio-8080-exec-6] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [INSERT INTO reservaties (klantid, filmid, reservatie) VALUES(?, ?, ?)]
+2021-04-07 14:46:00.981 TRACE 6416 --- [http-nio-8080-exec-6] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [13], value class [java.lang.Long], SQL type 4
+2021-04-07 14:46:00.981 TRACE 6416 --- [http-nio-8080-exec-6] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 2, parameter value [26], value class [java.lang.Long], SQL type 4
+2021-04-07 14:46:00.981 TRACE 6416 --- [http-nio-8080-exec-6] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 3, parameter value [2021-04-07], value class [java.time.LocalDate], SQL type 93
+2021-04-07 14:46:01.075 DEBUG 6416 --- [http-nio-8080-exec-6] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 14:46:01.075 DEBUG 6416 --- [http-nio-8080-exec-6] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,genreid,titel,prijs from films where id in (?) order by id]
+2021-04-07 14:46:01.076 TRACE 6416 --- [http-nio-8080-exec-6] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [26], value class [java.lang.Long], SQL type unknown
+2021-04-07 14:49:22.565  INFO 6416 --- [Thread-5] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-07 14:49:22.566  INFO 6416 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-04-07 14:49:22.576  INFO 6416 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-04-07 14:49:22.662  INFO 6416 --- [restartedMain] b.vdab.retrovideo.RetrovideoApplication  : Starting RetrovideoApplication using Java 11.0.9 on haydars-iMac.lan with PID 6416 (/Users/haydar/IdeaProjects/retrovideo/target/classes started by haydar in /Users/haydar/IdeaProjects/retrovideo)
+2021-04-07 14:49:22.662  INFO 6416 --- [restartedMain] b.vdab.retrovideo.RetrovideoApplication  : No active profile set, falling back to default profiles: default
+2021-04-07 14:49:22.924  INFO 6416 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-04-07 14:49:22.925  INFO 6416 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-04-07 14:49:22.925  INFO 6416 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.44]
+2021-04-07 14:49:22.933  INFO 6416 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-04-07 14:49:22.934  INFO 6416 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 270 ms
+2021-04-07 14:49:23.035  INFO 6416 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-07 14:49:23.051  INFO 6416 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-04-07 14:49:23.112  INFO 6416 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-04-07 14:49:23.127  INFO 6416 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-04-07 14:49:23.131  INFO 6416 --- [restartedMain] b.vdab.retrovideo.RetrovideoApplication  : Started RetrovideoApplication in 0.505 seconds (JVM running for 849.159)
+2021-04-07 14:49:23.133  INFO 6416 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-04-07 14:49:24.548  INFO 6416 --- [Thread-8] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-07 14:49:24.611  INFO 6416 --- [restartedMain] b.vdab.retrovideo.RetrovideoApplication  : Starting RetrovideoApplication using Java 11.0.9 on haydars-iMac.lan with PID 6416 (/Users/haydar/IdeaProjects/retrovideo/target/classes started by haydar in /Users/haydar/IdeaProjects/retrovideo)
+2021-04-07 14:49:24.611  INFO 6416 --- [restartedMain] b.vdab.retrovideo.RetrovideoApplication  : No active profile set, falling back to default profiles: default
+2021-04-07 14:49:24.778  INFO 6416 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-04-07 14:49:24.779  INFO 6416 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-04-07 14:49:24.779  INFO 6416 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.44]
+2021-04-07 14:49:24.786  INFO 6416 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-04-07 14:49:24.786  INFO 6416 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 173 ms
+2021-04-07 14:49:24.872  INFO 6416 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-07 14:49:24.885  INFO 6416 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-04-07 14:49:24.918  INFO 6416 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-04-07 14:49:24.929  INFO 6416 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-04-07 14:49:24.933  INFO 6416 --- [restartedMain] b.vdab.retrovideo.RetrovideoApplication  : Started RetrovideoApplication in 0.34 seconds (JVM running for 850.96)
+2021-04-07 14:49:24.934  INFO 6416 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-04-07 14:49:33.653  INFO 6416 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-07 14:49:33.654  INFO 6416 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-04-07 14:49:33.655  INFO 6416 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-04-07 14:49:33.657  INFO 6416 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2021-04-07 14:49:33.677  INFO 6416 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2021-04-07 14:49:33.682 DEBUG 6416 --- [http-nio-8080-exec-1] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [select id,naam from genres order by naam]
+2021-04-07 14:49:34.841 DEBUG 6416 --- [http-nio-8080-exec-3] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [select id,naam from genres order by naam]
+2021-04-07 14:49:34.847 DEBUG 6416 --- [http-nio-8080-exec-3] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 14:49:34.847 DEBUG 6416 --- [http-nio-8080-exec-3] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,genreid,titel,prijs from films where genreid = ? order by id]
+2021-04-07 14:49:34.847 TRACE 6416 --- [http-nio-8080-exec-3] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [1], value class [java.lang.Long], SQL type unknown
+2021-04-07 14:49:35.900 DEBUG 6416 --- [http-nio-8080-exec-6] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 14:49:35.900 DEBUG 6416 --- [http-nio-8080-exec-6] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,genreid,titel,prijs from films where id = ?]
+2021-04-07 14:49:35.900 TRACE 6416 --- [http-nio-8080-exec-6] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [26], value class [java.lang.Long], SQL type unknown
+2021-04-07 14:49:35.904 DEBUG 6416 --- [http-nio-8080-exec-6] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 14:49:35.904 DEBUG 6416 --- [http-nio-8080-exec-6] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select voorraad,gereserveerd from films where id = ?]
+2021-04-07 14:49:35.904 TRACE 6416 --- [http-nio-8080-exec-6] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [26], value class [java.lang.Long], SQL type unknown
+2021-04-07 14:49:37.272 DEBUG 6416 --- [http-nio-8080-exec-1] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 14:49:37.272 DEBUG 6416 --- [http-nio-8080-exec-1] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,genreid,titel,prijs from films where id in (?) order by id]
+2021-04-07 14:49:37.273 TRACE 6416 --- [http-nio-8080-exec-1] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [26], value class [java.lang.Long], SQL type unknown
+2021-04-07 14:49:37.275 DEBUG 6416 --- [http-nio-8080-exec-1] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 14:49:37.275 DEBUG 6416 --- [http-nio-8080-exec-1] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select sum(prijs) from films where id in (?)]
+2021-04-07 14:49:37.276 TRACE 6416 --- [http-nio-8080-exec-1] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [26], value class [java.lang.Long], SQL type unknown
+2021-04-07 14:49:40.800 DEBUG 6416 --- [http-nio-8080-exec-8] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 14:49:40.801 DEBUG 6416 --- [http-nio-8080-exec-8] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,familienaam,voornaam,straatnummer,postcode,gemeente from klanten where familienaam like ? order by familienaam]
+2021-04-07 14:49:40.801 TRACE 6416 --- [http-nio-8080-exec-8] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [%a%], value class [java.lang.String], SQL type unknown
+2021-04-07 14:49:41.916 DEBUG 6416 --- [http-nio-8080-exec-1] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 14:49:41.916 DEBUG 6416 --- [http-nio-8080-exec-1] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,familienaam,voornaam,straatnummer,postcode,gemeente from klanten  where id = ?]
+2021-04-07 14:49:41.916 TRACE 6416 --- [http-nio-8080-exec-1] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [13], value class [java.lang.Long], SQL type unknown
+2021-04-07 14:49:42.974 DEBUG 6416 --- [http-nio-8080-exec-4] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2021-04-07 14:49:42.975 DEBUG 6416 --- [http-nio-8080-exec-4] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [update films set gereserveerd=gereserveerd+1 where id=? and voorraad-gereserveerd>0]
+2021-04-07 14:49:42.975 TRACE 6416 --- [http-nio-8080-exec-4] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [26], value class [java.lang.Long], SQL type unknown
+2021-04-07 14:49:42.978 DEBUG 6416 --- [http-nio-8080-exec-4] o.s.jdbc.core.simple.SimpleJdbcInsert    : JdbcInsert not compiled before execution - invoking compile
+2021-04-07 14:49:42.984 DEBUG 6416 --- [http-nio-8080-exec-4] o.s.jdbc.core.simple.SimpleJdbcInsert    : Compiled insert object: insert string is [INSERT INTO reservaties (klantid, filmid, reservatie) VALUES(?, ?, ?)]
+2021-04-07 14:49:42.985 DEBUG 6416 --- [http-nio-8080-exec-4] o.s.jdbc.core.simple.SimpleJdbcInsert    : JdbcInsert for table [reservaties] compiled
+2021-04-07 14:49:42.985 DEBUG 6416 --- [http-nio-8080-exec-4] o.s.jdbc.core.simple.SimpleJdbcInsert    : The following parameters are used for insert INSERT INTO reservaties (klantid, filmid, reservatie) VALUES(?, ?, ?) with: [13, 26, 2021-04-07]
+2021-04-07 14:49:42.985 DEBUG 6416 --- [http-nio-8080-exec-4] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2021-04-07 14:49:42.985 DEBUG 6416 --- [http-nio-8080-exec-4] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [INSERT INTO reservaties (klantid, filmid, reservatie) VALUES(?, ?, ?)]
+2021-04-07 14:49:42.985 TRACE 6416 --- [http-nio-8080-exec-4] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [13], value class [java.lang.Long], SQL type 4
+2021-04-07 14:49:42.985 TRACE 6416 --- [http-nio-8080-exec-4] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 2, parameter value [26], value class [java.lang.Long], SQL type 4
+2021-04-07 14:49:42.985 TRACE 6416 --- [http-nio-8080-exec-4] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 3, parameter value [2021-04-07], value class [java.time.LocalDate], SQL type 93
+2021-04-07 14:49:42.993 DEBUG 6416 --- [http-nio-8080-exec-4] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 14:49:42.994 DEBUG 6416 --- [http-nio-8080-exec-4] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,genreid,titel,prijs from films where id in (?) order by id]
+2021-04-07 14:49:42.994 TRACE 6416 --- [http-nio-8080-exec-4] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [26], value class [java.lang.Long], SQL type unknown
+2021-04-07 14:49:49.625 DEBUG 6416 --- [http-nio-8080-exec-6] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [select id,naam from genres order by naam]
+2021-04-07 14:49:51.547 DEBUG 6416 --- [http-nio-8080-exec-9] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [select id,naam from genres order by naam]
+2021-04-07 14:49:51.550 DEBUG 6416 --- [http-nio-8080-exec-9] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 14:49:51.551 DEBUG 6416 --- [http-nio-8080-exec-9] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,genreid,titel,prijs from films where genreid = ? order by id]
+2021-04-07 14:49:51.551 TRACE 6416 --- [http-nio-8080-exec-9] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [5], value class [java.lang.Long], SQL type unknown
+2021-04-07 14:49:54.035 DEBUG 6416 --- [http-nio-8080-exec-2] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [select id,naam from genres order by naam]
+2021-04-07 14:49:54.038 DEBUG 6416 --- [http-nio-8080-exec-2] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 14:49:54.038 DEBUG 6416 --- [http-nio-8080-exec-2] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,genreid,titel,prijs from films where genreid = ? order by id]
+2021-04-07 14:49:54.038 TRACE 6416 --- [http-nio-8080-exec-2] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [7], value class [java.lang.Long], SQL type unknown
+2021-04-07 14:49:55.463 DEBUG 6416 --- [http-nio-8080-exec-8] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 14:49:55.463 DEBUG 6416 --- [http-nio-8080-exec-8] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,genreid,titel,prijs from films where id = ?]
+2021-04-07 14:49:55.463 TRACE 6416 --- [http-nio-8080-exec-8] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [2], value class [java.lang.Long], SQL type unknown
+2021-04-07 14:49:55.466 DEBUG 6416 --- [http-nio-8080-exec-8] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 14:49:55.467 DEBUG 6416 --- [http-nio-8080-exec-8] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select voorraad,gereserveerd from films where id = ?]
+2021-04-07 14:49:55.467 TRACE 6416 --- [http-nio-8080-exec-8] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [2], value class [java.lang.Long], SQL type unknown
+2021-04-07 14:49:57.914 DEBUG 6416 --- [http-nio-8080-exec-2] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 14:49:57.914 DEBUG 6416 --- [http-nio-8080-exec-2] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,genreid,titel,prijs from films where id in (?,?) order by id]
+2021-04-07 14:49:57.914 TRACE 6416 --- [http-nio-8080-exec-2] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [26], value class [java.lang.Long], SQL type unknown
+2021-04-07 14:49:57.914 TRACE 6416 --- [http-nio-8080-exec-2] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 2, parameter value [2], value class [java.lang.Long], SQL type unknown
+2021-04-07 14:49:57.916 DEBUG 6416 --- [http-nio-8080-exec-2] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 14:49:57.917 DEBUG 6416 --- [http-nio-8080-exec-2] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select sum(prijs) from films where id in (?,?)]
+2021-04-07 14:49:57.917 TRACE 6416 --- [http-nio-8080-exec-2] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [26], value class [java.lang.Long], SQL type unknown
+2021-04-07 14:49:57.917 TRACE 6416 --- [http-nio-8080-exec-2] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 2, parameter value [2], value class [java.lang.Long], SQL type unknown
+2021-04-07 14:50:06.142 DEBUG 6416 --- [http-nio-8080-exec-9] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 14:50:06.142 DEBUG 6416 --- [http-nio-8080-exec-9] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,familienaam,voornaam,straatnummer,postcode,gemeente from klanten where familienaam like ? order by familienaam]
+2021-04-07 14:50:06.143 TRACE 6416 --- [http-nio-8080-exec-9] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [%a%], value class [java.lang.String], SQL type unknown
+2021-04-07 14:50:07.679 DEBUG 6416 --- [http-nio-8080-exec-2] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 14:50:07.679 DEBUG 6416 --- [http-nio-8080-exec-2] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,familienaam,voornaam,straatnummer,postcode,gemeente from klanten  where id = ?]
+2021-04-07 14:50:07.679 TRACE 6416 --- [http-nio-8080-exec-2] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [13], value class [java.lang.Long], SQL type unknown
+2021-04-07 14:50:09.311 DEBUG 6416 --- [http-nio-8080-exec-3] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2021-04-07 14:50:09.311 DEBUG 6416 --- [http-nio-8080-exec-3] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [update films set gereserveerd=gereserveerd+1 where id=? and voorraad-gereserveerd>0]
+2021-04-07 14:50:09.311 TRACE 6416 --- [http-nio-8080-exec-3] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [26], value class [java.lang.Long], SQL type unknown
+2021-04-07 14:50:09.312 DEBUG 6416 --- [http-nio-8080-exec-3] o.s.jdbc.core.simple.SimpleJdbcInsert    : The following parameters are used for insert INSERT INTO reservaties (klantid, filmid, reservatie) VALUES(?, ?, ?) with: [13, 26, 2021-04-07]
+2021-04-07 14:50:09.312 DEBUG 6416 --- [http-nio-8080-exec-3] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2021-04-07 14:50:09.312 DEBUG 6416 --- [http-nio-8080-exec-3] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [INSERT INTO reservaties (klantid, filmid, reservatie) VALUES(?, ?, ?)]
+2021-04-07 14:50:09.313 TRACE 6416 --- [http-nio-8080-exec-3] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [13], value class [java.lang.Long], SQL type 4
+2021-04-07 14:50:09.313 TRACE 6416 --- [http-nio-8080-exec-3] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 2, parameter value [26], value class [java.lang.Long], SQL type 4
+2021-04-07 14:50:09.313 TRACE 6416 --- [http-nio-8080-exec-3] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 3, parameter value [2021-04-07], value class [java.time.LocalDate], SQL type 93
+2021-04-07 14:50:09.314 DEBUG 6416 --- [http-nio-8080-exec-3] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2021-04-07 14:50:09.314 DEBUG 6416 --- [http-nio-8080-exec-3] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [update films set gereserveerd=gereserveerd+1 where id=? and voorraad-gereserveerd>0]
+2021-04-07 14:50:09.315 TRACE 6416 --- [http-nio-8080-exec-3] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [2], value class [java.lang.Long], SQL type unknown
+2021-04-07 14:50:09.316 DEBUG 6416 --- [http-nio-8080-exec-3] o.s.jdbc.core.simple.SimpleJdbcInsert    : The following parameters are used for insert INSERT INTO reservaties (klantid, filmid, reservatie) VALUES(?, ?, ?) with: [13, 2, 2021-04-07]
+2021-04-07 14:50:09.316 DEBUG 6416 --- [http-nio-8080-exec-3] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2021-04-07 14:50:09.316 DEBUG 6416 --- [http-nio-8080-exec-3] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [INSERT INTO reservaties (klantid, filmid, reservatie) VALUES(?, ?, ?)]
+2021-04-07 14:50:09.316 TRACE 6416 --- [http-nio-8080-exec-3] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [13], value class [java.lang.Long], SQL type 4
+2021-04-07 14:50:09.316 TRACE 6416 --- [http-nio-8080-exec-3] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 2, parameter value [2], value class [java.lang.Long], SQL type 4
+2021-04-07 14:50:09.316 TRACE 6416 --- [http-nio-8080-exec-3] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 3, parameter value [2021-04-07], value class [java.time.LocalDate], SQL type 93
+2021-04-07 14:50:09.319 DEBUG 6416 --- [http-nio-8080-exec-3] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 14:50:09.319 DEBUG 6416 --- [http-nio-8080-exec-3] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,genreid,titel,prijs from films where id in (?) order by id]
+2021-04-07 14:50:09.319 TRACE 6416 --- [http-nio-8080-exec-3] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [26], value class [java.lang.Long], SQL type unknown
+2021-04-07 14:54:01.394  INFO 6416 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-07 14:54:01.395  INFO 6416 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2021-04-07 14:54:01.404  INFO 6416 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2021-04-07 14:58:13.552  INFO 6615 --- [restartedMain] b.vdab.retrovideo.RetrovideoApplication  : Starting RetrovideoApplication using Java 11.0.9 on haydars-iMac.lan with PID 6615 (/Users/haydar/IdeaProjects/retrovideo/target/classes started by haydar in /Users/haydar/IdeaProjects/retrovideo)
+2021-04-07 14:58:13.558  INFO 6615 --- [restartedMain] b.vdab.retrovideo.RetrovideoApplication  : No active profile set, falling back to default profiles: default
+2021-04-07 14:58:13.653  INFO 6615 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-04-07 14:58:13.656  INFO 6615 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-04-07 14:58:15.018  INFO 6615 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-04-07 14:58:15.027  INFO 6615 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-04-07 14:58:15.028  INFO 6615 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.44]
+2021-04-07 14:58:15.080  INFO 6615 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-04-07 14:58:15.080  INFO 6615 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1423 ms
+2021-04-07 14:58:15.333  INFO 6615 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-07 14:58:15.383  INFO 6615 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-04-07 14:58:15.491  INFO 6615 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-04-07 14:58:15.524  INFO 6615 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-04-07 14:58:15.534  INFO 6615 --- [restartedMain] b.vdab.retrovideo.RetrovideoApplication  : Started RetrovideoApplication in 2.343 seconds (JVM running for 3.113)
+2021-04-07 14:58:21.684  INFO 6615 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-07 14:58:21.686  INFO 6615 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-04-07 14:58:21.687  INFO 6615 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-04-07 14:58:21.715  INFO 6615 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-04-07 14:58:21.992  INFO 6615 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-04-07 14:58:22.007 DEBUG 6615 --- [http-nio-8080-exec-1] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [select id,naam from genres order by naam]
+2021-04-07 14:58:51.086 DEBUG 6615 --- [http-nio-8080-exec-3] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [select id,naam from genres order by naam]
+2021-04-07 14:58:54.002 DEBUG 6615 --- [http-nio-8080-exec-6] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [select id,naam from genres order by naam]
+2021-04-07 14:58:54.009 DEBUG 6615 --- [http-nio-8080-exec-6] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 14:58:54.015 DEBUG 6615 --- [http-nio-8080-exec-6] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,genreid,titel,prijs from films where genreid = ? order by id]
+2021-04-07 14:58:54.024 TRACE 6615 --- [http-nio-8080-exec-6] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [11], value class [java.lang.Long], SQL type unknown
+2021-04-07 14:58:55.515 DEBUG 6615 --- [http-nio-8080-exec-3] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [select id,naam from genres order by naam]
+2021-04-07 14:58:55.519 DEBUG 6615 --- [http-nio-8080-exec-3] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 14:58:55.520 DEBUG 6615 --- [http-nio-8080-exec-3] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,genreid,titel,prijs from films where genreid = ? order by id]
+2021-04-07 14:58:55.520 TRACE 6615 --- [http-nio-8080-exec-3] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [12], value class [java.lang.Long], SQL type unknown
+2021-04-07 14:58:56.393 DEBUG 6615 --- [http-nio-8080-exec-6] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [select id,naam from genres order by naam]
+2021-04-07 14:58:56.397 DEBUG 6615 --- [http-nio-8080-exec-6] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 14:58:56.397 DEBUG 6615 --- [http-nio-8080-exec-6] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,genreid,titel,prijs from films where genreid = ? order by id]
+2021-04-07 14:58:56.397 TRACE 6615 --- [http-nio-8080-exec-6] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [13], value class [java.lang.Long], SQL type unknown
+2021-04-07 14:58:57.767 DEBUG 6615 --- [http-nio-8080-exec-5] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [select id,naam from genres order by naam]
+2021-04-07 14:58:57.771 DEBUG 6615 --- [http-nio-8080-exec-5] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 14:58:57.771 DEBUG 6615 --- [http-nio-8080-exec-5] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,genreid,titel,prijs from films where genreid = ? order by id]
+2021-04-07 14:58:57.771 TRACE 6615 --- [http-nio-8080-exec-5] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [5], value class [java.lang.Long], SQL type unknown
+2021-04-07 15:51:02.775 DEBUG 6615 --- [http-nio-8080-exec-7] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [select id,naam from genres order by naam]
+2021-04-07 15:51:02.779 DEBUG 6615 --- [http-nio-8080-exec-7] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 15:51:02.779 DEBUG 6615 --- [http-nio-8080-exec-7] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,genreid,titel,prijs from films where genreid = ? order by id]
+2021-04-07 15:51:02.779 TRACE 6615 --- [http-nio-8080-exec-7] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [6], value class [java.lang.Long], SQL type unknown
+2021-04-07 15:51:07.309 DEBUG 6615 --- [http-nio-8080-exec-8] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [select id,naam from genres order by naam]
+2021-04-07 15:51:07.312 DEBUG 6615 --- [http-nio-8080-exec-8] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 15:51:07.312 DEBUG 6615 --- [http-nio-8080-exec-8] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,genreid,titel,prijs from films where genreid = ? order by id]
+2021-04-07 15:51:07.313 TRACE 6615 --- [http-nio-8080-exec-8] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [2], value class [java.lang.Long], SQL type unknown
+2021-04-07 15:51:08.221 DEBUG 6615 --- [http-nio-8080-exec-10] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 15:51:08.221 DEBUG 6615 --- [http-nio-8080-exec-10] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,genreid,titel,prijs from films where id = ?]
+2021-04-07 15:51:08.222 TRACE 6615 --- [http-nio-8080-exec-10] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [1], value class [java.lang.Long], SQL type unknown
+2021-04-07 15:51:08.228 DEBUG 6615 --- [http-nio-8080-exec-10] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 15:51:08.229 DEBUG 6615 --- [http-nio-8080-exec-10] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select voorraad,gereserveerd from films where id = ?]
+2021-04-07 15:51:08.229 TRACE 6615 --- [http-nio-8080-exec-10] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [1], value class [java.lang.Long], SQL type unknown
+2021-04-07 15:51:10.361 DEBUG 6615 --- [http-nio-8080-exec-6] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 15:51:10.361 DEBUG 6615 --- [http-nio-8080-exec-6] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,genreid,titel,prijs from films where id in (?) order by id]
+2021-04-07 15:51:10.361 TRACE 6615 --- [http-nio-8080-exec-6] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [1], value class [java.lang.Long], SQL type unknown
+2021-04-07 15:51:10.365 DEBUG 6615 --- [http-nio-8080-exec-6] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 15:51:10.365 DEBUG 6615 --- [http-nio-8080-exec-6] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select sum(prijs) from films where id in (?)]
+2021-04-07 15:51:10.365 TRACE 6615 --- [http-nio-8080-exec-6] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [1], value class [java.lang.Long], SQL type unknown
+2021-04-07 15:51:20.447 DEBUG 6615 --- [http-nio-8080-exec-5] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 15:51:20.447 DEBUG 6615 --- [http-nio-8080-exec-5] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,familienaam,voornaam,straatnummer,postcode,gemeente from klanten where familienaam like ? order by familienaam]
+2021-04-07 15:51:20.448 TRACE 6615 --- [http-nio-8080-exec-5] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [%a%], value class [java.lang.String], SQL type unknown
+2021-04-07 15:51:23.415 DEBUG 6615 --- [http-nio-8080-exec-8] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 15:51:23.416 DEBUG 6615 --- [http-nio-8080-exec-8] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,familienaam,voornaam,straatnummer,postcode,gemeente from klanten  where id = ?]
+2021-04-07 15:51:23.416 TRACE 6615 --- [http-nio-8080-exec-8] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [13], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:00:21.941  INFO 6615 --- [Thread-5] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-07 16:00:21.942  INFO 6615 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-04-07 16:00:21.948  INFO 6615 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-04-07 16:00:22.034  INFO 6615 --- [restartedMain] b.vdab.retrovideo.RetrovideoApplication  : Starting RetrovideoApplication using Java 11.0.9 on haydars-iMac.lan with PID 6615 (/Users/haydar/IdeaProjects/retrovideo/target/classes started by haydar in /Users/haydar/IdeaProjects/retrovideo)
+2021-04-07 16:00:22.034  INFO 6615 --- [restartedMain] b.vdab.retrovideo.RetrovideoApplication  : No active profile set, falling back to default profiles: default
+2021-04-07 16:00:22.248  INFO 6615 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-04-07 16:00:22.248  INFO 6615 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-04-07 16:00:22.249  INFO 6615 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.44]
+2021-04-07 16:00:22.259  INFO 6615 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-04-07 16:00:22.259  INFO 6615 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 223 ms
+2021-04-07 16:00:22.389  INFO 6615 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-07 16:00:22.411  INFO 6615 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-04-07 16:00:22.464  INFO 6615 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-04-07 16:00:22.477  INFO 6615 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-04-07 16:00:22.481  INFO 6615 --- [restartedMain] b.vdab.retrovideo.RetrovideoApplication  : Started RetrovideoApplication in 0.481 seconds (JVM running for 3730.087)
+2021-04-07 16:00:22.482  INFO 6615 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-04-07 16:00:23.893  INFO 6615 --- [Thread-8] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-07 16:00:23.954  INFO 6615 --- [restartedMain] b.vdab.retrovideo.RetrovideoApplication  : Starting RetrovideoApplication using Java 11.0.9 on haydars-iMac.lan with PID 6615 (/Users/haydar/IdeaProjects/retrovideo/target/classes started by haydar in /Users/haydar/IdeaProjects/retrovideo)
+2021-04-07 16:00:23.954  INFO 6615 --- [restartedMain] b.vdab.retrovideo.RetrovideoApplication  : No active profile set, falling back to default profiles: default
+2021-04-07 16:00:24.103  INFO 6615 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-04-07 16:00:24.104  INFO 6615 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-04-07 16:00:24.104  INFO 6615 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.44]
+2021-04-07 16:00:24.111  INFO 6615 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-04-07 16:00:24.111  INFO 6615 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 155 ms
+2021-04-07 16:00:24.187  INFO 6615 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-07 16:00:24.199  INFO 6615 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-04-07 16:00:24.229  INFO 6615 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-04-07 16:00:24.239  INFO 6615 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-04-07 16:00:24.242  INFO 6615 --- [restartedMain] b.vdab.retrovideo.RetrovideoApplication  : Started RetrovideoApplication in 0.305 seconds (JVM running for 3731.848)
+2021-04-07 16:00:24.243  INFO 6615 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-04-07 16:00:27.216  INFO 6615 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-07 16:00:32.444  INFO 7046 --- [restartedMain] b.vdab.retrovideo.RetrovideoApplication  : Starting RetrovideoApplication using Java 11.0.9 on haydars-iMac.lan with PID 7046 (/Users/haydar/IdeaProjects/retrovideo/target/classes started by haydar in /Users/haydar/IdeaProjects/retrovideo)
+2021-04-07 16:00:32.447  INFO 7046 --- [restartedMain] b.vdab.retrovideo.RetrovideoApplication  : No active profile set, falling back to default profiles: default
+2021-04-07 16:00:32.528  INFO 7046 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-04-07 16:00:32.528  INFO 7046 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-04-07 16:00:33.638  INFO 7046 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-04-07 16:00:33.648  INFO 7046 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-04-07 16:00:33.649  INFO 7046 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.44]
+2021-04-07 16:00:33.702  INFO 7046 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-04-07 16:00:33.702  INFO 7046 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1173 ms
+2021-04-07 16:00:33.959  INFO 7046 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-07 16:00:34.023  INFO 7046 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-04-07 16:00:34.149  INFO 7046 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-04-07 16:00:34.187  INFO 7046 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-04-07 16:00:34.198  INFO 7046 --- [restartedMain] b.vdab.retrovideo.RetrovideoApplication  : Started RetrovideoApplication in 2.167 seconds (JVM running for 2.949)
+2021-04-07 16:00:48.186  INFO 7046 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-07 16:00:48.186  INFO 7046 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-04-07 16:00:48.188  INFO 7046 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-04-07 16:00:48.211  INFO 7046 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-04-07 16:00:48.766  INFO 7046 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-04-07 16:00:48.791 DEBUG 7046 --- [http-nio-8080-exec-1] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [select id,naam from genres order by naam]
+2021-04-07 16:00:51.190 DEBUG 7046 --- [http-nio-8080-exec-3] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [select id,naam from genres order by naam]
+2021-04-07 16:00:51.198 DEBUG 7046 --- [http-nio-8080-exec-3] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:00:51.199 DEBUG 7046 --- [http-nio-8080-exec-3] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,genreid,titel,prijs from films where genreid = ? order by id]
+2021-04-07 16:00:51.207 TRACE 7046 --- [http-nio-8080-exec-3] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [1], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:00:52.212 DEBUG 7046 --- [http-nio-8080-exec-6] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:00:52.212 DEBUG 7046 --- [http-nio-8080-exec-6] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,genreid,titel,prijs from films where id = ?]
+2021-04-07 16:00:52.212 TRACE 7046 --- [http-nio-8080-exec-6] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [26], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:00:52.217 DEBUG 7046 --- [http-nio-8080-exec-6] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:00:52.217 DEBUG 7046 --- [http-nio-8080-exec-6] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select voorraad,gereserveerd from films where id = ?]
+2021-04-07 16:00:52.218 TRACE 7046 --- [http-nio-8080-exec-6] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [26], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:00:54.100 DEBUG 7046 --- [http-nio-8080-exec-1] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:00:54.100 DEBUG 7046 --- [http-nio-8080-exec-1] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,genreid,titel,prijs from films where id in (?) order by id]
+2021-04-07 16:00:54.100 TRACE 7046 --- [http-nio-8080-exec-1] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [26], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:00:54.104 DEBUG 7046 --- [http-nio-8080-exec-1] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:00:54.104 DEBUG 7046 --- [http-nio-8080-exec-1] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select sum(prijs) from films where id in (?)]
+2021-04-07 16:00:54.104 TRACE 7046 --- [http-nio-8080-exec-1] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [26], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:01:00.788 DEBUG 7046 --- [http-nio-8080-exec-8] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:01:00.788 DEBUG 7046 --- [http-nio-8080-exec-8] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,familienaam,voornaam,straatnummer,postcode,gemeente from klanten where familienaam like ? order by familienaam]
+2021-04-07 16:01:00.788 TRACE 7046 --- [http-nio-8080-exec-8] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [%a%], value class [java.lang.String], SQL type unknown
+2021-04-07 16:01:02.867 DEBUG 7046 --- [http-nio-8080-exec-10] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:01:02.867 DEBUG 7046 --- [http-nio-8080-exec-10] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,familienaam,voornaam,straatnummer,postcode,gemeente from klanten  where id = ?]
+2021-04-07 16:01:02.868 TRACE 7046 --- [http-nio-8080-exec-10] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [13], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:01:18.730 DEBUG 7046 --- [http-nio-8080-exec-3] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2021-04-07 16:01:18.730 DEBUG 7046 --- [http-nio-8080-exec-3] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [update films set gereserveerd=gereserveerd+1 where id=? and voorraad-gereserveerd>0]
+2021-04-07 16:01:18.731 TRACE 7046 --- [http-nio-8080-exec-3] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [26], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:01:18.735 DEBUG 7046 --- [http-nio-8080-exec-3] o.s.jdbc.core.simple.SimpleJdbcInsert    : JdbcInsert not compiled before execution - invoking compile
+2021-04-07 16:01:18.750 DEBUG 7046 --- [http-nio-8080-exec-3] o.s.jdbc.core.simple.SimpleJdbcInsert    : Compiled insert object: insert string is [INSERT INTO reservaties (klantid, filmid, reservatie) VALUES(?, ?, ?)]
+2021-04-07 16:01:18.750 DEBUG 7046 --- [http-nio-8080-exec-3] o.s.jdbc.core.simple.SimpleJdbcInsert    : JdbcInsert for table [reservaties] compiled
+2021-04-07 16:01:18.750 DEBUG 7046 --- [http-nio-8080-exec-3] o.s.jdbc.core.simple.SimpleJdbcInsert    : The following parameters are used for insert INSERT INTO reservaties (klantid, filmid, reservatie) VALUES(?, ?, ?) with: [0, 26, 2021-04-07]
+2021-04-07 16:01:18.751 DEBUG 7046 --- [http-nio-8080-exec-3] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2021-04-07 16:01:18.751 DEBUG 7046 --- [http-nio-8080-exec-3] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [INSERT INTO reservaties (klantid, filmid, reservatie) VALUES(?, ?, ?)]
+2021-04-07 16:01:18.751 TRACE 7046 --- [http-nio-8080-exec-3] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [0], value class [java.lang.Long], SQL type 4
+2021-04-07 16:01:18.751 TRACE 7046 --- [http-nio-8080-exec-3] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 2, parameter value [26], value class [java.lang.Long], SQL type 4
+2021-04-07 16:01:18.751 TRACE 7046 --- [http-nio-8080-exec-3] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 3, parameter value [2021-04-07], value class [java.time.LocalDate], SQL type 93
+2021-04-07 16:01:18.842 ERROR 7046 --- [http-nio-8080-exec-3] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.DataIntegrityViolationException: PreparedStatementCallback; SQL [INSERT INTO reservaties (klantid, filmid, reservatie) VALUES(?, ?, ?)]; Cannot add or update a child row: a foreign key constraint fails (`retrovideo`.`reservaties`, CONSTRAINT `reservatiesKlanten` FOREIGN KEY (`klantid`) REFERENCES `klanten` (`id`)); nested exception is java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`retrovideo`.`reservaties`, CONSTRAINT `reservatiesKlanten` FOREIGN KEY (`klantid`) REFERENCES `klanten` (`id`))] with root cause
+
+java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`retrovideo`.`reservaties`, CONSTRAINT `reservatiesKlanten` FOREIGN KEY (`klantid`) REFERENCES `klanten` (`id`))
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117) ~[mysql-connector-java-8.0.23.jar:8.0.23]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.23.jar:8.0.23]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953) ~[mysql-connector-java-8.0.23.jar:8.0.23]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1092) ~[mysql-connector-java-8.0.23.jar:8.0.23]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1040) ~[mysql-connector-java-8.0.23.jar:8.0.23]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1347) ~[mysql-connector-java-8.0.23.jar:8.0.23]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1025) ~[mysql-connector-java-8.0.23.jar:8.0.23]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61) ~[HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java) ~[HikariCP-3.4.5.jar:na]
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$2(JdbcTemplate.java:965) ~[spring-jdbc-5.3.5.jar:5.3.5]
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:651) ~[spring-jdbc-5.3.5.jar:5.3.5]
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:960) ~[spring-jdbc-5.3.5.jar:5.3.5]
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1015) ~[spring-jdbc-5.3.5.jar:5.3.5]
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1020) ~[spring-jdbc-5.3.5.jar:5.3.5]
+	at org.springframework.jdbc.core.simple.AbstractJdbcInsert.executeInsertInternal(AbstractJdbcInsert.java:358) ~[spring-jdbc-5.3.5.jar:5.3.5]
+	at org.springframework.jdbc.core.simple.AbstractJdbcInsert.doExecute(AbstractJdbcInsert.java:337) ~[spring-jdbc-5.3.5.jar:5.3.5]
+	at org.springframework.jdbc.core.simple.SimpleJdbcInsert.execute(SimpleJdbcInsert.java:117) ~[spring-jdbc-5.3.5.jar:5.3.5]
+	at be.vdab.retrovideo.repositories.JdbcReservatieRepository.createReservatie(JdbcReservatieRepository.java:27) ~[classes/:na]
+	at be.vdab.retrovideo.repositories.JdbcReservatieRepository$$FastClassBySpringCGLIB$$46754c86.invoke(<generated>) ~[classes/:na]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.3.5.jar:5.3.5]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:779) ~[spring-aop-5.3.5.jar:5.3.5]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.3.5.jar:5.3.5]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750) ~[spring-aop-5.3.5.jar:5.3.5]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137) ~[spring-tx-5.3.5.jar:5.3.5]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.5.jar:5.3.5]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750) ~[spring-aop-5.3.5.jar:5.3.5]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:692) ~[spring-aop-5.3.5.jar:5.3.5]
+	at be.vdab.retrovideo.repositories.JdbcReservatieRepository$$EnhancerBySpringCGLIB$$249e01e9.createReservatie(<generated>) ~[classes/:na]
+	at be.vdab.retrovideo.services.DefaultReservatieService.maakResevatie(DefaultReservatieService.java:44) ~[classes/:na]
+	at be.vdab.retrovideo.services.DefaultReservatieService$$FastClassBySpringCGLIB$$386cb06f.invoke(<generated>) ~[classes/:na]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.3.5.jar:5.3.5]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:779) ~[spring-aop-5.3.5.jar:5.3.5]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.3.5.jar:5.3.5]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750) ~[spring-aop-5.3.5.jar:5.3.5]
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123) ~[spring-tx-5.3.5.jar:5.3.5]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388) ~[spring-tx-5.3.5.jar:5.3.5]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-5.3.5.jar:5.3.5]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.5.jar:5.3.5]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750) ~[spring-aop-5.3.5.jar:5.3.5]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:692) ~[spring-aop-5.3.5.jar:5.3.5]
+	at be.vdab.retrovideo.services.DefaultReservatieService$$EnhancerBySpringCGLIB$$6726e8c3.maakResevatie(<generated>) ~[classes/:na]
+	at be.vdab.retrovideo.controllers.BevestigingController.bevestigenform(BevestigingController.java:53) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:197) ~[spring-web-5.3.5.jar:5.3.5]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:141) ~[spring-web-5.3.5.jar:5.3.5]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106) ~[spring-webmvc-5.3.5.jar:5.3.5]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:894) ~[spring-webmvc-5.3.5.jar:5.3.5]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.5.jar:5.3.5]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.5.jar:5.3.5]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1060) ~[spring-webmvc-5.3.5.jar:5.3.5]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:962) ~[spring-webmvc-5.3.5.jar:5.3.5]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.5.jar:5.3.5]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.5.jar:5.3.5]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626) ~[tomcat-embed-core-9.0.44.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.5.jar:5.3.5]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733) ~[tomcat-embed-core-9.0.44.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.5.jar:5.3.5]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.5.jar:5.3.5]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.5.jar:5.3.5]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.5.jar:5.3.5]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.5.jar:5.3.5]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.5.jar:5.3.5]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1707) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+
+2021-04-07 16:01:18.856 ERROR 7046 --- [http-nio-8080-exec-3] org.thymeleaf.TemplateEngine             : [THYMELEAF][http-nio-8080-exec-3] Exception processing template "error/500": An error happened during template parsing (template: "class path resource [templates/error/500.html]")
+
+org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/error/500.html]")
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:241) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:366) ~[thymeleaf-spring5-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:190) ~[thymeleaf-spring5-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1393) ~[spring-webmvc-5.3.5.jar:5.3.5]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1138) ~[spring-webmvc-5.3.5.jar:5.3.5]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1077) ~[spring-webmvc-5.3.5.jar:5.3.5]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:962) ~[spring-webmvc-5.3.5.jar:5.3.5]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.5.jar:5.3.5]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.5.jar:5.3.5]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626) ~[tomcat-embed-core-9.0.44.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.5.jar:5.3.5]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733) ~[tomcat-embed-core-9.0.44.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.5.jar:5.3.5]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.5.jar:5.3.5]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) ~[spring-web-5.3.5.jar:5.3.5]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) ~[spring-web-5.3.5.jar:5.3.5]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:710) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:459) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:384) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:312) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:398) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:257) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.StandardHostValve.throwable(StandardHostValve.java:352) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:177) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1707) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+Caused by: org.attoparser.ParseException: Error resolving template [fragments], template might not exist or might not be accessible by any of the configured Template Resolvers (template: "error/500" - line 3, col 7)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:393) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	... 47 common frames omitted
+Caused by: org.thymeleaf.exceptions.TemplateInputException: Error resolving template [fragments], template might not exist or might not be accessible by any of the configured Template Resolvers (template: "error/500" - line 3, col 7)
+	at org.thymeleaf.engine.TemplateManager.resolveTemplate(TemplateManager.java:869) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.engine.TemplateManager.parseStandalone(TemplateManager.java:250) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.standard.expression.FragmentExpression.resolveExecutedFragmentExpression(FragmentExpression.java:588) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.standard.processor.AbstractStandardFragmentInsertionTagProcessor.computeFragment(AbstractStandardFragmentInsertionTagProcessor.java:379) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.standard.processor.AbstractStandardFragmentInsertionTagProcessor.doProcess(AbstractStandardFragmentInsertionTagProcessor.java:110) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleOpenElementEnd(TemplateHandlerAdapterMarkupHandler.java:304) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:278) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleOpenElementEnd(OutputExpressionInlinePreProcessorHandler.java:186) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:124) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.attoparser.HtmlElement.handleOpenElementEnd(HtmlElement.java:109) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.HtmlMarkupHandler.handleOpenElementEnd(HtmlMarkupHandler.java:297) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupEventProcessorHandler.handleOpenElementEnd(MarkupEventProcessorHandler.java:402) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.ParsingElementMarkupUtil.parseOpenElement(ParsingElementMarkupUtil.java:159) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:710) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	... 49 common frames omitted
+
+2021-04-07 16:01:18.857 ERROR 7046 --- [http-nio-8080-exec-3] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] threw exception
+
+org.thymeleaf.exceptions.TemplateInputException: Error resolving template [fragments], template might not exist or might not be accessible by any of the configured Template Resolvers (template: "error/500" - line 3, col 7)
+	at org.thymeleaf.engine.TemplateManager.resolveTemplate(TemplateManager.java:869) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.engine.TemplateManager.parseStandalone(TemplateManager.java:250) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.standard.expression.FragmentExpression.resolveExecutedFragmentExpression(FragmentExpression.java:588) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.standard.processor.AbstractStandardFragmentInsertionTagProcessor.computeFragment(AbstractStandardFragmentInsertionTagProcessor.java:379) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.standard.processor.AbstractStandardFragmentInsertionTagProcessor.doProcess(AbstractStandardFragmentInsertionTagProcessor.java:110) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleOpenElementEnd(TemplateHandlerAdapterMarkupHandler.java:304) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:278) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleOpenElementEnd(OutputExpressionInlinePreProcessorHandler.java:186) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:124) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.attoparser.HtmlElement.handleOpenElementEnd(HtmlElement.java:109) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.HtmlMarkupHandler.handleOpenElementEnd(HtmlMarkupHandler.java:297) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupEventProcessorHandler.handleOpenElementEnd(MarkupEventProcessorHandler.java:402) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.ParsingElementMarkupUtil.parseOpenElement(ParsingElementMarkupUtil.java:159) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:710) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:366) ~[thymeleaf-spring5-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:190) ~[thymeleaf-spring5-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1393) ~[spring-webmvc-5.3.5.jar:5.3.5]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1138) ~[spring-webmvc-5.3.5.jar:5.3.5]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1077) ~[spring-webmvc-5.3.5.jar:5.3.5]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:962) ~[spring-webmvc-5.3.5.jar:5.3.5]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.5.jar:5.3.5]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.5.jar:5.3.5]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626) ~[tomcat-embed-core-9.0.44.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.5.jar:5.3.5]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733) ~[tomcat-embed-core-9.0.44.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.5.jar:5.3.5]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.5.jar:5.3.5]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) ~[spring-web-5.3.5.jar:5.3.5]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) ~[spring-web-5.3.5.jar:5.3.5]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:710) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:459) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:384) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:312) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:398) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:257) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.StandardHostValve.throwable(StandardHostValve.java:352) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:177) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1707) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+
+2021-04-07 16:01:18.859 ERROR 7046 --- [http-nio-8080-exec-3] o.a.c.c.C.[Tomcat].[localhost]           : Exception Processing ErrorPage[errorCode=0, location=/error]
+
+org.springframework.web.util.NestedServletException: Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/error/500.html]")
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-5.3.5.jar:5.3.5]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.5.jar:5.3.5]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626) ~[tomcat-embed-core-9.0.44.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.5.jar:5.3.5]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733) ~[tomcat-embed-core-9.0.44.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.5.jar:5.3.5]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.5.jar:5.3.5]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) ~[spring-web-5.3.5.jar:5.3.5]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) ~[spring-web-5.3.5.jar:5.3.5]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:710) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:459) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:384) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:312) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:398) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:257) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.StandardHostValve.throwable(StandardHostValve.java:352) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:177) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1707) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+Caused by: org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/error/500.html]")
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:241) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:366) ~[thymeleaf-spring5-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:190) ~[thymeleaf-spring5-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1393) ~[spring-webmvc-5.3.5.jar:5.3.5]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1138) ~[spring-webmvc-5.3.5.jar:5.3.5]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1077) ~[spring-webmvc-5.3.5.jar:5.3.5]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:962) ~[spring-webmvc-5.3.5.jar:5.3.5]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.5.jar:5.3.5]
+	... 36 common frames omitted
+Caused by: org.attoparser.ParseException: Error resolving template [fragments], template might not exist or might not be accessible by any of the configured Template Resolvers (template: "error/500" - line 3, col 7)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:393) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	... 47 common frames omitted
+Caused by: org.thymeleaf.exceptions.TemplateInputException: Error resolving template [fragments], template might not exist or might not be accessible by any of the configured Template Resolvers (template: "error/500" - line 3, col 7)
+	at org.thymeleaf.engine.TemplateManager.resolveTemplate(TemplateManager.java:869) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.engine.TemplateManager.parseStandalone(TemplateManager.java:250) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.standard.expression.FragmentExpression.resolveExecutedFragmentExpression(FragmentExpression.java:588) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.standard.processor.AbstractStandardFragmentInsertionTagProcessor.computeFragment(AbstractStandardFragmentInsertionTagProcessor.java:379) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.standard.processor.AbstractStandardFragmentInsertionTagProcessor.doProcess(AbstractStandardFragmentInsertionTagProcessor.java:110) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleOpenElementEnd(TemplateHandlerAdapterMarkupHandler.java:304) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:278) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleOpenElementEnd(OutputExpressionInlinePreProcessorHandler.java:186) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:124) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.attoparser.HtmlElement.handleOpenElementEnd(HtmlElement.java:109) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.HtmlMarkupHandler.handleOpenElementEnd(HtmlMarkupHandler.java:297) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupEventProcessorHandler.handleOpenElementEnd(MarkupEventProcessorHandler.java:402) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.ParsingElementMarkupUtil.parseOpenElement(ParsingElementMarkupUtil.java:159) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:710) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	... 49 common frames omitted
+
+2021-04-07 16:02:03.307  INFO 7046 --- [Thread-5] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-07 16:02:03.308  INFO 7046 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-04-07 16:02:03.318  INFO 7046 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-04-07 16:02:03.399  INFO 7046 --- [restartedMain] b.vdab.retrovideo.RetrovideoApplication  : Starting RetrovideoApplication using Java 11.0.9 on haydars-iMac.lan with PID 7046 (/Users/haydar/IdeaProjects/retrovideo/target/classes started by haydar in /Users/haydar/IdeaProjects/retrovideo)
+2021-04-07 16:02:03.400  INFO 7046 --- [restartedMain] b.vdab.retrovideo.RetrovideoApplication  : No active profile set, falling back to default profiles: default
+2021-04-07 16:02:03.644  INFO 7046 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-04-07 16:02:03.644  INFO 7046 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-04-07 16:02:03.645  INFO 7046 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.44]
+2021-04-07 16:02:03.676  INFO 7046 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-04-07 16:02:03.677  INFO 7046 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 273 ms
+2021-04-07 16:02:03.857  INFO 7046 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-07 16:02:04.108  INFO 7046 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-04-07 16:02:04.203  INFO 7046 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-04-07 16:02:04.253  INFO 7046 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-04-07 16:02:04.262  INFO 7046 --- [restartedMain] b.vdab.retrovideo.RetrovideoApplication  : Started RetrovideoApplication in 0.896 seconds (JVM running for 93.014)
+2021-04-07 16:02:04.265  INFO 7046 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-04-07 16:02:04.463  INFO 7046 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-07 16:02:04.479  INFO 7046 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-04-07 16:02:04.480  INFO 7046 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-04-07 16:02:04.481  INFO 7046 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2021-04-07 16:02:04.517  INFO 7046 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2021-04-07 16:02:04.523 DEBUG 7046 --- [http-nio-8080-exec-1] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [select id,naam from genres order by naam]
+2021-04-07 16:02:06.281 DEBUG 7046 --- [http-nio-8080-exec-3] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [select id,naam from genres order by naam]
+2021-04-07 16:02:06.286 DEBUG 7046 --- [http-nio-8080-exec-3] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:02:06.286 DEBUG 7046 --- [http-nio-8080-exec-3] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,genreid,titel,prijs from films where genreid = ? order by id]
+2021-04-07 16:02:06.286 TRACE 7046 --- [http-nio-8080-exec-3] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [1], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:02:07.031 DEBUG 7046 --- [http-nio-8080-exec-6] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:02:07.032 DEBUG 7046 --- [http-nio-8080-exec-6] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,genreid,titel,prijs from films where id = ?]
+2021-04-07 16:02:07.032 TRACE 7046 --- [http-nio-8080-exec-6] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [26], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:02:07.036 DEBUG 7046 --- [http-nio-8080-exec-6] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:02:07.036 DEBUG 7046 --- [http-nio-8080-exec-6] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select voorraad,gereserveerd from films where id = ?]
+2021-04-07 16:02:07.036 TRACE 7046 --- [http-nio-8080-exec-6] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [26], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:02:08.631 DEBUG 7046 --- [http-nio-8080-exec-1] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:02:08.631 DEBUG 7046 --- [http-nio-8080-exec-1] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,genreid,titel,prijs from films where id in (?) order by id]
+2021-04-07 16:02:08.631 TRACE 7046 --- [http-nio-8080-exec-1] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [26], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:02:08.635 DEBUG 7046 --- [http-nio-8080-exec-1] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:02:08.635 DEBUG 7046 --- [http-nio-8080-exec-1] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select sum(prijs) from films where id in (?)]
+2021-04-07 16:02:08.635 TRACE 7046 --- [http-nio-8080-exec-1] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [26], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:02:15.457 DEBUG 7046 --- [http-nio-8080-exec-8] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:02:15.457 DEBUG 7046 --- [http-nio-8080-exec-8] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,familienaam,voornaam,straatnummer,postcode,gemeente from klanten where familienaam like ? order by familienaam]
+2021-04-07 16:02:15.458 TRACE 7046 --- [http-nio-8080-exec-8] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [%h%], value class [java.lang.String], SQL type unknown
+2021-04-07 16:02:16.853 DEBUG 7046 --- [http-nio-8080-exec-10] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:02:16.853 DEBUG 7046 --- [http-nio-8080-exec-10] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,familienaam,voornaam,straatnummer,postcode,gemeente from klanten  where id = ?]
+2021-04-07 16:02:16.853 TRACE 7046 --- [http-nio-8080-exec-10] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [17], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:02:18.371 DEBUG 7046 --- [http-nio-8080-exec-3] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2021-04-07 16:02:18.372 DEBUG 7046 --- [http-nio-8080-exec-3] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [update films set gereserveerd=gereserveerd+1 where id=? and voorraad-gereserveerd>0]
+2021-04-07 16:02:18.372 TRACE 7046 --- [http-nio-8080-exec-3] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [26], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:02:18.376 DEBUG 7046 --- [http-nio-8080-exec-3] o.s.jdbc.core.simple.SimpleJdbcInsert    : JdbcInsert not compiled before execution - invoking compile
+2021-04-07 16:02:18.382 DEBUG 7046 --- [http-nio-8080-exec-3] o.s.jdbc.core.simple.SimpleJdbcInsert    : Compiled insert object: insert string is [INSERT INTO reservaties (klantid, filmid, reservatie) VALUES(?, ?, ?)]
+2021-04-07 16:02:18.382 DEBUG 7046 --- [http-nio-8080-exec-3] o.s.jdbc.core.simple.SimpleJdbcInsert    : JdbcInsert for table [reservaties] compiled
+2021-04-07 16:02:18.382 DEBUG 7046 --- [http-nio-8080-exec-3] o.s.jdbc.core.simple.SimpleJdbcInsert    : The following parameters are used for insert INSERT INTO reservaties (klantid, filmid, reservatie) VALUES(?, ?, ?) with: [17, 26, 2021-04-07]
+2021-04-07 16:02:18.382 DEBUG 7046 --- [http-nio-8080-exec-3] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2021-04-07 16:02:18.382 DEBUG 7046 --- [http-nio-8080-exec-3] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [INSERT INTO reservaties (klantid, filmid, reservatie) VALUES(?, ?, ?)]
+2021-04-07 16:02:18.383 TRACE 7046 --- [http-nio-8080-exec-3] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [17], value class [java.lang.Long], SQL type 4
+2021-04-07 16:02:18.383 TRACE 7046 --- [http-nio-8080-exec-3] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 2, parameter value [26], value class [java.lang.Long], SQL type 4
+2021-04-07 16:02:18.383 TRACE 7046 --- [http-nio-8080-exec-3] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 3, parameter value [2021-04-07], value class [java.time.LocalDate], SQL type 93
+2021-04-07 16:02:22.005 DEBUG 7046 --- [http-nio-8080-exec-5] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [select id,naam from genres order by naam]
+2021-04-07 16:02:23.356 DEBUG 7046 --- [http-nio-8080-exec-8] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [select id,naam from genres order by naam]
+2021-04-07 16:02:23.360 DEBUG 7046 --- [http-nio-8080-exec-8] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:02:23.360 DEBUG 7046 --- [http-nio-8080-exec-8] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,genreid,titel,prijs from films where genreid = ? order by id]
+2021-04-07 16:02:23.360 TRACE 7046 --- [http-nio-8080-exec-8] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [1], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:02:24.098 DEBUG 7046 --- [http-nio-8080-exec-10] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:02:24.098 DEBUG 7046 --- [http-nio-8080-exec-10] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,genreid,titel,prijs from films where id = ?]
+2021-04-07 16:02:24.098 TRACE 7046 --- [http-nio-8080-exec-10] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [26], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:02:24.101 DEBUG 7046 --- [http-nio-8080-exec-10] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:02:24.102 DEBUG 7046 --- [http-nio-8080-exec-10] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select voorraad,gereserveerd from films where id = ?]
+2021-04-07 16:02:24.102 TRACE 7046 --- [http-nio-8080-exec-10] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [26], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:02:25.601 DEBUG 7046 --- [http-nio-8080-exec-5] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:02:25.601 DEBUG 7046 --- [http-nio-8080-exec-5] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,genreid,titel,prijs from films where id in (?) order by id]
+2021-04-07 16:02:25.601 TRACE 7046 --- [http-nio-8080-exec-5] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [26], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:02:25.604 DEBUG 7046 --- [http-nio-8080-exec-5] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:02:25.604 DEBUG 7046 --- [http-nio-8080-exec-5] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select sum(prijs) from films where id in (?)]
+2021-04-07 16:02:25.604 TRACE 7046 --- [http-nio-8080-exec-5] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [26], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:02:30.659 DEBUG 7046 --- [http-nio-8080-exec-1] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:02:30.659 DEBUG 7046 --- [http-nio-8080-exec-1] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,familienaam,voornaam,straatnummer,postcode,gemeente from klanten where familienaam like ? order by familienaam]
+2021-04-07 16:02:30.659 TRACE 7046 --- [http-nio-8080-exec-1] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [%a%], value class [java.lang.String], SQL type unknown
+2021-04-07 16:02:33.391 DEBUG 7046 --- [http-nio-8080-exec-4] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:02:33.391 DEBUG 7046 --- [http-nio-8080-exec-4] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,familienaam,voornaam,straatnummer,postcode,gemeente from klanten  where id = ?]
+2021-04-07 16:02:33.391 TRACE 7046 --- [http-nio-8080-exec-4] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [13], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:02:34.537 DEBUG 7046 --- [http-nio-8080-exec-8] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2021-04-07 16:02:34.538 DEBUG 7046 --- [http-nio-8080-exec-8] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [update films set gereserveerd=gereserveerd+1 where id=? and voorraad-gereserveerd>0]
+2021-04-07 16:02:34.538 TRACE 7046 --- [http-nio-8080-exec-8] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [26], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:02:34.539 DEBUG 7046 --- [http-nio-8080-exec-8] o.s.jdbc.core.simple.SimpleJdbcInsert    : The following parameters are used for insert INSERT INTO reservaties (klantid, filmid, reservatie) VALUES(?, ?, ?) with: [13, 26, 2021-04-07]
+2021-04-07 16:02:34.539 DEBUG 7046 --- [http-nio-8080-exec-8] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2021-04-07 16:02:34.539 DEBUG 7046 --- [http-nio-8080-exec-8] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [INSERT INTO reservaties (klantid, filmid, reservatie) VALUES(?, ?, ?)]
+2021-04-07 16:02:34.539 TRACE 7046 --- [http-nio-8080-exec-8] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [13], value class [java.lang.Long], SQL type 4
+2021-04-07 16:02:34.539 TRACE 7046 --- [http-nio-8080-exec-8] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 2, parameter value [26], value class [java.lang.Long], SQL type 4
+2021-04-07 16:02:34.539 TRACE 7046 --- [http-nio-8080-exec-8] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 3, parameter value [2021-04-07], value class [java.time.LocalDate], SQL type 93
+2021-04-07 16:02:34.548 DEBUG 7046 --- [http-nio-8080-exec-8] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:02:34.548 DEBUG 7046 --- [http-nio-8080-exec-8] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,genreid,titel,prijs from films where id in (?) order by id]
+2021-04-07 16:02:34.549 TRACE 7046 --- [http-nio-8080-exec-8] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [26], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:03:58.170  INFO 7046 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-07 16:03:58.171  INFO 7046 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2021-04-07 16:03:58.178  INFO 7046 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2021-04-07 16:04:06.366  INFO 7110 --- [restartedMain] b.vdab.retrovideo.RetrovideoApplication  : Starting RetrovideoApplication using Java 11.0.9 on haydars-iMac.lan with PID 7110 (/Users/haydar/IdeaProjects/retrovideo/target/classes started by haydar in /Users/haydar/IdeaProjects/retrovideo)
+2021-04-07 16:04:06.389  INFO 7110 --- [restartedMain] b.vdab.retrovideo.RetrovideoApplication  : No active profile set, falling back to default profiles: default
+2021-04-07 16:04:06.471  INFO 7110 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-04-07 16:04:06.472  INFO 7110 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-04-07 16:04:07.889  INFO 7110 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-04-07 16:04:07.903  INFO 7110 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-04-07 16:04:07.903  INFO 7110 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.44]
+2021-04-07 16:04:07.968  INFO 7110 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-04-07 16:04:07.968  INFO 7110 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1495 ms
+2021-04-07 16:04:08.403  INFO 7110 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-07 16:04:08.508  INFO 7110 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-04-07 16:04:08.716  INFO 7110 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-04-07 16:04:08.774  INFO 7110 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-04-07 16:04:08.794  INFO 7110 --- [restartedMain] b.vdab.retrovideo.RetrovideoApplication  : Started RetrovideoApplication in 3.256 seconds (JVM running for 4.171)
+2021-04-07 16:04:13.639  INFO 7110 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-07 16:04:13.640  INFO 7110 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-04-07 16:04:13.642  INFO 7110 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-04-07 16:04:13.689  INFO 7110 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-04-07 16:04:14.058  INFO 7110 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-04-07 16:04:14.093 DEBUG 7110 --- [http-nio-8080-exec-1] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [select id,naam from genres order by naam]
+2021-04-07 16:04:25.133 DEBUG 7110 --- [http-nio-8080-exec-3] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [select id,naam from genres order by naam]
+2021-04-07 16:04:25.148 DEBUG 7110 --- [http-nio-8080-exec-3] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:04:25.154 DEBUG 7110 --- [http-nio-8080-exec-3] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,genreid,titel,prijs from films where genreid = ? order by id]
+2021-04-07 16:04:25.172 TRACE 7110 --- [http-nio-8080-exec-3] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [1], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:04:27.651 DEBUG 7110 --- [http-nio-8080-exec-6] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:04:27.652 DEBUG 7110 --- [http-nio-8080-exec-6] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,genreid,titel,prijs from films where id = ?]
+2021-04-07 16:04:27.652 TRACE 7110 --- [http-nio-8080-exec-6] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [26], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:04:27.659 DEBUG 7110 --- [http-nio-8080-exec-6] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:04:27.660 DEBUG 7110 --- [http-nio-8080-exec-6] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select voorraad,gereserveerd from films where id = ?]
+2021-04-07 16:04:27.660 TRACE 7110 --- [http-nio-8080-exec-6] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [26], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:04:29.397 DEBUG 7110 --- [http-nio-8080-exec-1] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:04:29.397 DEBUG 7110 --- [http-nio-8080-exec-1] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,genreid,titel,prijs from films where id in (?) order by id]
+2021-04-07 16:04:29.398 TRACE 7110 --- [http-nio-8080-exec-1] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [26], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:04:29.402 DEBUG 7110 --- [http-nio-8080-exec-1] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:04:29.403 DEBUG 7110 --- [http-nio-8080-exec-1] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select sum(prijs) from films where id in (?)]
+2021-04-07 16:04:29.403 TRACE 7110 --- [http-nio-8080-exec-1] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [26], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:04:33.418 DEBUG 7110 --- [http-nio-8080-exec-7] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:04:33.419 DEBUG 7110 --- [http-nio-8080-exec-7] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,familienaam,voornaam,straatnummer,postcode,gemeente from klanten where familienaam like ? order by familienaam]
+2021-04-07 16:04:33.419 TRACE 7110 --- [http-nio-8080-exec-7] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [%h%], value class [java.lang.String], SQL type unknown
+2021-04-07 16:04:35.783 DEBUG 7110 --- [http-nio-8080-exec-10] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:04:35.784 DEBUG 7110 --- [http-nio-8080-exec-10] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,familienaam,voornaam,straatnummer,postcode,gemeente from klanten  where id = ?]
+2021-04-07 16:04:35.784 TRACE 7110 --- [http-nio-8080-exec-10] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [26], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:04:37.314 DEBUG 7110 --- [http-nio-8080-exec-3] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [select id,naam from genres order by naam]
+2021-04-07 16:04:38.720 DEBUG 7110 --- [http-nio-8080-exec-5] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [select id,naam from genres order by naam]
+2021-04-07 16:04:38.723 DEBUG 7110 --- [http-nio-8080-exec-5] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:04:38.724 DEBUG 7110 --- [http-nio-8080-exec-5] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,genreid,titel,prijs from films where genreid = ? order by id]
+2021-04-07 16:04:38.724 TRACE 7110 --- [http-nio-8080-exec-5] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [11], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:04:39.722 DEBUG 7110 --- [http-nio-8080-exec-1] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:04:39.722 DEBUG 7110 --- [http-nio-8080-exec-1] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,genreid,titel,prijs from films where id = ?]
+2021-04-07 16:04:39.722 TRACE 7110 --- [http-nio-8080-exec-1] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [23], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:04:39.726 DEBUG 7110 --- [http-nio-8080-exec-1] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:04:39.726 DEBUG 7110 --- [http-nio-8080-exec-1] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select voorraad,gereserveerd from films where id = ?]
+2021-04-07 16:04:39.727 TRACE 7110 --- [http-nio-8080-exec-1] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [23], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:04:41.395 DEBUG 7110 --- [http-nio-8080-exec-7] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:04:41.396 DEBUG 7110 --- [http-nio-8080-exec-7] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,genreid,titel,prijs from films where id in (?,?) order by id]
+2021-04-07 16:04:41.396 TRACE 7110 --- [http-nio-8080-exec-7] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [26], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:04:41.396 TRACE 7110 --- [http-nio-8080-exec-7] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 2, parameter value [23], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:04:41.400 DEBUG 7110 --- [http-nio-8080-exec-7] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:04:41.400 DEBUG 7110 --- [http-nio-8080-exec-7] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select sum(prijs) from films where id in (?,?)]
+2021-04-07 16:04:41.401 TRACE 7110 --- [http-nio-8080-exec-7] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [26], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:04:41.401 TRACE 7110 --- [http-nio-8080-exec-7] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 2, parameter value [23], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:04:43.006 DEBUG 7110 --- [http-nio-8080-exec-10] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:04:43.007 DEBUG 7110 --- [http-nio-8080-exec-10] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,genreid,titel,prijs from films where id in (?,?) order by id]
+2021-04-07 16:04:43.007 TRACE 7110 --- [http-nio-8080-exec-10] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [26], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:04:43.007 TRACE 7110 --- [http-nio-8080-exec-10] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 2, parameter value [23], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:04:43.012 DEBUG 7110 --- [http-nio-8080-exec-10] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:04:43.012 DEBUG 7110 --- [http-nio-8080-exec-10] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select sum(prijs) from films where id in (?,?)]
+2021-04-07 16:04:43.012 TRACE 7110 --- [http-nio-8080-exec-10] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [26], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:04:43.012 TRACE 7110 --- [http-nio-8080-exec-10] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 2, parameter value [23], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:04:45.177 DEBUG 7110 --- [http-nio-8080-exec-5] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [select id,naam from genres order by naam]
+2021-04-07 16:04:47.238 DEBUG 7110 --- [http-nio-8080-exec-3] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [select id,naam from genres order by naam]
+2021-04-07 16:04:47.242 DEBUG 7110 --- [http-nio-8080-exec-3] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:04:47.243 DEBUG 7110 --- [http-nio-8080-exec-3] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,genreid,titel,prijs from films where genreid = ? order by id]
+2021-04-07 16:04:47.243 TRACE 7110 --- [http-nio-8080-exec-3] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [12], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:04:48.308 DEBUG 7110 --- [http-nio-8080-exec-8] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:04:48.308 DEBUG 7110 --- [http-nio-8080-exec-8] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,genreid,titel,prijs from films where id = ?]
+2021-04-07 16:04:48.309 TRACE 7110 --- [http-nio-8080-exec-8] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [14], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:04:48.312 DEBUG 7110 --- [http-nio-8080-exec-8] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:04:48.312 DEBUG 7110 --- [http-nio-8080-exec-8] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select voorraad,gereserveerd from films where id = ?]
+2021-04-07 16:04:48.313 TRACE 7110 --- [http-nio-8080-exec-8] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [14], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:04:49.655 DEBUG 7110 --- [http-nio-8080-exec-5] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:04:49.655 DEBUG 7110 --- [http-nio-8080-exec-5] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,genreid,titel,prijs from films where id in (?,?,?) order by id]
+2021-04-07 16:04:49.656 TRACE 7110 --- [http-nio-8080-exec-5] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [26], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:04:49.656 TRACE 7110 --- [http-nio-8080-exec-5] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 2, parameter value [14], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:04:49.656 TRACE 7110 --- [http-nio-8080-exec-5] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 3, parameter value [23], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:04:49.659 DEBUG 7110 --- [http-nio-8080-exec-5] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:04:49.660 DEBUG 7110 --- [http-nio-8080-exec-5] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select sum(prijs) from films where id in (?,?,?)]
+2021-04-07 16:04:49.660 TRACE 7110 --- [http-nio-8080-exec-5] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [26], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:04:49.660 TRACE 7110 --- [http-nio-8080-exec-5] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 2, parameter value [14], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:04:49.660 TRACE 7110 --- [http-nio-8080-exec-5] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 3, parameter value [23], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:04:53.312 DEBUG 7110 --- [http-nio-8080-exec-6] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [select id,naam from genres order by naam]
+2021-04-07 16:04:54.224 DEBUG 7110 --- [http-nio-8080-exec-8] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [select id,naam from genres order by naam]
+2021-04-07 16:04:54.228 DEBUG 7110 --- [http-nio-8080-exec-8] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:04:54.228 DEBUG 7110 --- [http-nio-8080-exec-8] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,genreid,titel,prijs from films where genreid = ? order by id]
+2021-04-07 16:04:54.229 TRACE 7110 --- [http-nio-8080-exec-8] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [7], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:04:55.146 DEBUG 7110 --- [http-nio-8080-exec-5] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:04:55.146 DEBUG 7110 --- [http-nio-8080-exec-5] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,genreid,titel,prijs from films where id = ?]
+2021-04-07 16:04:55.147 TRACE 7110 --- [http-nio-8080-exec-5] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [8], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:04:55.151 DEBUG 7110 --- [http-nio-8080-exec-5] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:04:55.151 DEBUG 7110 --- [http-nio-8080-exec-5] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select voorraad,gereserveerd from films where id = ?]
+2021-04-07 16:04:55.152 TRACE 7110 --- [http-nio-8080-exec-5] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [8], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:04:56.755 DEBUG 7110 --- [http-nio-8080-exec-8] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:04:56.755 DEBUG 7110 --- [http-nio-8080-exec-8] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,genreid,titel,prijs from films where id in (?,?,?,?) order by id]
+2021-04-07 16:04:56.755 TRACE 7110 --- [http-nio-8080-exec-8] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [8], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:04:56.755 TRACE 7110 --- [http-nio-8080-exec-8] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 2, parameter value [26], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:04:56.756 TRACE 7110 --- [http-nio-8080-exec-8] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 3, parameter value [14], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:04:56.756 TRACE 7110 --- [http-nio-8080-exec-8] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 4, parameter value [23], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:04:56.759 DEBUG 7110 --- [http-nio-8080-exec-8] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:04:56.759 DEBUG 7110 --- [http-nio-8080-exec-8] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select sum(prijs) from films where id in (?,?,?,?)]
+2021-04-07 16:04:56.759 TRACE 7110 --- [http-nio-8080-exec-8] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [8], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:04:56.759 TRACE 7110 --- [http-nio-8080-exec-8] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 2, parameter value [26], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:04:56.759 TRACE 7110 --- [http-nio-8080-exec-8] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 3, parameter value [14], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:04:56.760 TRACE 7110 --- [http-nio-8080-exec-8] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 4, parameter value [23], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:05:00.671 DEBUG 7110 --- [http-nio-8080-exec-6] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:05:00.671 DEBUG 7110 --- [http-nio-8080-exec-6] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,familienaam,voornaam,straatnummer,postcode,gemeente from klanten where familienaam like ? order by familienaam]
+2021-04-07 16:05:00.672 TRACE 7110 --- [http-nio-8080-exec-6] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [%b%], value class [java.lang.String], SQL type unknown
+2021-04-07 16:05:03.505 DEBUG 7110 --- [http-nio-8080-exec-7] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:05:03.505 DEBUG 7110 --- [http-nio-8080-exec-7] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,familienaam,voornaam,straatnummer,postcode,gemeente from klanten  where id = ?]
+2021-04-07 16:05:03.505 TRACE 7110 --- [http-nio-8080-exec-7] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [5], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:05:07.730 DEBUG 7110 --- [http-nio-8080-exec-10] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2021-04-07 16:05:07.730 DEBUG 7110 --- [http-nio-8080-exec-10] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [update films set gereserveerd=gereserveerd+1 where id=? and voorraad-gereserveerd>0]
+2021-04-07 16:05:07.731 TRACE 7110 --- [http-nio-8080-exec-10] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [14], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:05:07.738 DEBUG 7110 --- [http-nio-8080-exec-10] o.s.jdbc.core.simple.SimpleJdbcInsert    : JdbcInsert not compiled before execution - invoking compile
+2021-04-07 16:05:07.768 DEBUG 7110 --- [http-nio-8080-exec-10] o.s.jdbc.core.simple.SimpleJdbcInsert    : Compiled insert object: insert string is [INSERT INTO reservaties (klantid, filmid, reservatie) VALUES(?, ?, ?)]
+2021-04-07 16:05:07.768 DEBUG 7110 --- [http-nio-8080-exec-10] o.s.jdbc.core.simple.SimpleJdbcInsert    : JdbcInsert for table [reservaties] compiled
+2021-04-07 16:05:07.768 DEBUG 7110 --- [http-nio-8080-exec-10] o.s.jdbc.core.simple.SimpleJdbcInsert    : The following parameters are used for insert INSERT INTO reservaties (klantid, filmid, reservatie) VALUES(?, ?, ?) with: [5, 14, 2021-04-07]
+2021-04-07 16:05:07.769 DEBUG 7110 --- [http-nio-8080-exec-10] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2021-04-07 16:05:07.769 DEBUG 7110 --- [http-nio-8080-exec-10] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [INSERT INTO reservaties (klantid, filmid, reservatie) VALUES(?, ?, ?)]
+2021-04-07 16:05:07.769 TRACE 7110 --- [http-nio-8080-exec-10] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [5], value class [java.lang.Long], SQL type 4
+2021-04-07 16:05:07.770 TRACE 7110 --- [http-nio-8080-exec-10] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 2, parameter value [14], value class [java.lang.Long], SQL type 4
+2021-04-07 16:05:07.770 TRACE 7110 --- [http-nio-8080-exec-10] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 3, parameter value [2021-04-07], value class [java.time.LocalDate], SQL type 93
+2021-04-07 16:05:07.775 DEBUG 7110 --- [http-nio-8080-exec-10] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2021-04-07 16:05:07.775 DEBUG 7110 --- [http-nio-8080-exec-10] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [update films set gereserveerd=gereserveerd+1 where id=? and voorraad-gereserveerd>0]
+2021-04-07 16:05:07.776 TRACE 7110 --- [http-nio-8080-exec-10] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [23], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:05:07.777 DEBUG 7110 --- [http-nio-8080-exec-10] o.s.jdbc.core.simple.SimpleJdbcInsert    : The following parameters are used for insert INSERT INTO reservaties (klantid, filmid, reservatie) VALUES(?, ?, ?) with: [5, 23, 2021-04-07]
+2021-04-07 16:05:07.777 DEBUG 7110 --- [http-nio-8080-exec-10] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2021-04-07 16:05:07.777 DEBUG 7110 --- [http-nio-8080-exec-10] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [INSERT INTO reservaties (klantid, filmid, reservatie) VALUES(?, ?, ?)]
+2021-04-07 16:05:07.778 TRACE 7110 --- [http-nio-8080-exec-10] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [5], value class [java.lang.Long], SQL type 4
+2021-04-07 16:05:07.778 TRACE 7110 --- [http-nio-8080-exec-10] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 2, parameter value [23], value class [java.lang.Long], SQL type 4
+2021-04-07 16:05:07.778 TRACE 7110 --- [http-nio-8080-exec-10] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 3, parameter value [2021-04-07], value class [java.time.LocalDate], SQL type 93
+2021-04-07 16:05:07.781 DEBUG 7110 --- [http-nio-8080-exec-10] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2021-04-07 16:05:07.781 DEBUG 7110 --- [http-nio-8080-exec-10] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [update films set gereserveerd=gereserveerd+1 where id=? and voorraad-gereserveerd>0]
+2021-04-07 16:05:07.781 TRACE 7110 --- [http-nio-8080-exec-10] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [8], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:05:07.782 DEBUG 7110 --- [http-nio-8080-exec-10] o.s.jdbc.core.simple.SimpleJdbcInsert    : The following parameters are used for insert INSERT INTO reservaties (klantid, filmid, reservatie) VALUES(?, ?, ?) with: [5, 8, 2021-04-07]
+2021-04-07 16:05:07.783 DEBUG 7110 --- [http-nio-8080-exec-10] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2021-04-07 16:05:07.783 DEBUG 7110 --- [http-nio-8080-exec-10] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [INSERT INTO reservaties (klantid, filmid, reservatie) VALUES(?, ?, ?)]
+2021-04-07 16:05:07.783 TRACE 7110 --- [http-nio-8080-exec-10] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [5], value class [java.lang.Long], SQL type 4
+2021-04-07 16:05:07.783 TRACE 7110 --- [http-nio-8080-exec-10] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 2, parameter value [8], value class [java.lang.Long], SQL type 4
+2021-04-07 16:05:07.783 TRACE 7110 --- [http-nio-8080-exec-10] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 3, parameter value [2021-04-07], value class [java.time.LocalDate], SQL type 93
+2021-04-07 16:05:07.786 DEBUG 7110 --- [http-nio-8080-exec-10] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2021-04-07 16:05:07.786 DEBUG 7110 --- [http-nio-8080-exec-10] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [update films set gereserveerd=gereserveerd+1 where id=? and voorraad-gereserveerd>0]
+2021-04-07 16:05:07.786 TRACE 7110 --- [http-nio-8080-exec-10] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [26], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:05:07.788 DEBUG 7110 --- [http-nio-8080-exec-10] o.s.jdbc.core.simple.SimpleJdbcInsert    : The following parameters are used for insert INSERT INTO reservaties (klantid, filmid, reservatie) VALUES(?, ?, ?) with: [5, 26, 2021-04-07]
+2021-04-07 16:05:07.788 DEBUG 7110 --- [http-nio-8080-exec-10] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2021-04-07 16:05:07.788 DEBUG 7110 --- [http-nio-8080-exec-10] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [INSERT INTO reservaties (klantid, filmid, reservatie) VALUES(?, ?, ?)]
+2021-04-07 16:05:07.788 TRACE 7110 --- [http-nio-8080-exec-10] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [5], value class [java.lang.Long], SQL type 4
+2021-04-07 16:05:07.789 TRACE 7110 --- [http-nio-8080-exec-10] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 2, parameter value [26], value class [java.lang.Long], SQL type 4
+2021-04-07 16:05:07.789 TRACE 7110 --- [http-nio-8080-exec-10] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 3, parameter value [2021-04-07], value class [java.time.LocalDate], SQL type 93
+2021-04-07 16:05:16.162 DEBUG 7110 --- [http-nio-8080-exec-2] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [select id,naam from genres order by naam]
+2021-04-07 16:06:06.429  INFO 7110 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-07 16:06:06.431  INFO 7110 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-04-07 16:06:06.452  INFO 7110 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-04-07 16:11:02.950  INFO 7148 --- [restartedMain] b.vdab.retrovideo.RetrovideoApplication  : Starting RetrovideoApplication using Java 11.0.9 on haydars-iMac.lan with PID 7148 (/Users/haydar/IdeaProjects/retrovideo/target/classes started by haydar in /Users/haydar/IdeaProjects/retrovideo)
+2021-04-07 16:11:02.955  INFO 7148 --- [restartedMain] b.vdab.retrovideo.RetrovideoApplication  : No active profile set, falling back to default profiles: default
+2021-04-07 16:11:03.071  INFO 7148 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-04-07 16:11:03.071  INFO 7148 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-04-07 16:11:04.544  INFO 7148 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-04-07 16:11:04.561  INFO 7148 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-04-07 16:11:04.561  INFO 7148 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.44]
+2021-04-07 16:11:04.636  INFO 7148 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-04-07 16:11:04.637  INFO 7148 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1564 ms
+2021-04-07 16:11:05.105  INFO 7148 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-07 16:11:05.215  INFO 7148 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-04-07 16:11:05.404  INFO 7148 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-04-07 16:11:05.450  INFO 7148 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-04-07 16:11:05.466  INFO 7148 --- [restartedMain] b.vdab.retrovideo.RetrovideoApplication  : Started RetrovideoApplication in 3.224 seconds (JVM running for 4.342)
+2021-04-07 16:11:33.479  INFO 7148 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-07 16:11:33.480  INFO 7148 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-04-07 16:11:33.481  INFO 7148 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-04-07 16:11:33.532  INFO 7148 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-04-07 16:11:33.889  INFO 7148 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-04-07 16:11:33.923 DEBUG 7148 --- [http-nio-8080-exec-1] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [select id,naam from genres order by naam]
+2021-04-07 16:11:33.974 DEBUG 7148 --- [http-nio-8080-exec-1] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:11:33.975 DEBUG 7148 --- [http-nio-8080-exec-1] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,genreid,titel,prijs from films where genreid = ? order by id]
+2021-04-07 16:11:33.998 TRACE 7148 --- [http-nio-8080-exec-1] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [1], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:11:36.260 DEBUG 7148 --- [http-nio-8080-exec-4] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:11:36.261 DEBUG 7148 --- [http-nio-8080-exec-4] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,genreid,titel,prijs from films where id = ?]
+2021-04-07 16:11:36.261 TRACE 7148 --- [http-nio-8080-exec-4] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [26], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:11:36.267 DEBUG 7148 --- [http-nio-8080-exec-4] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:11:36.267 DEBUG 7148 --- [http-nio-8080-exec-4] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select voorraad,gereserveerd from films where id = ?]
+2021-04-07 16:11:36.267 TRACE 7148 --- [http-nio-8080-exec-4] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [26], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:11:37.638 DEBUG 7148 --- [http-nio-8080-exec-9] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:11:37.638 DEBUG 7148 --- [http-nio-8080-exec-9] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,genreid,titel,prijs from films where id in (?) order by id]
+2021-04-07 16:11:37.639 TRACE 7148 --- [http-nio-8080-exec-9] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [26], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:11:37.645 DEBUG 7148 --- [http-nio-8080-exec-9] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:11:37.645 DEBUG 7148 --- [http-nio-8080-exec-9] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select sum(prijs) from films where id in (?)]
+2021-04-07 16:11:37.645 TRACE 7148 --- [http-nio-8080-exec-9] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [26], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:11:44.154 DEBUG 7148 --- [http-nio-8080-exec-6] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [select id,naam from genres order by naam]
+2021-04-07 16:11:45.010 DEBUG 7148 --- [http-nio-8080-exec-8] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [select id,naam from genres order by naam]
+2021-04-07 16:11:45.015 DEBUG 7148 --- [http-nio-8080-exec-8] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:11:45.015 DEBUG 7148 --- [http-nio-8080-exec-8] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,genreid,titel,prijs from films where genreid = ? order by id]
+2021-04-07 16:11:45.015 TRACE 7148 --- [http-nio-8080-exec-8] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [3], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:11:46.000 DEBUG 7148 --- [http-nio-8080-exec-3] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:11:46.000 DEBUG 7148 --- [http-nio-8080-exec-3] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,genreid,titel,prijs from films where id = ?]
+2021-04-07 16:11:46.001 TRACE 7148 --- [http-nio-8080-exec-3] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [11], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:11:46.005 DEBUG 7148 --- [http-nio-8080-exec-3] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:11:46.005 DEBUG 7148 --- [http-nio-8080-exec-3] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select voorraad,gereserveerd from films where id = ?]
+2021-04-07 16:11:46.005 TRACE 7148 --- [http-nio-8080-exec-3] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [11], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:11:48.283 DEBUG 7148 --- [http-nio-8080-exec-8] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:11:48.283 DEBUG 7148 --- [http-nio-8080-exec-8] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,genreid,titel,prijs from films where id in (?) order by id]
+2021-04-07 16:11:48.284 TRACE 7148 --- [http-nio-8080-exec-8] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [11], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:11:48.287 DEBUG 7148 --- [http-nio-8080-exec-8] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:11:48.287 DEBUG 7148 --- [http-nio-8080-exec-8] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select sum(prijs) from films where id in (?)]
+2021-04-07 16:11:48.288 TRACE 7148 --- [http-nio-8080-exec-8] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [11], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:11:49.814 DEBUG 7148 --- [http-nio-8080-exec-2] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [select id,naam from genres order by naam]
+2021-04-07 16:11:50.839 DEBUG 7148 --- [http-nio-8080-exec-3] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [select id,naam from genres order by naam]
+2021-04-07 16:11:50.843 DEBUG 7148 --- [http-nio-8080-exec-3] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:11:50.844 DEBUG 7148 --- [http-nio-8080-exec-3] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,genreid,titel,prijs from films where genreid = ? order by id]
+2021-04-07 16:11:50.844 TRACE 7148 --- [http-nio-8080-exec-3] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [6], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:11:52.772 DEBUG 7148 --- [http-nio-8080-exec-8] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:11:52.772 DEBUG 7148 --- [http-nio-8080-exec-8] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,genreid,titel,prijs from films where id = ?]
+2021-04-07 16:11:52.772 TRACE 7148 --- [http-nio-8080-exec-8] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [15], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:11:52.775 DEBUG 7148 --- [http-nio-8080-exec-8] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:11:52.775 DEBUG 7148 --- [http-nio-8080-exec-8] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select voorraad,gereserveerd from films where id = ?]
+2021-04-07 16:11:52.776 TRACE 7148 --- [http-nio-8080-exec-8] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [15], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:11:54.303 DEBUG 7148 --- [http-nio-8080-exec-3] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:11:54.303 DEBUG 7148 --- [http-nio-8080-exec-3] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,genreid,titel,prijs from films where id in (?,?) order by id]
+2021-04-07 16:11:54.303 TRACE 7148 --- [http-nio-8080-exec-3] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [11], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:11:54.303 TRACE 7148 --- [http-nio-8080-exec-3] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 2, parameter value [15], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:11:54.307 DEBUG 7148 --- [http-nio-8080-exec-3] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:11:54.308 DEBUG 7148 --- [http-nio-8080-exec-3] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select sum(prijs) from films where id in (?,?)]
+2021-04-07 16:11:54.308 TRACE 7148 --- [http-nio-8080-exec-3] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [11], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:11:54.308 TRACE 7148 --- [http-nio-8080-exec-3] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 2, parameter value [15], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:12:00.729 DEBUG 7148 --- [http-nio-8080-exec-9] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:12:00.729 DEBUG 7148 --- [http-nio-8080-exec-9] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,familienaam,voornaam,straatnummer,postcode,gemeente from klanten where familienaam like ? order by familienaam]
+2021-04-07 16:12:00.729 TRACE 7148 --- [http-nio-8080-exec-9] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [%a%], value class [java.lang.String], SQL type unknown
+2021-04-07 16:12:02.439 DEBUG 7148 --- [http-nio-8080-exec-1] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:12:02.439 DEBUG 7148 --- [http-nio-8080-exec-1] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,familienaam,voornaam,straatnummer,postcode,gemeente from klanten  where id = ?]
+2021-04-07 16:12:02.440 TRACE 7148 --- [http-nio-8080-exec-1] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [13], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:12:03.679 DEBUG 7148 --- [http-nio-8080-exec-4] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2021-04-07 16:12:03.680 DEBUG 7148 --- [http-nio-8080-exec-4] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [update films set gereserveerd=gereserveerd+1 where id=? and voorraad-gereserveerd>0]
+2021-04-07 16:12:03.680 TRACE 7148 --- [http-nio-8080-exec-4] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [11], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:12:03.689 DEBUG 7148 --- [http-nio-8080-exec-4] o.s.jdbc.core.simple.SimpleJdbcInsert    : JdbcInsert not compiled before execution - invoking compile
+2021-04-07 16:12:03.713 DEBUG 7148 --- [http-nio-8080-exec-4] o.s.jdbc.core.simple.SimpleJdbcInsert    : Compiled insert object: insert string is [INSERT INTO reservaties (klantid, filmid, reservatie) VALUES(?, ?, ?)]
+2021-04-07 16:12:03.713 DEBUG 7148 --- [http-nio-8080-exec-4] o.s.jdbc.core.simple.SimpleJdbcInsert    : JdbcInsert for table [reservaties] compiled
+2021-04-07 16:12:03.713 DEBUG 7148 --- [http-nio-8080-exec-4] o.s.jdbc.core.simple.SimpleJdbcInsert    : The following parameters are used for insert INSERT INTO reservaties (klantid, filmid, reservatie) VALUES(?, ?, ?) with: [13, 11, 2021-04-07]
+2021-04-07 16:12:03.714 DEBUG 7148 --- [http-nio-8080-exec-4] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2021-04-07 16:12:03.714 DEBUG 7148 --- [http-nio-8080-exec-4] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [INSERT INTO reservaties (klantid, filmid, reservatie) VALUES(?, ?, ?)]
+2021-04-07 16:12:03.714 TRACE 7148 --- [http-nio-8080-exec-4] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [13], value class [java.lang.Long], SQL type 4
+2021-04-07 16:12:03.714 TRACE 7148 --- [http-nio-8080-exec-4] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 2, parameter value [11], value class [java.lang.Long], SQL type 4
+2021-04-07 16:12:03.715 TRACE 7148 --- [http-nio-8080-exec-4] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 3, parameter value [2021-04-07], value class [java.time.LocalDate], SQL type 93
+2021-04-07 16:12:03.720 DEBUG 7148 --- [http-nio-8080-exec-4] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2021-04-07 16:12:03.721 DEBUG 7148 --- [http-nio-8080-exec-4] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [update films set gereserveerd=gereserveerd+1 where id=? and voorraad-gereserveerd>0]
+2021-04-07 16:12:03.721 TRACE 7148 --- [http-nio-8080-exec-4] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [15], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:12:03.722 DEBUG 7148 --- [http-nio-8080-exec-4] o.s.jdbc.core.simple.SimpleJdbcInsert    : The following parameters are used for insert INSERT INTO reservaties (klantid, filmid, reservatie) VALUES(?, ?, ?) with: [13, 15, 2021-04-07]
+2021-04-07 16:12:03.723 DEBUG 7148 --- [http-nio-8080-exec-4] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2021-04-07 16:12:03.723 DEBUG 7148 --- [http-nio-8080-exec-4] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [INSERT INTO reservaties (klantid, filmid, reservatie) VALUES(?, ?, ?)]
+2021-04-07 16:12:03.723 TRACE 7148 --- [http-nio-8080-exec-4] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [13], value class [java.lang.Long], SQL type 4
+2021-04-07 16:12:03.723 TRACE 7148 --- [http-nio-8080-exec-4] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 2, parameter value [15], value class [java.lang.Long], SQL type 4
+2021-04-07 16:12:03.723 TRACE 7148 --- [http-nio-8080-exec-4] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 3, parameter value [2021-04-07], value class [java.time.LocalDate], SQL type 93
+2021-04-07 16:12:07.378 DEBUG 7148 --- [http-nio-8080-exec-5] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [select id,naam from genres order by naam]
+2021-04-07 16:12:09.107 DEBUG 7148 --- [http-nio-8080-exec-9] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [select id,naam from genres order by naam]
+2021-04-07 16:12:09.111 DEBUG 7148 --- [http-nio-8080-exec-9] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:12:09.112 DEBUG 7148 --- [http-nio-8080-exec-9] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,genreid,titel,prijs from films where genreid = ? order by id]
+2021-04-07 16:12:09.112 TRACE 7148 --- [http-nio-8080-exec-9] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [5], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:12:09.838 DEBUG 7148 --- [http-nio-8080-exec-7] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [select id,naam from genres order by naam]
+2021-04-07 16:12:09.843 DEBUG 7148 --- [http-nio-8080-exec-7] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:12:09.843 DEBUG 7148 --- [http-nio-8080-exec-7] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,genreid,titel,prijs from films where genreid = ? order by id]
+2021-04-07 16:12:09.844 TRACE 7148 --- [http-nio-8080-exec-7] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [6], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:12:10.615 DEBUG 7148 --- [http-nio-8080-exec-8] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:12:10.616 DEBUG 7148 --- [http-nio-8080-exec-8] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,genreid,titel,prijs from films where id = ?]
+2021-04-07 16:12:10.616 TRACE 7148 --- [http-nio-8080-exec-8] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [15], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:12:10.619 DEBUG 7148 --- [http-nio-8080-exec-8] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:12:10.620 DEBUG 7148 --- [http-nio-8080-exec-8] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select voorraad,gereserveerd from films where id = ?]
+2021-04-07 16:12:10.620 TRACE 7148 --- [http-nio-8080-exec-8] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [15], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:12:13.528 DEBUG 7148 --- [http-nio-8080-exec-7] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:12:13.528 DEBUG 7148 --- [http-nio-8080-exec-7] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,genreid,titel,prijs from films where id in (?) order by id]
+2021-04-07 16:12:13.529 TRACE 7148 --- [http-nio-8080-exec-7] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [15], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:12:13.532 DEBUG 7148 --- [http-nio-8080-exec-7] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:12:13.532 DEBUG 7148 --- [http-nio-8080-exec-7] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select sum(prijs) from films where id in (?)]
+2021-04-07 16:12:13.532 TRACE 7148 --- [http-nio-8080-exec-7] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [15], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:12:14.991 DEBUG 7148 --- [http-nio-8080-exec-4] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [select id,naam from genres order by naam]
+2021-04-07 16:12:16.004 DEBUG 7148 --- [http-nio-8080-exec-8] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [select id,naam from genres order by naam]
+2021-04-07 16:12:16.008 DEBUG 7148 --- [http-nio-8080-exec-8] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:12:16.008 DEBUG 7148 --- [http-nio-8080-exec-8] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,genreid,titel,prijs from films where genreid = ? order by id]
+2021-04-07 16:12:16.008 TRACE 7148 --- [http-nio-8080-exec-8] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [9], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:12:16.759 DEBUG 7148 --- [http-nio-8080-exec-9] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:12:16.759 DEBUG 7148 --- [http-nio-8080-exec-9] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,genreid,titel,prijs from films where id = ?]
+2021-04-07 16:12:16.759 TRACE 7148 --- [http-nio-8080-exec-9] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [12], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:12:16.763 DEBUG 7148 --- [http-nio-8080-exec-9] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:12:16.763 DEBUG 7148 --- [http-nio-8080-exec-9] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select voorraad,gereserveerd from films where id = ?]
+2021-04-07 16:12:16.764 TRACE 7148 --- [http-nio-8080-exec-9] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [12], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:12:18.322 DEBUG 7148 --- [http-nio-8080-exec-4] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:12:18.322 DEBUG 7148 --- [http-nio-8080-exec-4] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,genreid,titel,prijs from films where id in (?,?) order by id]
+2021-04-07 16:12:18.323 TRACE 7148 --- [http-nio-8080-exec-4] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [12], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:12:18.323 TRACE 7148 --- [http-nio-8080-exec-4] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 2, parameter value [15], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:12:18.326 DEBUG 7148 --- [http-nio-8080-exec-4] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:12:18.326 DEBUG 7148 --- [http-nio-8080-exec-4] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select sum(prijs) from films where id in (?,?)]
+2021-04-07 16:12:18.326 TRACE 7148 --- [http-nio-8080-exec-4] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [12], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:12:18.326 TRACE 7148 --- [http-nio-8080-exec-4] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 2, parameter value [15], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:12:26.894 DEBUG 7148 --- [http-nio-8080-exec-6] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:12:26.894 DEBUG 7148 --- [http-nio-8080-exec-6] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,familienaam,voornaam,straatnummer,postcode,gemeente from klanten where familienaam like ? order by familienaam]
+2021-04-07 16:12:26.895 TRACE 7148 --- [http-nio-8080-exec-6] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [%a%], value class [java.lang.String], SQL type unknown
+2021-04-07 16:12:28.838 DEBUG 7148 --- [http-nio-8080-exec-3] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:12:28.838 DEBUG 7148 --- [http-nio-8080-exec-3] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,familienaam,voornaam,straatnummer,postcode,gemeente from klanten  where id = ?]
+2021-04-07 16:12:28.839 TRACE 7148 --- [http-nio-8080-exec-3] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [13], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:12:29.807 DEBUG 7148 --- [http-nio-8080-exec-5] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2021-04-07 16:12:29.807 DEBUG 7148 --- [http-nio-8080-exec-5] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [update films set gereserveerd=gereserveerd+1 where id=? and voorraad-gereserveerd>0]
+2021-04-07 16:12:29.808 TRACE 7148 --- [http-nio-8080-exec-5] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [12], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:12:29.809 DEBUG 7148 --- [http-nio-8080-exec-5] o.s.jdbc.core.simple.SimpleJdbcInsert    : The following parameters are used for insert INSERT INTO reservaties (klantid, filmid, reservatie) VALUES(?, ?, ?) with: [13, 12, 2021-04-07]
+2021-04-07 16:12:29.809 DEBUG 7148 --- [http-nio-8080-exec-5] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2021-04-07 16:12:29.810 DEBUG 7148 --- [http-nio-8080-exec-5] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [INSERT INTO reservaties (klantid, filmid, reservatie) VALUES(?, ?, ?)]
+2021-04-07 16:12:29.810 TRACE 7148 --- [http-nio-8080-exec-5] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [13], value class [java.lang.Long], SQL type 4
+2021-04-07 16:12:29.811 TRACE 7148 --- [http-nio-8080-exec-5] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 2, parameter value [12], value class [java.lang.Long], SQL type 4
+2021-04-07 16:12:29.811 TRACE 7148 --- [http-nio-8080-exec-5] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 3, parameter value [2021-04-07], value class [java.time.LocalDate], SQL type 93
+2021-04-07 16:12:29.819 DEBUG 7148 --- [http-nio-8080-exec-5] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2021-04-07 16:12:29.819 DEBUG 7148 --- [http-nio-8080-exec-5] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [update films set gereserveerd=gereserveerd+1 where id=? and voorraad-gereserveerd>0]
+2021-04-07 16:12:29.819 TRACE 7148 --- [http-nio-8080-exec-5] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [15], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:12:29.821 DEBUG 7148 --- [http-nio-8080-exec-5] o.s.jdbc.core.simple.SimpleJdbcInsert    : The following parameters are used for insert INSERT INTO reservaties (klantid, filmid, reservatie) VALUES(?, ?, ?) with: [13, 15, 2021-04-07]
+2021-04-07 16:12:29.821 DEBUG 7148 --- [http-nio-8080-exec-5] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2021-04-07 16:12:29.821 DEBUG 7148 --- [http-nio-8080-exec-5] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [INSERT INTO reservaties (klantid, filmid, reservatie) VALUES(?, ?, ?)]
+2021-04-07 16:12:29.821 TRACE 7148 --- [http-nio-8080-exec-5] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [13], value class [java.lang.Long], SQL type 4
+2021-04-07 16:12:29.821 TRACE 7148 --- [http-nio-8080-exec-5] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 2, parameter value [15], value class [java.lang.Long], SQL type 4
+2021-04-07 16:12:29.821 TRACE 7148 --- [http-nio-8080-exec-5] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 3, parameter value [2021-04-07], value class [java.time.LocalDate], SQL type 93
+2021-04-07 16:12:29.929 DEBUG 7148 --- [http-nio-8080-exec-5] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:12:29.929 DEBUG 7148 --- [http-nio-8080-exec-5] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,genreid,titel,prijs from films where id in (?) order by id]
+2021-04-07 16:12:29.929 TRACE 7148 --- [http-nio-8080-exec-5] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [15], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:12:32.741 DEBUG 7148 --- [http-nio-8080-exec-9] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:12:32.741 DEBUG 7148 --- [http-nio-8080-exec-9] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,genreid,titel,prijs from films where id in (?) order by id]
+2021-04-07 16:12:32.742 TRACE 7148 --- [http-nio-8080-exec-9] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [15], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:12:32.745 DEBUG 7148 --- [http-nio-8080-exec-9] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:12:32.746 DEBUG 7148 --- [http-nio-8080-exec-9] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select sum(prijs) from films where id in (?)]
+2021-04-07 16:12:32.746 TRACE 7148 --- [http-nio-8080-exec-9] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [15], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:12:33.978 DEBUG 7148 --- [http-nio-8080-exec-7] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [select id,naam from genres order by naam]
+2021-04-07 16:12:34.991 DEBUG 7148 --- [http-nio-8080-exec-3] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [select id,naam from genres order by naam]
+2021-04-07 16:12:34.995 DEBUG 7148 --- [http-nio-8080-exec-3] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:12:34.996 DEBUG 7148 --- [http-nio-8080-exec-3] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,genreid,titel,prijs from films where genreid = ? order by id]
+2021-04-07 16:12:34.996 TRACE 7148 --- [http-nio-8080-exec-3] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [11], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:12:36.060 DEBUG 7148 --- [http-nio-8080-exec-10] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:12:36.061 DEBUG 7148 --- [http-nio-8080-exec-10] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,genreid,titel,prijs from films where id = ?]
+2021-04-07 16:12:36.061 TRACE 7148 --- [http-nio-8080-exec-10] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [20], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:12:36.065 DEBUG 7148 --- [http-nio-8080-exec-10] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:12:36.065 DEBUG 7148 --- [http-nio-8080-exec-10] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select voorraad,gereserveerd from films where id = ?]
+2021-04-07 16:12:36.065 TRACE 7148 --- [http-nio-8080-exec-10] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [20], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:12:37.262 DEBUG 7148 --- [http-nio-8080-exec-5] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:12:37.263 DEBUG 7148 --- [http-nio-8080-exec-5] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,genreid,titel,prijs from films where id in (?,?) order by id]
+2021-04-07 16:12:37.263 TRACE 7148 --- [http-nio-8080-exec-5] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [20], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:12:37.263 TRACE 7148 --- [http-nio-8080-exec-5] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 2, parameter value [15], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:12:37.267 DEBUG 7148 --- [http-nio-8080-exec-5] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:12:37.267 DEBUG 7148 --- [http-nio-8080-exec-5] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select sum(prijs) from films where id in (?,?)]
+2021-04-07 16:12:37.267 TRACE 7148 --- [http-nio-8080-exec-5] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [20], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:12:37.267 TRACE 7148 --- [http-nio-8080-exec-5] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 2, parameter value [15], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:12:41.621 DEBUG 7148 --- [http-nio-8080-exec-7] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:12:41.621 DEBUG 7148 --- [http-nio-8080-exec-7] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,familienaam,voornaam,straatnummer,postcode,gemeente from klanten where familienaam like ? order by familienaam]
+2021-04-07 16:12:41.622 TRACE 7148 --- [http-nio-8080-exec-7] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [%q%], value class [java.lang.String], SQL type unknown
+2021-04-07 16:12:42.732 DEBUG 7148 --- [http-nio-8080-exec-2] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2021-04-07 16:12:42.732 DEBUG 7148 --- [http-nio-8080-exec-2] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [select id,familienaam,voornaam,straatnummer,postcode,gemeente from klanten  where id = ?]
+2021-04-07 16:12:42.733 TRACE 7148 --- [http-nio-8080-exec-2] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [11], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:12:43.812 DEBUG 7148 --- [http-nio-8080-exec-4] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2021-04-07 16:12:43.813 DEBUG 7148 --- [http-nio-8080-exec-4] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [update films set gereserveerd=gereserveerd+1 where id=? and voorraad-gereserveerd>0]
+2021-04-07 16:12:43.813 TRACE 7148 --- [http-nio-8080-exec-4] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [20], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:12:43.814 DEBUG 7148 --- [http-nio-8080-exec-4] o.s.jdbc.core.simple.SimpleJdbcInsert    : The following parameters are used for insert INSERT INTO reservaties (klantid, filmid, reservatie) VALUES(?, ?, ?) with: [11, 20, 2021-04-07]
+2021-04-07 16:12:43.815 DEBUG 7148 --- [http-nio-8080-exec-4] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2021-04-07 16:12:43.815 DEBUG 7148 --- [http-nio-8080-exec-4] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [INSERT INTO reservaties (klantid, filmid, reservatie) VALUES(?, ?, ?)]
+2021-04-07 16:12:43.815 TRACE 7148 --- [http-nio-8080-exec-4] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [11], value class [java.lang.Long], SQL type 4
+2021-04-07 16:12:43.816 TRACE 7148 --- [http-nio-8080-exec-4] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 2, parameter value [20], value class [java.lang.Long], SQL type 4
+2021-04-07 16:12:43.816 TRACE 7148 --- [http-nio-8080-exec-4] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 3, parameter value [2021-04-07], value class [java.time.LocalDate], SQL type 93
+2021-04-07 16:12:43.819 DEBUG 7148 --- [http-nio-8080-exec-4] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2021-04-07 16:12:43.819 DEBUG 7148 --- [http-nio-8080-exec-4] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [update films set gereserveerd=gereserveerd+1 where id=? and voorraad-gereserveerd>0]
+2021-04-07 16:12:43.819 TRACE 7148 --- [http-nio-8080-exec-4] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [15], value class [java.lang.Long], SQL type unknown
+2021-04-07 16:12:43.821 DEBUG 7148 --- [http-nio-8080-exec-4] o.s.jdbc.core.simple.SimpleJdbcInsert    : The following parameters are used for insert INSERT INTO reservaties (klantid, filmid, reservatie) VALUES(?, ?, ?) with: [11, 15, 2021-04-07]
+2021-04-07 16:12:43.821 DEBUG 7148 --- [http-nio-8080-exec-4] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2021-04-07 16:12:43.821 DEBUG 7148 --- [http-nio-8080-exec-4] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [INSERT INTO reservaties (klantid, filmid, reservatie) VALUES(?, ?, ?)]
+2021-04-07 16:12:43.821 TRACE 7148 --- [http-nio-8080-exec-4] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [11], value class [java.lang.Long], SQL type 4
+2021-04-07 16:12:43.821 TRACE 7148 --- [http-nio-8080-exec-4] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 2, parameter value [15], value class [java.lang.Long], SQL type 4
+2021-04-07 16:12:43.821 TRACE 7148 --- [http-nio-8080-exec-4] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 3, parameter value [2021-04-07], value class [java.time.LocalDate], SQL type 93
+2021-04-07 16:12:50.961  INFO 7148 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-07 16:12:50.962  INFO 7148 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-04-07 16:12:50.981  INFO 7148 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

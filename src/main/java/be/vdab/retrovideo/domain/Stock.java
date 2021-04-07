@@ -21,9 +21,6 @@ public class Stock {
         return gereserveerd;
     }
 
-    public void setGereserveerd(long gereserveerd) {
-        this.gereserveerd = gereserveerd;
-    }
     @PositiveOrZero
     public long getBeschikebaar() {
         return voorraad - gereserveerd;
