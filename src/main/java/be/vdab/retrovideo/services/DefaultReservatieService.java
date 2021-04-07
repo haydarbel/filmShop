@@ -2,15 +2,15 @@ package be.vdab.retrovideo.services;
 
 import be.vdab.retrovideo.domain.Klant;
 import be.vdab.retrovideo.domain.Reservatie;
-import be.vdab.retrovideo.exceptions.ReservatieException;
+import be.vdab.retrovideo.exceptions.DuplicateReservatieException;
 import be.vdab.retrovideo.repositories.FilmRepository;
 import be.vdab.retrovideo.repositories.KlantRepository;
 import be.vdab.retrovideo.repositories.ReservatieRepository;
 import org.springframework.stereotype.Service;
-
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.*;
+import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -42,7 +42,7 @@ public class DefaultReservatieService implements ReservatieService {
     public boolean maakResevatie(Reservatie reservatie) {
         filmRepository.verhoogGereserveerdWaardeMetEen(reservatie);
         if (!reservatieRepository.createReservatie(reservatie)) {
-            throw new ReservatieException();
+            throw new DuplicateReservatieException();
         }
         return true;
     }

@@ -32,7 +32,7 @@ class IndexController {
     public ModelAndView film(@PathVariable long id) {
        var modelAndView = new ModelAndView("film");
          filmService.findFilmById(id).ifPresent(film ->modelAndView.addObject("film",film)
-                .addObject("stock", filmService.findStockById(id).get()));
+                .addObject("stock",filmService.findStockById(id).get()));
         return modelAndView;
     }
 

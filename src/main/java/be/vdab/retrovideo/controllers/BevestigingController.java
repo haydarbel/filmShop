@@ -1,7 +1,7 @@
 package be.vdab.retrovideo.controllers;
 
 import be.vdab.retrovideo.domain.Reservatie;
-import be.vdab.retrovideo.exceptions.ReservatieException;
+import be.vdab.retrovideo.exceptions.DuplicateReservatieException;
 import be.vdab.retrovideo.forms.ReservatieForm;
 import be.vdab.retrovideo.services.FilmService;
 import be.vdab.retrovideo.services.ReservatieService;
@@ -18,13 +18,13 @@ import java.util.stream.Collectors;
 
 
 @Controller
-@RequestMapping("bevestigen")
-class BevestigController {
+@RequestMapping("bevestiging")
+class BevestigingController {
     private final ReservatieService reservatieService;
     private final FilmService filmService;
     private final Mandje mandje;
 
-    public BevestigController(ReservatieService reservatieService, FilmService filmService, Mandje mandje) {
+    public BevestigingController(ReservatieService reservatieService, FilmService filmService, Mandje mandje) {
         this.reservatieService = reservatieService;
         this.filmService = filmService;
         this.mandje = mandje;
@@ -33,12 +33,12 @@ class BevestigController {
     @GetMapping("{id}")
     public String identificatie(@PathVariable long id) {
         mandje.setKlantid(id);
-        return "redirect:/bevestigen/form";
+        return "redirect:/bevestiging/form";
     }
 
     @GetMapping("form")
     public ModelAndView bevestig() {
-        var modelAndView = new ModelAndView("bevestigen", "mandje", mandje);
+        var modelAndView = new ModelAndView("bevestiging", "mandje", mandje);
         reservatieService.findKlantById(mandje.getKlantid()).ifPresent(
                 klant -> modelAndView.addObject("klant", klant));
         return modelAndView;
@@ -53,8 +53,8 @@ class BevestigController {
                 if (reservatieService.maakResevatie(reservatie)) {
                     gereserveerdeFilms.add(reservatie.getFilmid());
                 }
-            } catch (ReservatieException e) {
-                System.out.println("hurraaaaaaaaaa");
+            } catch (DuplicateReservatieException e) {
+
             }
         }
         mandje.getIds().removeAll(gereserveerdeFilms);
@@ -62,14 +62,6 @@ class BevestigController {
                 filmService.findFilmsByIds(mandje.getIds()));
     }
 
-//    @GetMapping("gedaan")
-//    public ModelAndView bevestigenform() {
-//        var nietgereserveerdeFilms =
-//                reservatieService.createReservaties(reservatieSetVanHetMandje());
-//        mandje.getIds().retainAll(nietgereserveerdeFilms);
-//        return new ModelAndView("bevestigd", "nietgereserveerdeFilms",
-//                filmService.findFilmsByIds(nietgereserveerdeFilms));
-//    }
 
     @GetMapping("bevestigd")
     public ModelAndView bevestigd() {
