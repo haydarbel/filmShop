@@ -3,6 +3,7 @@ package be.vdab.retrovideo.services;
 import be.vdab.retrovideo.domain.Film;
 import be.vdab.retrovideo.domain.Genre;
 import be.vdab.retrovideo.domain.Stock;
+import be.vdab.retrovideo.exceptions.FilmNietGevondenException;
 import be.vdab.retrovideo.repositories.FilmRepository;
 import be.vdab.retrovideo.repositories.GenreRepository;
 import org.springframework.stereotype.Service;
@@ -26,7 +27,11 @@ public class DefaultFilmService implements FilmService {
 
     @Override
     public Optional<Film> findFilmById(long id) {
-        return filmRepository.findFilmById(id);
+       Optional<Film> result = filmRepository.findFilmById(id);
+        if (result.isEmpty()) {
+            throw new FilmNietGevondenException();
+        }
+        return result;
     }
 
     @Override

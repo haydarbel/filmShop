@@ -9,10 +9,13 @@
     </ul>
 </nav>
 <h1>Rapport</h1>
-<h3 th:if="${nietgereserveerdeFilms.isEmpty()}">De reservatie is OK</h3>
-<h4 th:if="not ${nietgereserveerdeFilms.isEmpty()}">De reservatie van volgende film(s) zijn mislukt.</h4>
-<ul th:object="${nietgereserveerdeFilms}">
-    <li th:each="film:${nietgereserveerdeFilms}" th:text="${film.titel}"></li>
-</ul>
+<th:block th:if="${nietgereserveerdeFilms}">
+    <h3 th:if="${nietgereserveerdeFilms.isEmpty()}">De reservatie is OK</h3>
+    <h4 th:if="not ${nietgereserveerdeFilms.isEmpty()}">De reservatie van volgende film(s) zijn mislukt.</h4>
+    <ul th:object="${nietgereserveerdeFilms}">
+        <li th:each="film:${nietgereserveerdeFilms}" th:text="${film.titel}"></li>
+    </ul>
+</th:block>
+<h3 th:if="not ${nietgereserveerdeFilms}" >U moet eerst aan het mandje film toevoegen !</h3>
 </body>
 </html>

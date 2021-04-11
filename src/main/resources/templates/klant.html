@@ -7,7 +7,7 @@
 <form th:object="${zoekForm}" method="get"
       th:action="@{/klant/byletters}">
     <label>
-        Familienaam bevat:<input th:field="*{letters}" autofocus type="text" required minlength="1">
+        Familienaam bevat:<input th:field="*{letters}" autofocus type="text">  <!--required minlength="1"-->
         <span th:errors="*{letters}"></span>
     </label>
     <button>Zoeken</button>

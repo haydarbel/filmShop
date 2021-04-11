@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.validation.Valid;
 import java.util.HashSet;
 
 
@@ -39,18 +40,21 @@ class BevestigingController {
     @GetMapping("gedaan")
     public ModelAndView bevestigenform() {
         var setVanNietGereserveerd = new HashSet<Long>();
-        mandje.getIdsVanFilms().stream()
-                .map(id -> new ReservatieForm(mandje.getKlantid(), id))
-                .forEach(reservatieForm -> {
-                    try {
-                        reservatieService.maakReservatie(reservatieForm);
-                    } catch (DuplicateReservatieException e) {
-                        setVanNietGereserveerd.add(reservatieForm.getFilmid());
-                    }
-                });
-        mandje.getIdsVanFilms().retainAll(setVanNietGereserveerd);
-        return new ModelAndView("bevestigd", "nietgereserveerdeFilms",
-                filmService.findFilmsByIds(mandje.getIdsVanFilms()));
+        if (mandje.getIdsVanFilms().size() > 0) {
+            mandje.getIdsVanFilms().stream()
+                    .map(id -> new ReservatieForm( mandje.getKlantid(), id))
+                    .forEach(reservatieForm -> {
+                        try {
+                            reservatieService.maakReservatie(reservatieForm);
+                        } catch (DuplicateReservatieException e) {
+                            setVanNietGereserveerd.add(reservatieForm.getFilmid());
+                        }
+                    });
+            mandje.getIdsVanFilms().retainAll(setVanNietGereserveerd);
+            return new ModelAndView("bevestigd", "nietgereserveerdeFilms",
+                    filmService.findFilmsByIds(mandje.getIdsVanFilms()));
+        }
+        return new ModelAndView("bevestigd");
     }
 }
 

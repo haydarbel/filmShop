@@ -3,6 +3,7 @@ package be.vdab.retrovideo.repositories;
 import be.vdab.retrovideo.domain.Film;
 import be.vdab.retrovideo.domain.Reservatie;
 import be.vdab.retrovideo.domain.Stock;
+import be.vdab.retrovideo.exceptions.FilmNietGevondenException;
 import org.springframework.dao.IncorrectResultSizeDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;

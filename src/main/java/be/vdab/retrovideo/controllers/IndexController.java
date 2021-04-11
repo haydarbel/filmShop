@@ -1,5 +1,6 @@
 package be.vdab.retrovideo.controllers;
 
+import be.vdab.retrovideo.exceptions.FilmNietGevondenException;
 import be.vdab.retrovideo.services.FilmService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -31,8 +32,13 @@ class IndexController {
     @GetMapping("film/{id}")
     public ModelAndView film(@PathVariable long id) {
        var modelAndView = new ModelAndView("film");
-         filmService.findFilmById(id).ifPresent(film ->modelAndView.addObject("film",film)
-                .addObject("stock",filmService.findStockById(id).get()));
+        try {
+            filmService.findFilmById(id)
+                    .ifPresent(film ->modelAndView.addObject("film",film)
+                   .addObject("stock",filmService.findStockById(id).get()));
+        } catch (FilmNietGevondenException e) {
+            return modelAndView;
+        }
         return modelAndView;
     }
 
