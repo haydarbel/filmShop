@@ -15,7 +15,7 @@
     <a th:each="film:${filmsMetGenre}" th:object="${film}" th:href="@{/film/{id}(id=*{id})}">
         <img th:src="@{/images/{id}.jpg (id=*{id})}" th:alt="*{titel}">
     </a>
-    <h1 th:if="${filmsMetGenre.isEmpty()}"> Genre Is Niet Gevonden !</h1>
+    <h1 th:if="${filmsMetGenre.isEmpty()}"> Geen film gevonden in dit genre !</h1>
 </div>
 </body>
 </html>

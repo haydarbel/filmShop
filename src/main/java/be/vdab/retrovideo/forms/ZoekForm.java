@@ -7,7 +7,7 @@ public class ZoekForm {
     @NotBlank
     private final String letters;
 
-    public ZoekForm(@NotBlank String letters) {
+    public ZoekForm(String letters) {
         this.letters = letters;
     }
 

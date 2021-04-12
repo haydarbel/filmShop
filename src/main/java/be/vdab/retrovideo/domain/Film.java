@@ -1,14 +1,16 @@
 package be.vdab.retrovideo.domain;
 
+import org.apache.logging.log4j.message.Message;
 import org.springframework.format.annotation.NumberFormat;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Positive;
 import java.math.BigDecimal;
 import java.util.Objects;
 
 public class Film {
-    @Positive
+    @NotNull
     private final long id;
     @Positive
     private final long genreId;

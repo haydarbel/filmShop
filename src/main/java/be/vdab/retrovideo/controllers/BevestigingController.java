@@ -6,13 +6,18 @@ import be.vdab.retrovideo.services.FilmService;
 import be.vdab.retrovideo.services.ReservatieService;
 import be.vdab.retrovideo.sessions.Mandje;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.executable.ValidateOnExecution;
 import java.util.HashSet;
+import java.util.Set;
 
 
 @Controller
@@ -39,10 +44,10 @@ class BevestigingController {
 
     @GetMapping("gedaan")
     public ModelAndView bevestigenform() {
-        var setVanNietGereserveerd = new HashSet<Long>();
-        if (mandje.getIdsVanFilms().size() > 0) {
+        if (!mandje.getIdsVanFilms().isEmpty()) {
+            var setVanNietGereserveerd = new HashSet<Long>();
             mandje.getIdsVanFilms().stream()
-                    .map(id -> new ReservatieForm( mandje.getKlantid(), id))
+                    .map(id -> new ReservatieForm(mandje.getKlantid(), id))
                     .forEach(reservatieForm -> {
                         try {
                             reservatieService.maakReservatie(reservatieForm);
@@ -53,8 +58,10 @@ class BevestigingController {
             mandje.getIdsVanFilms().retainAll(setVanNietGereserveerd);
             return new ModelAndView("bevestigd", "nietgereserveerdeFilms",
                     filmService.findFilmsByIds(mandje.getIdsVanFilms()));
+        } else {
+            return new ModelAndView("bevestigd");
         }
-        return new ModelAndView("bevestigd");
+
     }
 }
 
