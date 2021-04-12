@@ -1,18 +1,14 @@
 package be.vdab.retrovideo.controllers;
 
 import be.vdab.retrovideo.exceptions.FilmNietGevondenException;
-import be.vdab.retrovideo.forms.FilmForm;
 import be.vdab.retrovideo.services.FilmService;
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.Errors;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.validation.Valid;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.Positive;
 
 @Controller
