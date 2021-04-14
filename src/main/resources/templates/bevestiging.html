@@ -5,7 +5,8 @@
 <nav th:replace="fragment::navbar"></nav>
 <div>
     <h1>Bevestigen</h1>
-    <p th:text="|${mandje.getIdsVanFilms().size()} film(s) voor ${klant}|"></p>
+    <p th:text="|${mandje.getIdsVanFilms().size()} film(s) voor|"></p>
+    <p th:if="${klant}" th:text="${klant}"></p>
     <form th:action="@{/bevestiging/gedaan}"  method="get">
         <button>Bevestig</button>
     </form>

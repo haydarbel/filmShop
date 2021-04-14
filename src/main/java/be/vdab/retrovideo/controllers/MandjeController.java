@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.validation.constraints.Positive;
 import java.util.Optional;
 
 @Controller
@@ -29,8 +30,9 @@ import java.util.Optional;
     }
 
     @PostMapping("{id}")
-    public String voegToe(@PathVariable long id) {
-        mandje.voegDeFilmToe(id);
+    public String voegToe(@PathVariable("id") @Positive long id) {
+        filmService.findFilmById(id)
+                .ifPresent(film->mandje.voegDeFilmToe(film.getId()));
         return "redirect:/mandje";
     }
 

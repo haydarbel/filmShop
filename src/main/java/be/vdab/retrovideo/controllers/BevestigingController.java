@@ -15,6 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Positive;
 import javax.validation.executable.ValidateOnExecution;
 import java.util.HashSet;
 import java.util.Set;
@@ -34,11 +35,12 @@ class BevestigingController {
     }
 
     @GetMapping("form/{id}")
-    public ModelAndView bevestig(@PathVariable long id) {
+    public ModelAndView bevestig(@PathVariable("id")@Positive long id) {
         var modelAndView = new ModelAndView("bevestiging", "mandje", mandje);
-        mandje.setKlantid(id);
-        reservatieService.findKlantById(id).ifPresent(
-                klant -> modelAndView.addObject("klant", klant));
+        reservatieService.findKlantById(id)
+                .ifPresent(klant -> {mandje.setKlantid(klant.getId());
+                modelAndView.addObject("klant",klant);
+                });
         return modelAndView;
     }
 
