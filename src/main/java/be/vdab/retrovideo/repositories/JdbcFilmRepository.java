@@ -3,7 +3,6 @@ package be.vdab.retrovideo.repositories;
 import be.vdab.retrovideo.domain.Film;
 import be.vdab.retrovideo.domain.Reservatie;
 import be.vdab.retrovideo.domain.Stock;
-import be.vdab.retrovideo.exceptions.FilmNietGevondenException;
 import org.springframework.dao.IncorrectResultSizeDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -58,11 +57,13 @@ public class JdbcFilmRepository implements FilmRepository {
     }
 
     @Override
+
     public BigDecimal findTotalePrijsByIds(Set<Long> ids) {
         if (ids.size() != 0) {
-            var sql = "select sum(prijs) from films where id in (" +
-                    "?,".repeat(ids.size() - 1) +
-                    "?)";
+            var sql = new StringBuilder()
+                    .append("select sum(prijs) from films where id in (")
+                    .append("?,".repeat(ids.size() - 1))
+                    .append("?)").toString();
             return template.queryForObject(sql, BigDecimal.class, ids.toArray());
         } else {
             return BigDecimal.ZERO;
